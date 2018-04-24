@@ -1,9 +1,33 @@
 import {tempData} from "../js/pager_tempdata.js";
 
+class RkPager1_itemList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+
+    // binders
+    
+  }
+  // hooks
+  
+  // methods
+  
+  render() {
+    return (
+      <div>
+        {this.props.pr_list.map((i) =>
+          <span>{i}</span>
+        )}
+      </div>
+    );
+  }
+}
+
 class RkPager1 extends React.Component {
   constructor(props) {
     super(props);
-    this.items = []; // raw items
     this.state = {
       itemList: []
     };
@@ -13,24 +37,22 @@ class RkPager1 extends React.Component {
   }
   // hooks
   componentDidMount() {
-    this.items = tempData;
     this.setItems();
-  }
-
-  componentDidUpdate() {
-        
   }
 
   // methods
   setItems() {    
     this.setState({
-      itemList: this.items
+      itemList: tempData
     }); 
   }
   
   render() {
     return (
-      <div>{this.state.itemList}</div>
+      <div>
+        <RkPager1_itemList 
+        pr_list={this.state.itemList} />
+      </div>
     );
   }
 }
