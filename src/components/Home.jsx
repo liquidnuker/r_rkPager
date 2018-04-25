@@ -1,4 +1,29 @@
 import {tempData} from "../js/pager_tempdata.js";
+import Pager from "../js/pager.js";
+import {pageBtns} from "../js/pagebtns.js";
+
+class RkPager1_pageSelector extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+
+    // binders
+    
+  }
+  // hooks
+  
+  // methods
+  
+  render() {
+    return (
+      <div>
+        Page {this.props.pr_currentPage} of {this.props.pr_totalPages}
+      </div>
+    );
+  }
+}
 
 class RkPager1_itemList extends React.Component {
   constructor(props) {
@@ -28,8 +53,17 @@ class RkPager1_itemList extends React.Component {
 class RkPager1 extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.items = []; // raw items
+    this.pg = null;
+    
     this.state = {
-      itemList: []
+      itemList: [], // paginated items
+
+      perPage: 10,
+      perPageItems: [10, 20, 50, 100],
+      totalPages: "",
+      currentPage: "",
     };
 
     // binders
@@ -37,14 +71,33 @@ class RkPager1 extends React.Component {
   }
   // hooks
   componentDidMount() {
-    this.setItems();
+    this.items = tempData;
+    this.activatePager();
   }
 
   // methods
-  setItems() {    
-    this.setState({
-      itemList: tempData
-    }); 
+  activatePager() {    
+    this.pg = null;
+    this.pg = new Pager({
+      perPage: this.state.perPage,
+      data: this.items
+    });
+
+    this.setState(prevState => ({
+       totalPages: this.pg.getTotalPages()
+     })); 
+
+     // this.setPageBtns();
+     this.showItems(1);        
+  }
+
+  showItems(num) {
+    this.setState(prevState => ({
+      itemList: this.pg.page(num),
+      currentPage: this.pg.currentPage
+    }));
+
+    // this.changePageBtns();
   }
   
   render() {
@@ -52,6 +105,10 @@ class RkPager1 extends React.Component {
       <div>
         <RkPager1_itemList 
         pr_list={this.state.itemList} />
+
+        <RkPager1_pageSelector
+        pr_totalPages={this.state.totalPages} 
+        pr_currentPage={this.state.currentPage} />
       </div>
     );
   }
