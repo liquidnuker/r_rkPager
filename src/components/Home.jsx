@@ -10,16 +10,34 @@ class RkPager1_pageSelector extends React.Component {
     };
 
     // binders
+    this.handleChange = this.handleChange.bind(this);
     
   }
   // hooks
   
   // methods
+  createOptions() {
+    let items = [];         
+    for (let i = 1; i <= this.props.pr_totalPages; i++) {             
+      items.push(<option onClick={() => 
+        {this.props.pr_val_showItems(i)}} key={i} value={i}>{i}</option>);   
+    }
+    return items;
+  }   
+
+  handleChange(event) {
+    this.props.pr_val_showItems(event.target.value);
+  } 
   
   render() {
     return (
       <div>
-        Page {this.props.pr_currentPage} of {this.props.pr_totalPages}
+      Page
+      <select className="" value={this.props.pr_currentPage}
+      onChange={this.handleChange} >
+      {this.createOptions()}
+      </select>
+      of {this.props.pr_totalPages}
       </div>
     );
   }
@@ -67,6 +85,7 @@ class RkPager1 extends React.Component {
     };
 
     // binders
+    this.showItems = this.showItems.bind(this);
     
   }
   // hooks
@@ -108,7 +127,8 @@ class RkPager1 extends React.Component {
 
         <RkPager1_pageSelector
         pr_totalPages={this.state.totalPages} 
-        pr_currentPage={this.state.currentPage} />
+        pr_currentPage={this.state.currentPage}
+        pr_val_showItems={this.showItems} />
       </div>
     );
   }
