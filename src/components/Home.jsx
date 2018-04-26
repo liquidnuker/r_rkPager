@@ -2,6 +2,71 @@ import {tempData} from "../js/pager_tempdata.js";
 import Pager from "../js/pager.js";
 import {pageBtns} from "../js/pagebtns.js";
 
+class RkPager1_buttons extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+
+    // binders
+    
+  }
+  // hooks
+  
+  // methods
+  
+  render() {
+    if (this.props.pr_i === this.props.pr_currentPage) {
+      return (
+          <a className="jspager1_pagebtn 
+          jspager1_pagebtn--active" tabindex="0" 
+          onClick={() => { this.props.pr_val_showItems(this.props.pr_i) }}>
+            {this.props.pr_i}
+          </a>
+        );
+    } else {
+      return (
+       <a className="jspager1_pagebtn" tabindex="0" 
+       onClick={() => { this.props.pr_val_showItems(this.props.pr_i) }}>
+            {this.props.pr_i}
+        </a>
+      );
+    }
+  }
+}
+
+
+
+
+class RkPager1_pageButtons extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+
+    // binders
+    
+  }
+  // hooks
+  
+  // methods
+  
+  render() {
+    return (
+      <div className="jspager1">
+        {this.props.pr_buttonSet.map((i) =>
+          <RkPager1_buttons 
+          pr_i={i}
+          pr_currentPage={this.props.pr_currentPage} 
+          pr_val_showItems={this.props.pr_val_showItems}/>
+        )}
+      </div>
+    );
+  }
+}
+
 class RkPager1_pageSelector extends React.Component {
   constructor(props) {
     super(props);
@@ -82,6 +147,8 @@ class RkPager1 extends React.Component {
       perPageItems: [10, 20, 50, 100],
       totalPages: "",
       currentPage: "",
+
+      buttonSet: [],
     };
 
     // binders
@@ -106,7 +173,7 @@ class RkPager1 extends React.Component {
        totalPages: this.pg.getTotalPages()
      })); 
 
-     // this.setPageBtns();
+     this.setPageBtns();
      this.showItems(1);        
   }
 
@@ -116,7 +183,20 @@ class RkPager1 extends React.Component {
       currentPage: this.pg.currentPage
     }));
 
-    // this.changePageBtns();
+    this.changePageBtns();
+  }
+
+  setPageBtns() {
+    this.temp = [];
+    for (let i = 0, l = this.pg.getTotalPages(); i < l; i++) {
+      this.temp.push(pageBtns(i, l));
+    }
+  }
+
+  changePageBtns() {
+    this.setState(prevState => ({
+      buttonSet: this.temp[this.pg.currentPage - 1]
+    }));
   }
   
   render() {
@@ -127,6 +207,11 @@ class RkPager1 extends React.Component {
 
         <RkPager1_pageSelector
         pr_totalPages={this.state.totalPages} 
+        pr_currentPage={this.state.currentPage}
+        pr_val_showItems={this.showItems} />
+
+        <RkPager1_pageButtons 
+        pr_buttonSet={this.state.buttonSet}
         pr_currentPage={this.state.currentPage}
         pr_val_showItems={this.showItems} />
       </div>

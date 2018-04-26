@@ -14,6 +14,8 @@
 @import "vendor/bulma/bulma.sass"; 
 @import "layout/grid";
 
+@import "jspager";
+
 // show the active breakpoint (_mq.scss)
 // ==================================================/
 // @include mq-show-breakpoints;
@@ -25,8 +27,4 @@
 // temp
 body {
   @extend %system_normal--300;
-}
-
-.item-id {
-  background-color: #ccc;
 }

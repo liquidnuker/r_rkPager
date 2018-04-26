@@ -1,0 +1,967 @@
+body {
+  // background-color: #141416;
+}
+
+// jspager1
+// ==================================================/
+
+// mobile portrait (320x480) 
+@include mq($from: mobile) {
+  .jspager1 {
+    .jspager1_pagebtnholder,
+    .jspager1_totalpagesholder,
+    .jspager1_jumptopageholder,
+    .jspager1_perpageholder,
+    .jspager1_prevnextholder {
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .jspager1_totalpagesholder {      
+      label,
+      p,
+      select {
+        display: inline-block;
+      }
+    }
+
+    .jspager1_jumptopageholder {
+      .jspager1_jump {
+        width: 20%;
+        border: 1px solid #000;
+      }
+    }
+
+    .jspager1_prevnextholder {
+      button {
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }    
+}
+
+// *small tablet portrait (600x800)
+@include mq($from: smallTabletPortrait) {
+  .jspager1 {
+    .jspager1_pagebtnholder,
+    .jspager1_totalpagesholder,
+    .jspager1_jumptopageholder,
+    .jspager1_perpageholder,
+    .jspager1_prevnextholder {
+      float: left;
+      margin-top: auto;
+    } 
+
+    .jspager1_prevnextholder {
+      button {
+        float: left;
+        width: auto;
+      }
+    }
+
+    .jspager1_jumptopageholder {
+      .jspager1_jump {
+        width: 60px;
+      }
+    }
+  }
+}
+
+// end breakpoints 
+
+@mixin jspager1_theme() {
+  .jspager1_items {
+    color: #ccc;
+  }
+
+  .jspager1 {
+    background-color: #1c1d22;
+    color: #d5d5d5;
+
+    .jspager1_pagebtnholder,
+    .jspager1_totalpagesholder,
+    .jspager1_jumptopageholder,
+    .jspager1_perpageholder,
+    .jspager1_prevnextholder {
+      border: 1px solid #303134;
+    }
+
+    .btn {
+      color: #1c1d22;
+
+      @include background-gradient(#fff, #e8e8e8, 'vertical'); 
+      border: 1px solid #2c2d32;
+
+      > svg {
+        fill: #bf0101;
+      }
+      
+      &:hover {
+        @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+        color: #fff;
+
+        > svg {
+          fill: #fff;
+        }
+      }
+    }
+
+    .jspager1_pagebtn {
+      @include background-gradient(#fff, #e8e8e8, 'vertical');
+      color: #1c1d22;
+      border: 1px solid #000;
+
+      &:hover {
+        @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+        color: #fff;
+      }
+    }
+
+    .jspager1_pagebtn--active {
+      @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+      color: #fff;
+    }
+
+    .jspager1_select,
+    .jspager1_perpage,
+    .jspager1_jump {
+      border: 1px solid #000;
+    }
+  }
+}
+@include jspager1_theme();
+
+.jspager1_items {
+  > li {
+    display: inline-block;
+    background-color: #000;
+  }
+}
+
+.jspager1_holder {
+  @extend %text--center;
+}
+
+.jspager1 {
+  @extend %display--inline-block;
+  
+    .jspager1_pagebtnholder,
+    .jspager1_totalpagesholder,
+    .jspager1_jumptopageholder,
+    .jspager1_perpageholder,
+    .jspager1_prevnextholder {
+      @extend %padd--4;
+    }
+
+  .jspager1_pagebtn {
+      @extend %mp--0;
+      @extend %btn_font--sans-serif;
+      @extend %display--inline-block;
+      @extend %padd--4;
+      font-size: 100%; 
+      line-height: 1.15;
+      cursor: pointer;    
+      height: 30px;
+      vertical-align: middle;
+    }
+
+    .jspager1_pagebtn--active {
+      background-color: green;
+      color: #fff;
+    }    
+
+  .btn {
+    @extend %padd--4;
+    height: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .btn_prev,
+  .btn_next,
+  .btn_first,
+  .btn_last {    
+    span {
+      @extend %display--inline-block;
+    }
+
+    svg {
+      @extend %display--inline-block;
+      vertical-align: text-bottom;
+      height: 18px;
+    }
+  }
+
+  .btn_prev,
+  .btn_first {
+    svg {
+      margin-left: -4px;
+    }
+  }
+
+  .btn_next,
+  .btn_last {
+    svg {
+      margin-right: -4px;
+    }
+  }
+
+  .jspager1_select,
+  .jspager1_perpage,
+  .jspager1_jump {
+    @extend %padd--4;
+    vertical-align: middle;
+    height: 30px;
+  }
+}
+
+// jspager2
+// ==================================================/
+
+// mobile portrait (320x480) 
+@include mq($from: mobile) {
+  .jspager2 {
+    display: block;
+    width: 100%;
+    .jspager2_pagebtnholder,
+    .jspager2_totalpagesholder,
+    .jspager2_perpageholder,
+    .jspager2_prevnextholder {
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .jspager2_totalpagesholder {      
+      label,
+      p,
+      select {
+        display: inline-block;
+      }
+    }
+
+    .jspager2_prevnextholder {
+      button {
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }    
+}
+
+// *small tablet portrait (600x800)
+@include mq($from: smallTabletPortrait) {
+  .jspager2 {
+    display: inline-block;
+    width: auto;
+    .jspager2_pagebtnholder,
+    .jspager2_totalpagesholder,
+    .jspager2_perpageholder,
+    .jspager2_prevnextholder {
+      float: left;
+      margin-top: auto;
+    } 
+
+    .jspager2_prevnextholder {
+      button {
+        float: left;
+        width: auto;
+      }
+    }
+  }
+}
+
+// end breakpoints 
+
+@mixin jspager2_theme() {
+  .jspager2_items {
+    color: #fff;
+  }
+
+  .jspager2 {
+    background-color: #1c1d22;
+    color: #d5d5d5;
+
+    .jspager2_pagebtnholder,
+    .jspager2_totalpagesholder,
+    .jspager2_perpageholder,
+    .jspager2_prevnextholder {
+      border: 1px solid #303134;
+    }
+
+    .btn {
+      color: #1c1d22;
+
+      @include background-gradient(#fff, #e8e8e8, 'vertical'); 
+      border: 1px solid #2c2d32;
+
+      > svg {
+        fill: #bf0101;
+      }
+      
+      &:hover {
+        @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+        color: #fff;
+
+        > svg {
+          fill: #fff;
+        }
+      }
+    }
+
+    .jspager2_pagebtn {
+      @include background-gradient(#fff, #e8e8e8, 'vertical');
+      color: #1c1d22;
+      border: 1px solid #000;
+
+      &:hover {
+        @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+        color: #fff;
+      }
+    }
+
+    .jspager2_pagebtn--active {
+      @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+      color: #fff;
+    }
+
+    .jspager2_select,
+    .jspager2_perpage,
+    .jspager2_jump {
+      border: 1px solid #000;
+    }
+  }
+}
+@include jspager2_theme();
+
+.jspager2_holder {
+  @extend %text--center;
+}
+
+.jspager2 {
+    .jspager2_pagebtnholder,
+    .jspager2_totalpagesholder,
+    .jspager2_perpageholder,
+    .jspager2_prevnextholder {
+      @extend %padd--4;
+    }
+
+  .jspager2_pagebtn {
+      @extend %mp--0;
+      @extend %btn_font--sans-serif;
+      @extend %display--inline-block;
+      @extend %padd--4;
+      font-size: 100%; 
+      line-height: 1.15;
+      cursor: pointer;    
+      height: 30px;
+      vertical-align: middle;
+    }
+
+    .jspager2_pagebtn--active {
+      background-color: green;
+      color: #fff;
+    }    
+
+  .btn {
+    @extend %padd--4;
+    height: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .btn_prev,
+  .btn_next,
+  .btn_first,
+  .btn_last {    
+    span {
+      @extend %display--inline-block;
+    }
+
+    svg {
+      @extend %display--inline-block;
+      vertical-align: text-bottom;
+      height: 18px;
+    }
+  }
+
+  .btn_prev,
+  .btn_first {
+    svg {
+      margin-left: -4px;
+    }
+  }
+
+  .btn_next,
+  .btn_last {
+    svg {
+      margin-right: -4px;
+    }
+  }
+
+  .jspager2_select,
+  .jspager2_perpage {
+    @extend %padd--4;
+    vertical-align: middle;
+    height: 30px;
+  }
+}
+
+// jspager3
+// ==================================================/
+
+// mobile portrait (320x480) 
+@include mq($from: mobile) {
+  .jspager3 {
+    display: block;
+    width: 100%;
+    .jspager3_pagebtnholder,
+    .jspager3_totalpagesholder,
+    .jspager3_perpageholder,
+    .jspager3_prevnextholder {
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .jspager3_totalpagesholder {      
+      label,
+      p,
+      select {
+        display: inline-block;
+      }
+    }
+
+    .jspager3_prevnextholder {
+      button {
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }    
+}
+
+// *small tablet portrait (600x800)
+@include mq($from: smallTabletPortrait) {
+  .jspager3 {
+    display: inline-block;
+    width: auto;
+    .jspager3_pagebtnholder,
+    .jspager3_totalpagesholder,
+    .jspager3_perpageholder,
+    .jspager3_prevnextholder {
+      float: left;
+      margin-top: auto;
+    } 
+
+    .jspager3_prevnextholder {
+      button {
+        float: left;
+        width: auto;
+      }
+    }
+  }
+}
+
+// end breakpoints 
+
+@mixin jspager3_theme() {
+  .jspager3_items {
+    color: #fff;
+  }
+
+  .jspager3 {
+    background-color: #1c1d22;
+    color: #d5d5d5;
+
+    .jspager3_pagebtnholder,
+    .jspager3_totalpagesholder,
+    .jspager3_perpageholder,
+    .jspager3_prevnextholder {
+      border: 1px solid #303134;
+    }
+
+    .btn {
+      color: #1c1d22;
+
+      @include background-gradient(#fff, #e8e8e8, 'vertical'); 
+      border: 1px solid #2c2d32;
+
+      > svg {
+        fill: #bf0101;
+      }
+      
+      &:hover {
+        @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+        color: #fff;
+
+        > svg {
+          fill: #fff;
+        }
+      }
+    }
+
+    .jspager3_pagebtn {
+      @include background-gradient(#fff, #e8e8e8, 'vertical');
+      color: #1c1d22;
+      border: 1px solid #000;
+
+      &:hover {
+        @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+        color: #fff;
+      }
+    }
+
+    .jspager3_pagebtn--active {
+      @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+      color: #fff;
+    }
+
+    .jspager3_select,
+    .jspager3_perpage,
+    .jspager3_jump {
+      border: 1px solid #000;
+    }
+  }
+}
+@include jspager3_theme();
+
+.jspager3_holder {
+  @extend %text--center;
+}
+
+.jspager3 {
+    .jspager3_pagebtnholder,
+    .jspager3_totalpagesholder,
+    .jspager3_perpageholder,
+    .jspager3_prevnextholder {
+      @extend %padd--4;
+    }
+
+  .jspager3_pagebtn {
+      @extend %mp--0;
+      @extend %btn_font--sans-serif;
+      @extend %display--inline-block;
+      @extend %padd--4;
+      font-size: 100%; 
+      line-height: 1.15;
+      cursor: pointer;    
+      height: 30px;
+      vertical-align: middle;
+    }
+
+    .jspager3_pagebtn--active {
+      background-color: green;
+      color: #fff;
+    }    
+
+  .btn {
+    @extend %padd--4;
+    height: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .btn_prev,
+  .btn_next,
+  .btn_first,
+  .btn_last {    
+    span {
+      @extend %display--inline-block;
+    }
+
+    svg {
+      @extend %display--inline-block;
+      vertical-align: text-bottom;
+      height: 18px;
+    }
+  }
+
+  .btn_prev,
+  .btn_first {
+    svg {
+      margin-left: -4px;
+    }
+  }
+
+  .btn_next,
+  .btn_last {
+    svg {
+      margin-right: -4px;
+    }
+  }
+
+  .jspager3_select,
+  .jspager3_perpage {
+    @extend %padd--4;
+    vertical-align: middle;
+    height: 30px;
+  }
+}
+
+// jspager4
+// ==================================================/
+
+// mobile portrait (320x480) 
+@include mq($from: mobile) {
+  .jspager4 {
+    display: block;
+    width: 100%;
+    .jspager4_totalpagesholder,
+    .jspager4_jumptopageholder,
+    .jspager4_perpageholder,
+    .jspager4_prevnextholder {
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .jspager4_totalpagesholder {      
+      label,
+      p,
+      select {
+        display: inline-block;
+      }
+    }
+
+    .jspager4_prevnextholder {
+      button {
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }    
+}
+
+// *small tablet portrait (600x800)
+@include mq($from: smallTabletPortrait) {
+  .jspager4 {
+    display: inline-block;
+    width: auto;
+    .jspager4_totalpagesholder,
+    .jspager4_jumptopageholder,
+    .jspager4_perpageholder,
+    .jspager4_prevnextholder {
+      float: left;
+      margin-top: auto;
+    } 
+
+    .jspager4_prevnextholder {
+      button {
+        float: left;
+        width: auto;
+      }
+    }
+  }
+}
+
+// end breakpoints 
+
+@mixin jspager4_theme() {
+  .jspager4_items {
+    color: #fff;
+  }
+
+  .jspager4 {
+    background-color: #1c1d22;
+    color: #d5d5d5;
+
+    .jspager4_totalpagesholder,
+    .jspager4_perpageholder,
+    .jspager4_prevnextholder {
+      border: 1px solid #303134;
+    }
+
+    .btn {
+      color: #1c1d22;
+
+      @include background-gradient(#fff, #e8e8e8, 'vertical'); 
+      border: 1px solid #2c2d32;
+
+      > svg {
+        fill: #bf0101;
+      }
+      
+      &:hover {
+        @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+        color: #fff;
+
+        > svg {
+          fill: #fff;
+        }
+      }
+    }
+
+    .jspager4_select,
+    .jspager4_perpage,
+    .jspager4_jump {
+      border: 1px solid #000;
+    }
+  }
+}
+@include jspager4_theme();
+
+.jspager4_holder {
+  @extend %text--center;
+}
+
+.jspager4 {
+    .jspager4_totalpagesholder,
+    .jspager4_jumptopageholder,
+    .jspager4_perpageholder,
+    .jspager4_prevnextholder {
+      @extend %padd--4;
+    }
+
+  .jspager4_pagebtn {
+      @extend %mp--0;
+      @extend %btn_font--sans-serif;
+      @extend %display--inline-block;
+      @extend %padd--4;
+      font-size: 100%; 
+      line-height: 1.15;
+      cursor: pointer;    
+      height: 30px;
+      vertical-align: middle;
+    }
+
+    .jspager4_pagebtn--active {
+      background-color: green;
+      color: #fff;
+    }    
+
+  .btn {
+    @extend %padd--4;
+    height: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .btn_prev,
+  .btn_next,
+  .btn_first,
+  .btn_last {    
+    span {
+      @extend %display--inline-block;
+    }
+
+    svg {
+      @extend %display--inline-block;
+      vertical-align: text-bottom;
+      height: 18px;
+    }
+  }
+
+  .btn_prev,
+  .btn_first {
+    svg {
+      margin-left: -4px;
+    }
+  }
+
+  .btn_next,
+  .btn_last {
+    svg {
+      margin-right: -4px;
+    }
+  }
+
+  .jspager4_select,
+  .jspager4_perpage {
+    @extend %padd--4;
+    vertical-align: middle;
+    height: 30px;
+  }
+}
+
+// jspager5
+// ==================================================/
+
+// mobile portrait (320x480) 
+@include mq($from: mobile) {
+  .jspager5 {
+    display: block;
+    width: 100%;
+    .jspager5_pagebtnholder,
+    .jspager5_totalpagesholder,
+    .jspager5_jumptopageholder,
+    .jspager5_perpageholder,
+    .jspager5_prevnextholder {
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .jspager5_totalpagesholder {      
+      label,
+      p,
+      select {
+        display: inline-block;
+      }
+    }
+
+    .jspager5_prevnextholder {
+      button {
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }    
+}
+
+// *small tablet portrait (600x800)
+@include mq($from: smallTabletPortrait) {
+  .jspager5 {
+    display: inline-block;
+    width: auto;
+    .jspager5_pagebtnholder,
+    .jspager5_totalpagesholder,
+    .jspager5_jumptopageholder,
+    .jspager5_perpageholder,
+    .jspager5_prevnextholder {
+      float: left;
+      margin-top: auto;
+    } 
+
+    .jspager5_prevnextholder {
+      button {
+        float: left;
+        width: auto;
+      }
+    }
+  }
+}
+
+// end breakpoints 
+
+@mixin jspager5_theme() {
+  .jspager5_items {
+    color: #fff;
+  }
+
+  .jspager5 {
+    background-color: #1c1d22;
+    color: #d5d5d5;
+
+    .jspager5_pagebtnholder,
+    .jspager5_totalpagesholder,
+    .jspager5_perpageholder,
+    .jspager5_prevnextholder {
+      border: 1px solid #303134;
+    }
+
+    .btn {
+      color: #1c1d22;
+
+      @include background-gradient(#fff, #e8e8e8, 'vertical'); 
+      border: 1px solid #2c2d32;
+
+      > svg {
+        fill: #bf0101;
+      }
+      
+      &:hover {
+        @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+        color: #fff;
+
+        > svg {
+          fill: #fff;
+        }
+      }
+    }
+
+    .jspager5_pagebtn {
+      @include background-gradient(#fff, #e8e8e8, 'vertical');
+      color: #1c1d22;
+      border: 1px solid #000;
+
+      &:hover {
+        @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+        color: #fff;
+      }
+    }
+
+    .jspager5_pagebtn--active {
+      @include background-gradient(#bf0101, #cc0001, 'vertical'); 
+      color: #fff;
+    }
+
+    .jspager5_select,
+    .jspager5_perpage,
+    .jspager5_jump {
+      border: 1px solid #000;
+    }
+  }
+}
+@include jspager5_theme();
+
+.jspager5_holder {
+  @extend %text--center;
+}
+
+.jspager5 {
+    .jspager5_pagebtnholder,
+    .jspager5_totalpagesholder,
+    .jspager5_jumptopageholder,
+    .jspager5_perpageholder,
+    .jspager5_prevnextholder {
+      @extend %padd--4;
+    }
+
+  .jspager5_pagebtn {
+      @extend %mp--0;
+      @extend %btn_font--sans-serif;
+      @extend %display--inline-block;
+      @extend %padd--4;
+      font-size: 100%; 
+      line-height: 1.15;
+      cursor: pointer;    
+      height: 30px;
+      vertical-align: middle;
+    }
+
+    .jspager5_pagebtn--active {
+      background-color: green;
+      color: #fff;
+    }    
+
+  .btn {
+    @extend %padd--4;
+    height: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .btn_prev,
+  .btn_next,
+  .btn_first,
+  .btn_last {    
+    span {
+      @extend %display--inline-block;
+    }
+
+    svg {
+      @extend %display--inline-block;
+      vertical-align: text-bottom;
+      height: 18px;
+    }
+  }
+
+  .btn_prev,
+  .btn_first {
+    svg {
+      margin-left: -4px;
+    }
+  }
+
+  .btn_next,
+  .btn_last {
+    svg {
+      margin-right: -4px;
+    }
+  }
+
+  .jspager5_select,
+  .jspager5_perpage {
+    @extend %padd--4;
+    vertical-align: middle;
+    height: 30px;
+  }
+}
