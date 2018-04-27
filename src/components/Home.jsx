@@ -2,6 +2,38 @@ import {tempData} from "../js/pager_tempdata.js";
 import Pager from "../js/pager.js";
 import {pageBtns} from "../js/pagebtns.js";
 
+class RkPager1_itemsPerPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+
+    // binders
+    this.handleChange = this.handleChange.bind(this);
+    
+  }
+  // hooks
+  
+  // methods
+  handleChange(event) {
+    this.props.pr_val_setPerPage(event.target.value);
+  }
+  
+  render() {
+    return (
+      <div>
+      <select value={this.props.pr_perPage} onChange={this.handleChange}>
+      {this.props.pr_perPageItems.map((i) =>
+        <option key={i} value={i}>{i}
+          </option>
+          )}
+      </select> 
+      </div>
+    );
+  }
+}
+
 class RkPager1_buttons extends React.Component {
   constructor(props) {
     super(props);
@@ -35,9 +67,6 @@ class RkPager1_buttons extends React.Component {
     }
   }
 }
-
-
-
 
 class RkPager1_pageButtons extends React.Component {
   constructor(props) {
@@ -153,6 +182,7 @@ class RkPager1 extends React.Component {
 
     // binders
     this.showItems = this.showItems.bind(this);
+    this.setPerPage = this.setPerPage.bind(this);
     
   }
   // hooks
@@ -178,12 +208,18 @@ class RkPager1 extends React.Component {
   }
 
   showItems(num) {
+    console.log(num);
     this.setState(prevState => ({
       itemList: this.pg.page(num),
       currentPage: this.pg.currentPage
     }));
 
     this.changePageBtns();
+  }
+
+  setPerPage(perPage) {
+    this.state.perPage = perPage;
+    this.activatePager();
   }
 
   setPageBtns() {
@@ -214,6 +250,11 @@ class RkPager1 extends React.Component {
         pr_buttonSet={this.state.buttonSet}
         pr_currentPage={this.state.currentPage}
         pr_val_showItems={this.showItems} />
+
+        <RkPager1_itemsPerPage 
+        pr_perPage={this.state.perPage} 
+        pr_perPageItems={this.state.perPageItems}
+        pr_val_setPerPage={this.setPerPage} />
       </div>
     );
   }
