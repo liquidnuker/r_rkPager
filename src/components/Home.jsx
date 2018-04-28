@@ -2,6 +2,51 @@ import {tempData} from "../js/pager_tempdata.js";
 import Pager from "../js/pager.js";
 import {pageBtns} from "../js/pagebtns.js";
 
+class RkPager1_jumpToPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ""
+    };
+
+    // binders
+    this.handleChange = this.handleChange.bind(this);
+    this.keyPress = this.keyPress.bind(this);
+  }
+  // hooks
+  
+  // methods
+  handleChange(event) {
+    this.setState({
+      value: event.target.value
+    });
+  }
+
+  keyPress(event) {
+    if(event.keyCode == 13){
+      this.setState({
+        value: event.target.value
+      });
+
+      this.props.pr_val_showItems(Number(this.state.value));
+    }
+  }
+  
+  render() {
+    return (
+      <div>
+      <label for="jumptopage">Jump to page</label>
+      <input type="search" name="jumptopage" id="jumptopage" placeholder=""
+      value={this.state.value} 
+      onChange={this.handleChange}
+      onKeyDown={this.keyPress} />
+      <button className="btn btn1-01" data-message="jump to page" 
+      onClick={() => { this.props.pr_val_showItems(Number(this.state.value)); }}>Go</button>
+      </div>
+    );
+  }
+}
+
 class RkPager1_itemsPerPage extends React.Component {
   constructor(props) {
     super(props);
@@ -249,6 +294,9 @@ class RkPager1 extends React.Component {
         <RkPager1_pageButtons 
         pr_buttonSet={this.state.buttonSet}
         pr_currentPage={this.state.currentPage}
+        pr_val_showItems={this.showItems} />
+
+        <RkPager1_jumpToPage 
         pr_val_showItems={this.showItems} />
 
         <RkPager1_itemsPerPage 
