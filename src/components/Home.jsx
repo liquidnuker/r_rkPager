@@ -1,4 +1,5 @@
 import RkPager1 from "./RkPager1.jsx";
+// import RkPager2 from "./RkPager2.jsx";
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -17,6 +18,9 @@ export default class Home extends React.Component {
     return (
       <div>
         <RkPager1  />
+        <br />
+        <br />
+        {/*<RkPager2 />*/}
       </div>
     );
   }

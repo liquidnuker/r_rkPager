@@ -83,7 +83,117 @@ class RkPager1_itemsPerPage extends React.Component {
   }
 }
 
-class RkPager1_buttons extends React.Component {
+class RkPager1_btnFirst extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+
+    // binders
+    
+  }
+  // hooks
+  
+  // methods
+  
+  render() {
+    return (
+      <button className="btn btn_first" tabindex="0" 
+      onClick={() => { this.props.pr_val_showItems(1) }}>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+      <span>First</span>
+      </button>
+    );
+  }
+}
+
+class RkPager1_btnPrev extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+
+    // binders
+    
+  }
+  // hooks
+  
+  // methods
+  
+  render() {
+    return (
+      <button className="btn btn_prev" tabindex="0" 
+      onClick={() => { this.props.pr_val_flip() }}>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+      <span>Prev</span>
+      </button>
+    );
+  }
+}
+
+class RkPager1_btnNext extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+
+    // binders
+    
+  }
+  // hooks
+  
+  // methods
+  
+  render() {
+    return (
+      <button className="btn btn_next" tabindex="0" 
+      onClick={() => { this.props.pr_val_flip("next") }}>
+      <span>Next</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+      </button>
+    );
+  }
+}
+
+class RkPager1_btnLast extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+
+    // binders
+    
+  }
+  // hooks
+  
+  // methods
+  
+  render() {
+    return (
+      <button className="btn btn_last" tabindex="0" 
+      onClick={() => { this.props.pr_val_showItems(this.props.pr_totalPages) }}>
+      <span>Last</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+      </button>
+    );
+  }
+}
+
+
+
+class RkPager1_pageBtnItems extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -117,7 +227,7 @@ class RkPager1_buttons extends React.Component {
   }
 }
 
-class RkPager1_pageButtons extends React.Component {
+class RkPager1_pageBtns extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -137,7 +247,7 @@ class RkPager1_pageButtons extends React.Component {
       aria-atomic="true" aria-live="polite" 
       aria-relevant="additions">
         {this.props.pr_buttonSet.map((i) =>
-          <RkPager1_buttons 
+          <RkPager1_pageBtnItems 
           pr_i={i}
           pr_currentPage={this.props.pr_currentPage} 
           pr_val_showItems={this.props.pr_val_showItems}/>
@@ -237,6 +347,7 @@ export default class RkPager1 extends React.Component {
     // binders
     this.showItems = this.showItems.bind(this);
     this.setPerPage = this.setPerPage.bind(this);
+    this.flip = this.flip.bind(this);
     
   }
   // hooks
@@ -270,6 +381,14 @@ export default class RkPager1 extends React.Component {
     this.changePageBtns();
   }
 
+  flip(direction) {
+    if (direction === "next") {
+      this.showItems(this.pg.next());
+    } else {
+      this.showItems(this.pg.prev());
+    }
+  }
+
   setPerPage(perPage) {
     this.state.perPage = perPage;
     this.activatePager();
@@ -301,7 +420,19 @@ export default class RkPager1 extends React.Component {
       pr_currentPage={this.state.currentPage}
       pr_val_showItems={this.showItems} />
 
-      <RkPager1_pageButtons 
+      <aside className="jspager1_prevnextholder">
+        <RkPager1_btnFirst 
+        pr_val_showItems={this.showItems}/>
+        <RkPager1_btnPrev
+        pr_val_flip={this.flip} />
+        <RkPager1_btnNext
+        pr_val_flip={this.flip} />
+        <RkPager1_btnLast
+        pr_totalPages={this.state.totalPages}
+        pr_val_showItems={this.showItems} />
+      </aside>
+
+      <RkPager1_pageBtns 
       pr_buttonSet={this.state.buttonSet}
       pr_currentPage={this.state.currentPage}
       pr_val_showItems={this.showItems} />
