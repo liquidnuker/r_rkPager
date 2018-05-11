@@ -938,6 +938,10 @@ var _RkPager3 = __webpack_require__(100);
 
 var _RkPager4 = _interopRequireDefault(_RkPager3);
 
+var _RkPager5 = __webpack_require__(101);
+
+var _RkPager6 = _interopRequireDefault(_RkPager5);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function (_React$Component) {
@@ -966,7 +970,10 @@ var Home = function (_React$Component) {
         React.createElement(_RkPager2.default, null),
         React.createElement("br", null),
         React.createElement("br", null),
-        React.createElement(_RkPager4.default, null)
+        React.createElement(_RkPager4.default, null),
+        React.createElement("br", null),
+        React.createElement("br", null),
+        React.createElement(_RkPager6.default, null)
       );
     }
   }]);
@@ -3312,6 +3319,647 @@ var RkPager2 = function (_React$Component10) {
 }(React.Component);
 
 exports.default = RkPager2;
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = __webpack_require__(29);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(35);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(36);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(37);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(47);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _pager_tempdata = __webpack_require__(91);
+
+var _pager = __webpack_require__(92);
+
+var _pager2 = _interopRequireDefault(_pager);
+
+var _pagebtns = __webpack_require__(93);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var RkPager3_itemsPerPage = function (_React$Component) {
+  (0, _inherits3.default)(RkPager3_itemsPerPage, _React$Component);
+
+  function RkPager3_itemsPerPage(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_itemsPerPage);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (RkPager3_itemsPerPage.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_itemsPerPage)).call(this, props));
+
+    _this.state = {};
+
+    // binders
+    _this.handleChange = _this.handleChange.bind(_this);
+
+    return _this;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager3_itemsPerPage, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.pr_val_setPerPage(event.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "aside",
+        { className: "jspager3_perpageholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager3_perpage" },
+          "perPage:\xA0"
+        ),
+        React.createElement(
+          "select",
+          { name: "jspager3_perpage", className: "jspager3_perpage",
+            tabindex: "0", onChange: this.handleChange,
+            value: this.props.pr_perPage },
+          this.props.pr_perPageItems.map(function (i) {
+            return React.createElement(
+              "option",
+              { key: i, value: i },
+              i
+            );
+          })
+        )
+      );
+    }
+  }]);
+  return RkPager3_itemsPerPage;
+}(React.Component);
+
+var RkPager3_btnFirst = function (_React$Component2) {
+  (0, _inherits3.default)(RkPager3_btnFirst, _React$Component2);
+
+  function RkPager3_btnFirst(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_btnFirst);
+
+    var _this2 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_btnFirst.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_btnFirst)).call(this, props));
+
+    _this2.state = {};
+
+    // binders
+
+    return _this2;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_btnFirst, [{
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_first", tabindex: "0",
+          onClick: function onClick() {
+            _this3.props.pr_val_showItems(1);
+          } },
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+        ),
+        React.createElement(
+          "span",
+          null,
+          "First"
+        )
+      );
+    }
+  }]);
+  return RkPager3_btnFirst;
+}(React.Component);
+
+var RkPager3_btnPrev = function (_React$Component3) {
+  (0, _inherits3.default)(RkPager3_btnPrev, _React$Component3);
+
+  function RkPager3_btnPrev(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_btnPrev);
+
+    var _this4 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_btnPrev.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_btnPrev)).call(this, props));
+
+    _this4.state = {};
+
+    // binders
+
+    return _this4;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_btnPrev, [{
+    key: "render",
+    value: function render() {
+      var _this5 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_prev", tabindex: "0",
+          onClick: function onClick() {
+            _this5.props.pr_val_flip();
+          } },
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+        ),
+        React.createElement(
+          "span",
+          null,
+          "Prev"
+        )
+      );
+    }
+  }]);
+  return RkPager3_btnPrev;
+}(React.Component);
+
+var RkPager3_btnNext = function (_React$Component4) {
+  (0, _inherits3.default)(RkPager3_btnNext, _React$Component4);
+
+  function RkPager3_btnNext(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_btnNext);
+
+    var _this6 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_btnNext.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_btnNext)).call(this, props));
+
+    _this6.state = {};
+
+    // binders
+
+    return _this6;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_btnNext, [{
+    key: "render",
+    value: function render() {
+      var _this7 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_next", tabindex: "0",
+          onClick: function onClick() {
+            _this7.props.pr_val_flip("next");
+          } },
+        React.createElement(
+          "span",
+          null,
+          "Next"
+        ),
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" })
+        )
+      );
+    }
+  }]);
+  return RkPager3_btnNext;
+}(React.Component);
+
+var RkPager3_btnLast = function (_React$Component5) {
+  (0, _inherits3.default)(RkPager3_btnLast, _React$Component5);
+
+  function RkPager3_btnLast(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_btnLast);
+
+    var _this8 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_btnLast.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_btnLast)).call(this, props));
+
+    _this8.state = {};
+
+    // binders
+
+    return _this8;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_btnLast, [{
+    key: "render",
+    value: function render() {
+      var _this9 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_last", tabindex: "0",
+          onClick: function onClick() {
+            _this9.props.pr_val_showItems(_this9.props.pr_totalPages);
+          } },
+        React.createElement(
+          "span",
+          null,
+          "Last"
+        ),
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" })
+        )
+      );
+    }
+  }]);
+  return RkPager3_btnLast;
+}(React.Component);
+
+var RkPager3_pageBtnItems = function (_React$Component6) {
+  (0, _inherits3.default)(RkPager3_pageBtnItems, _React$Component6);
+
+  function RkPager3_pageBtnItems(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_pageBtnItems);
+
+    var _this10 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_pageBtnItems.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_pageBtnItems)).call(this, props));
+
+    _this10.state = {};
+
+    // binders
+
+    return _this10;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_pageBtnItems, [{
+    key: "render",
+    value: function render() {
+      var _this11 = this;
+
+      if (this.props.pr_i === this.props.pr_currentPage) {
+        return React.createElement(
+          "a",
+          { className: "jspager3_pagebtn \r jspager3_pagebtn--active", tabindex: "0",
+            onClick: function onClick() {
+              _this11.props.pr_val_showItems(_this11.props.pr_i);
+            } },
+          this.props.pr_i
+        );
+      } else {
+        return React.createElement(
+          "a",
+          { className: "jspager3_pagebtn", tabindex: "0",
+            onClick: function onClick() {
+              _this11.props.pr_val_showItems(_this11.props.pr_i);
+            } },
+          this.props.pr_i
+        );
+      }
+    }
+  }]);
+  return RkPager3_pageBtnItems;
+}(React.Component);
+
+var RkPager3_pageBtns = function (_React$Component7) {
+  (0, _inherits3.default)(RkPager3_pageBtns, _React$Component7);
+
+  function RkPager3_pageBtns(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_pageBtns);
+
+    var _this12 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_pageBtns.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_pageBtns)).call(this, props));
+
+    _this12.state = {};
+
+    // binders
+
+    return _this12;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_pageBtns, [{
+    key: "render",
+    value: function render() {
+      var _this13 = this;
+
+      return React.createElement(
+        "aside",
+        { className: "jspager3_pagebtnholder",
+          "aria-atomic": "true", "aria-live": "polite",
+          "aria-relevant": "additions" },
+        this.props.pr_buttonSet.map(function (i) {
+          return React.createElement(RkPager3_pageBtnItems, {
+            pr_i: i,
+            pr_currentPage: _this13.props.pr_currentPage,
+            pr_val_showItems: _this13.props.pr_val_showItems });
+        })
+      );
+    }
+  }]);
+  return RkPager3_pageBtns;
+}(React.Component);
+
+var RkPager3_pageSelector = function (_React$Component8) {
+  (0, _inherits3.default)(RkPager3_pageSelector, _React$Component8);
+
+  function RkPager3_pageSelector(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_pageSelector);
+
+    var _this14 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_pageSelector.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_pageSelector)).call(this, props));
+
+    _this14.state = {};
+
+    // binders
+    _this14.handleChange = _this14.handleChange.bind(_this14);
+
+    return _this14;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager3_pageSelector, [{
+    key: "createOptions",
+    value: function createOptions() {
+      var _this15 = this;
+
+      var items = [];
+
+      var _loop = function _loop(i) {
+        items.push(React.createElement(
+          "option",
+          { onClick: function onClick() {
+              _this15.props.pr_val_showItems(i);
+            }, key: i, value: i },
+          i
+        ));
+      };
+
+      for (var i = 1; i <= this.props.pr_totalPages; i++) {
+        _loop(i);
+      }
+      return items;
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.pr_val_showItems(event.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "aside",
+        { className: "jspager3_totalpagesholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager3_select" },
+          "Page:"
+        ),
+        React.createElement(
+          "p",
+          null,
+          this.props.pr_currentPage
+        ),
+        React.createElement(
+          "select",
+          { className: "jspager3_select",
+            name: "jspager3_select", value: this.props.pr_currentPage,
+            onChange: this.handleChange, tabindex: "0" },
+          this.createOptions()
+        ),
+        React.createElement(
+          "p",
+          null,
+          "of ",
+          this.props.pr_totalPages
+        )
+      );
+    }
+  }]);
+  return RkPager3_pageSelector;
+}(React.Component);
+
+var RkPager3_itemList = function (_React$Component9) {
+  (0, _inherits3.default)(RkPager3_itemList, _React$Component9);
+
+  function RkPager3_itemList(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_itemList);
+
+    var _this16 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_itemList.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_itemList)).call(this, props));
+
+    _this16.state = {};
+
+    // binders
+
+    return _this16;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_itemList, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "row jspager3_items",
+          "aria-atomic": "true", "aria-live": "assertive", "aria-relevant": "all" },
+        this.props.pr_list.map(function (i) {
+          return React.createElement(
+            "span",
+            null,
+            i
+          );
+        })
+      );
+    }
+  }]);
+  return RkPager3_itemList;
+}(React.Component);
+
+var RkPager3 = function (_React$Component10) {
+  (0, _inherits3.default)(RkPager3, _React$Component10);
+
+  function RkPager3(props) {
+    (0, _classCallCheck3.default)(this, RkPager3);
+
+    var _this17 = (0, _possibleConstructorReturn3.default)(this, (RkPager3.__proto__ || (0, _getPrototypeOf2.default)(RkPager3)).call(this, props));
+
+    _this17.items = []; // raw items
+    _this17.pg = null;
+
+    _this17.state = {
+      itemList: [], // paginated items
+
+      perPage: 10,
+      perPageItems: [10, 20, 50, 100],
+      totalPages: "",
+      currentPage: "",
+
+      buttonSet: []
+    };
+
+    // binders
+    _this17.showItems = _this17.showItems.bind(_this17);
+    _this17.setPerPage = _this17.setPerPage.bind(_this17);
+    _this17.flip = _this17.flip.bind(_this17);
+
+    return _this17;
+  }
+  // hooks
+
+
+  (0, _createClass3.default)(RkPager3, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.items = _pager_tempdata.tempData;
+      this.activatePager();
+    }
+
+    // methods
+
+  }, {
+    key: "activatePager",
+    value: function activatePager() {
+      var _this18 = this;
+
+      this.pg = null;
+      this.pg = new _pager2.default({
+        perPage: this.state.perPage,
+        data: this.items
+      });
+
+      this.setState(function (prevState) {
+        return {
+          totalPages: _this18.pg.getTotalPages()
+        };
+      });
+
+      this.setPageBtns();
+      this.showItems(1);
+    }
+  }, {
+    key: "showItems",
+    value: function showItems(num) {
+      var _this19 = this;
+
+      this.setState(function (prevState) {
+        return {
+          itemList: _this19.pg.page(num),
+          currentPage: _this19.pg.currentPage
+        };
+      });
+
+      this.changePageBtns();
+    }
+  }, {
+    key: "flip",
+    value: function flip(direction) {
+      if (direction === "next") {
+        this.showItems(this.pg.next());
+      } else {
+        this.showItems(this.pg.prev());
+      }
+    }
+  }, {
+    key: "setPerPage",
+    value: function setPerPage(perPage) {
+      this.state.perPage = perPage;
+      this.activatePager();
+    }
+  }, {
+    key: "setPageBtns",
+    value: function setPageBtns() {
+      this.temp = [];
+      for (var i = 0, l = this.pg.getTotalPages(); i < l; i++) {
+        this.temp.push((0, _pagebtns.pageBtns)(i, l));
+      }
+    }
+  }, {
+    key: "changePageBtns",
+    value: function changePageBtns() {
+      var _this20 = this;
+
+      this.setState(function (prevState) {
+        return {
+          buttonSet: _this20.temp[_this20.pg.currentPage - 1]
+        };
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "jspager3_holder" },
+        React.createElement(RkPager3_itemList, {
+          pr_list: this.state.itemList }),
+        React.createElement(
+          "nav",
+          { className: "jspager3" },
+          React.createElement(
+            "aside",
+            { className: "jspager3_prevnextholder" },
+            React.createElement(RkPager3_btnFirst, {
+              pr_val_showItems: this.showItems }),
+            React.createElement(RkPager3_btnPrev, {
+              pr_val_flip: this.flip })
+          ),
+          React.createElement(RkPager3_pageSelector, {
+            pr_totalPages: this.state.totalPages,
+            pr_currentPage: this.state.currentPage,
+            pr_val_showItems: this.showItems }),
+          React.createElement(
+            "aside",
+            { className: "jspager3_prevnextholder" },
+            React.createElement(RkPager3_btnNext, {
+              pr_val_flip: this.flip }),
+            React.createElement(RkPager3_btnLast, {
+              pr_totalPages: this.state.totalPages,
+              pr_val_showItems: this.showItems })
+          ),
+          React.createElement(RkPager3_pageBtns, {
+            pr_buttonSet: this.state.buttonSet,
+            pr_currentPage: this.state.currentPage,
+            pr_val_showItems: this.showItems }),
+          React.createElement(RkPager3_itemsPerPage, {
+            pr_perPage: this.state.perPage,
+            pr_perPageItems: this.state.perPageItems,
+            pr_val_setPerPage: this.setPerPage })
+        )
+      );
+    }
+  }]);
+  return RkPager3;
+}(React.Component);
+
+exports.default = RkPager3;
 
 /***/ })
 /******/ ]);
