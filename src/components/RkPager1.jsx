@@ -208,7 +208,14 @@ class RkPager1_pageBtnItems extends React.Component {
   // methods
   
   render() {
-    if (this.props.pr_i === this.props.pr_currentPage) {
+    // dots
+    if (this.props.pr_i === "...") {
+      return (
+          <a className="jspager1_pagebtn_dots" tabindex="0">
+            {this.props.pr_i}
+          </a>
+        );
+    } else if (this.props.pr_i === this.props.pr_currentPage) {
       return (
           <a className="jspager1_pagebtn 
           jspager1_pagebtn--active" tabindex="0" 

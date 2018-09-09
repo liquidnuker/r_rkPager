@@ -169,6 +169,10 @@ body {
     .jspager1_pagebtn--active {
       background-color: green;
       color: #fff;
+    }
+
+    .jspager1_pagebtn_dots {
+      @extend %padd--4;
     }    
 
   .btn {
@@ -361,6 +365,10 @@ body {
     .jspager2_pagebtn--active {
       background-color: green;
       color: #fff;
+    }  
+
+    .jspager2_pagebtn_dots {
+      @extend %padd--4;
     }    
 
   .btn {
@@ -552,6 +560,10 @@ body {
     .jspager3_pagebtn--active {
       background-color: green;
       color: #fff;
+    }  
+
+    .jspager3_pagebtn_dots {
+      @extend %padd--4;
     }    
 
   .btn {
@@ -882,6 +894,10 @@ body {
       @include background-gradient(#bf0101, #cc0001, 'vertical'); 
       color: #fff;
     }
+
+    .jspager5_pagebtn_dots {
+      @extend %padd--4;
+    }  
 
     .jspager5_select,
     .jspager5_perpage,
