@@ -1,1 +1,5191 @@
-!function(e){function t(n){if(a[n])return a[n].exports;var r=a[n]={i:n,l:!1,exports:{}};return e[n].call(r.exports,r,r.exports,t),r.l=!0,r.exports}var a={};t.m=e,t.c=a,t.d=function(e,a,n){t.o(e,a)||Object.defineProperty(e,a,{configurable:!1,enumerable:!0,get:n})},t.n=function(e){var a=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(a,"a",a),a},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="dist/",t(t.s=51)}([function(e,t){var a=e.exports={version:"2.4.0"};"number"==typeof __e&&(__e=a)},function(e,t){var a=e.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=a)},function(e,t,a){var n=a(26)("wks"),r=a(20),s=a(1).Symbol,o="function"==typeof s;(e.exports=function(e){return n[e]||(n[e]=o&&s[e]||(o?s:r)("Symbol."+e))}).store=n},function(e,t){var a={}.hasOwnProperty;e.exports=function(e,t){return a.call(e,t)}},function(e,t,a){var n=a(10),r=a(40),s=a(27),o=Object.defineProperty;t.f=a(5)?Object.defineProperty:function(e,t,a){if(n(e),t=s(t,!0),n(a),r)try{return o(e,t,a)}catch(e){}if("get"in a||"set"in a)throw TypeError("Accessors not supported!");return"value"in a&&(e[t]=a.value),e}},function(e,t,a){e.exports=!a(16)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(e,t,a){var n=a(67),r=a(24);e.exports=function(e){return n(r(e))}},function(e,t,a){e.exports={default:a(55),__esModule:!0}},function(e,t,a){var n=a(1),r=a(0),s=a(39),o=a(9),i=function(e,t,a){var u,l,c,p=e&i.F,f=e&i.G,h=e&i.S,d=e&i.P,_=e&i.B,g=e&i.W,m=f?r:r[t]||(r[t]={}),v=m.prototype,P=f?n:h?n[t]:(n[t]||{}).prototype;f&&(a=t);for(u in a)(l=!p&&P&&void 0!==P[u])&&u in m||(c=l?P[u]:a[u],m[u]=f&&"function"!=typeof P[u]?a[u]:_&&l?s(c,n):g&&P[u]==c?function(e){var t=function(t,a,n){if(this instanceof e){switch(arguments.length){case 0:return new e;case 1:return new e(t);case 2:return new e(t,a)}return new e(t,a,n)}return e.apply(this,arguments)};return t.prototype=e.prototype,t}(c):d&&"function"==typeof c?s(Function.call,c):c,d&&((m.virtual||(m.virtual={}))[u]=c,e&i.R&&v&&!v[u]&&o(v,u,c)))};i.F=1,i.G=2,i.S=4,i.P=8,i.B=16,i.W=32,i.U=64,i.R=128,e.exports=i},function(e,t,a){var n=a(4),r=a(21);e.exports=a(5)?function(e,t,a){return n.f(e,t,r(1,a))}:function(e,t,a){return e[t]=a,e}},function(e,t,a){var n=a(15);e.exports=function(e){if(!n(e))throw TypeError(e+" is not an object!");return e}},function(e,t,a){"use strict";t.__esModule=!0,t.default=function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}},function(e,t,a){"use strict";t.__esModule=!0;var n=a(59),r=function(e){return e&&e.__esModule?e:{default:e}}(n);t.default=function(){function e(e,t){for(var a=0;a<t.length;a++){var n=t[a];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),(0,r.default)(e,n.key,n)}}return function(t,a,n){return a&&e(t.prototype,a),n&&e(t,n),t}}()},function(e,t,a){"use strict";t.__esModule=!0;var n=a(42),r=function(e){return e&&e.__esModule?e:{default:e}}(n);t.default=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!==(void 0===t?"undefined":(0,r.default)(t))&&"function"!=typeof t?e:t}},function(e,t,a){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}t.__esModule=!0;var r=a(86),s=n(r),o=a(90),i=n(o),u=a(42),l=n(u);t.default=function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+(void 0===t?"undefined":(0,l.default)(t)));e.prototype=(0,i.default)(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(s.default?(0,s.default)(e,t):e.__proto__=t)}},function(e,t){e.exports=function(e){return"object"==typeof e?null!==e:"function"==typeof e}},function(e,t){e.exports=function(e){try{return!!e()}catch(e){return!0}}},function(e,t,a){"use strict";Object.defineProperty(t,"__esModule",{value:!0});for(var n=[],r=0;r<162;r++)n.push(r);t.tempData=n},function(e,t,a){"use strict";function n(e){this.data=e.data,this.perPage=e.perPage,this.currentPage=1}Object.defineProperty(t,"__esModule",{value:!0}),t.default=n,n.prototype={getTotalPages:function(){return Math.ceil(this.data.length/this.perPage)},getCurrentOffset:function(){return(this.currentPage-1)*this.perPage},page:function(e){if(this.isValidPage(e)){this.currentPage=e;var t=this.getCurrentOffset(),a=t+Number(this.perPage);return this.data.slice(t,a)}return this.currentPage=1,this.data.slice(0,this.perPage)},hasNext:function(){return this.currentPage<this.getTotalPages()},hasPrev:function(){return 1!==this.currentPage},prev:function(){return this.hasPrev()?this.currentPage=this.currentPage-1:this.currentPage=this.getTotalPages(),this.currentPage},next:function(){return this.hasNext()?this.currentPage++:this.currentPage=1,this.currentPage},isValidPage:function(e){return e>0&&e<=this.getTotalPages()}}},function(e,t,a){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.pageBtns=void 0;var n=a(94),r=function(e){return e&&e.__esModule?e:{default:e}}(n),s=function(e,t){var a,n=[],s=[];if(n.push(1),t<=1)return n;for(var o=e-2;o<=e+2;o++)o<t&&o>1&&n.push(o);n.push(t);var i=!0,u=!1,l=void 0;try{for(var c,p=(0,r.default)(n);!(i=(c=p.next()).done);i=!0){var f=c.value;a&&(f-a==2?s.push(a+1):f-a!=1&&s.push("...")),s.push(f),a=f}}catch(e){u=!0,l=e}finally{try{!i&&p.return&&p.return()}finally{if(u)throw l}}return s};t.pageBtns=s},function(e,t){var a=0,n=Math.random();e.exports=function(e){return"Symbol(".concat(void 0===e?"":e,")_",(++a+n).toString(36))}},function(e,t){e.exports=function(e,t){return{enumerable:!(1&e),configurable:!(2&e),writable:!(4&e),value:t}}},function(e,t){e.exports={}},function(e,t,a){var n=a(46),r=a(32);e.exports=Object.keys||function(e){return n(e,r)}},function(e,t){e.exports=function(e){if(void 0==e)throw TypeError("Can't call method on  "+e);return e}},function(e,t,a){var n=a(26)("keys"),r=a(20);e.exports=function(e){return n[e]||(n[e]=r(e))}},function(e,t,a){var n=a(1),r=n["__core-js_shared__"]||(n["__core-js_shared__"]={});e.exports=function(e){return r[e]||(r[e]={})}},function(e,t,a){var n=a(15);e.exports=function(e,t){if(!n(e))return e;var a,r;if(t&&"function"==typeof(a=e.toString)&&!n(r=a.call(e)))return r;if("function"==typeof(a=e.valueOf)&&!n(r=a.call(e)))return r;if(!t&&"function"==typeof(a=e.toString)&&!n(r=a.call(e)))return r;throw TypeError("Can't convert object to primitive value")}},function(e,t){var a=Math.ceil,n=Math.floor;e.exports=function(e){return isNaN(e=+e)?0:(e>0?n:a)(e)}},function(e,t){e.exports=!0},function(e,t,a){var n=a(10),r=a(66),s=a(32),o=a(25)("IE_PROTO"),i=function(){},u=function(){var e,t=a(41)("iframe"),n=s.length;for(t.style.display="none",a(71).appendChild(t),t.src="javascript:",e=t.contentWindow.document,e.open(),e.write("<script>document.F=Object<\/script>"),e.close(),u=e.F;n--;)delete u.prototype[s[n]];return u()};e.exports=Object.create||function(e,t){var a;return null!==e?(i.prototype=n(e),a=new i,i.prototype=null,a[o]=e):a=u(),void 0===t?a:r(a,t)}},function(e,t){var a={}.toString;e.exports=function(e){return a.call(e).slice(8,-1)}},function(e,t){e.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")},function(e,t,a){var n=a(4).f,r=a(3),s=a(2)("toStringTag");e.exports=function(e,t,a){e&&!r(e=a?e:e.prototype,s)&&n(e,s,{configurable:!0,value:t})}},function(e,t,a){t.f=a(2)},function(e,t,a){var n=a(1),r=a(0),s=a(29),o=a(34),i=a(4).f;e.exports=function(e){var t=r.Symbol||(r.Symbol=s?{}:n.Symbol||{});"_"==e.charAt(0)||e in t||i(t,e,{value:o.f(e)})}},function(e,t){t.f={}.propertyIsEnumerable},function(e,t,a){var n=a(24);e.exports=function(e){return Object(n(e))}},function(e,t,a){var n=a(3),r=a(37),s=a(25)("IE_PROTO"),o=Object.prototype;e.exports=Object.getPrototypeOf||function(e){return e=r(e),n(e,s)?e[s]:"function"==typeof e.constructor&&e instanceof e.constructor?e.constructor.prototype:e instanceof Object?o:null}},function(e,t,a){var n=a(58);e.exports=function(e,t,a){if(n(e),void 0===t)return e;switch(a){case 1:return function(a){return e.call(t,a)};case 2:return function(a,n){return e.call(t,a,n)};case 3:return function(a,n,r){return e.call(t,a,n,r)}}return function(){return e.apply(t,arguments)}}},function(e,t,a){e.exports=!a(5)&&!a(16)(function(){return 7!=Object.defineProperty(a(41)("div"),"a",{get:function(){return 7}}).a})},function(e,t,a){var n=a(15),r=a(1).document,s=n(r)&&n(r.createElement);e.exports=function(e){return s?r.createElement(e):{}}},function(e,t,a){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}t.__esModule=!0;var r=a(62),s=n(r),o=a(75),i=n(o),u="function"==typeof i.default&&"symbol"==typeof s.default?function(e){return typeof e}:function(e){return e&&"function"==typeof i.default&&e.constructor===i.default&&e!==i.default.prototype?"symbol":typeof e};t.default="function"==typeof i.default&&"symbol"===u(s.default)?function(e){return void 0===e?"undefined":u(e)}:function(e){return e&&"function"==typeof i.default&&e.constructor===i.default&&e!==i.default.prototype?"symbol":void 0===e?"undefined":u(e)}},function(e,t,a){"use strict";var n=a(64)(!0);a(44)(String,"String",function(e){this._t=String(e),this._i=0},function(){var e,t=this._t,a=this._i;return a>=t.length?{value:void 0,done:!0}:(e=n(t,a),this._i+=e.length,{value:e,done:!1})})},function(e,t,a){"use strict";var n=a(29),r=a(8),s=a(45),o=a(9),i=a(3),u=a(22),l=a(65),c=a(33),p=a(38),f=a(2)("iterator"),h=!([].keys&&"next"in[].keys()),d=function(){return this};e.exports=function(e,t,a,_,g,m,v){l(a,t,_);var P,b,y,R=function(e){if(!h&&e in k)return k[e];switch(e){case"keys":case"values":return function(){return new a(this,e)}}return function(){return new a(this,e)}},w=t+" Iterator",E="values"==g,x=!1,k=e.prototype,C=k[f]||k["@@iterator"]||g&&k[g],j=C||R(g),I=g?E?R("entries"):j:void 0,N="Array"==t?k.entries||C:C;if(N&&(y=p(N.call(new e)))!==Object.prototype&&(c(y,w,!0),n||i(y,f)||o(y,f,d)),E&&C&&"values"!==C.name&&(x=!0,j=function(){return C.call(this)}),n&&!v||!h&&!x&&k[f]||o(k,f,j),u[t]=j,u[w]=d,g)if(P={values:E?j:R("values"),keys:m?j:R("keys"),entries:I},v)for(b in P)b in k||s(k,b,P[b]);else r(r.P+r.F*(h||x),t,P);return P}},function(e,t,a){e.exports=a(9)},function(e,t,a){var n=a(3),r=a(6),s=a(68)(!1),o=a(25)("IE_PROTO");e.exports=function(e,t){var a,i=r(e),u=0,l=[];for(a in i)a!=o&&n(i,a)&&l.push(a);for(;t.length>u;)n(i,a=t[u++])&&(~s(l,a)||l.push(a));return l}},function(e,t,a){a(72);for(var n=a(1),r=a(9),s=a(22),o=a(2)("toStringTag"),i=["NodeList","DOMTokenList","MediaList","StyleSheetList","CSSRuleList"],u=0;u<5;u++){var l=i[u],c=n[l],p=c&&c.prototype;p&&!p[o]&&r(p,o,l),s[l]=s.Array}},function(e,t){t.f=Object.getOwnPropertySymbols},function(e,t,a){var n=a(46),r=a(32).concat("length","prototype");t.f=Object.getOwnPropertyNames||function(e){return n(e,r)}},function(e,t,a){var n=a(36),r=a(21),s=a(6),o=a(27),i=a(3),u=a(40),l=Object.getOwnPropertyDescriptor;t.f=a(5)?l:function(e,t){if(e=s(e),t=o(t,!0),u)try{return l(e,t)}catch(e){}if(i(e,t))return r(!n.f.call(e,t),e[t])}},function(e,t,a){e.exports=a(52)},function(e,t,a){"use strict";a(53);var n=a(54),r=function(e){return e&&e.__esModule?e:{default:e}}(n);ReactDOM.render(React.createElement(r.default,null),document.getElementById("root"))},function(e,t){},function(e,t,a){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var r=a(7),s=n(r),o=a(11),i=n(o),u=a(12),l=n(u),c=a(13),p=n(c),f=a(14),h=n(f),d=a(93),_=n(d),g=a(99),m=n(g),v=a(100),P=n(v),b=a(101),y=n(b),R=a(102),w=n(R),E=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){return React.createElement("div",null,React.createElement(_.default,null),React.createElement("br",null),React.createElement("br",null),React.createElement(m.default,null),React.createElement("br",null),React.createElement("br",null),React.createElement(P.default,null),React.createElement("br",null),React.createElement("br",null),React.createElement(y.default,null),React.createElement("br",null),React.createElement("br",null),React.createElement(w.default,null))}}]),t}(React.Component);t.default=E},function(e,t,a){a(56),e.exports=a(0).Object.getPrototypeOf},function(e,t,a){var n=a(37),r=a(38);a(57)("getPrototypeOf",function(){return function(e){return r(n(e))}})},function(e,t,a){var n=a(8),r=a(0),s=a(16);e.exports=function(e,t){var a=(r.Object||{})[e]||Object[e],o={};o[e]=t(a),n(n.S+n.F*s(function(){a(1)}),"Object",o)}},function(e,t){e.exports=function(e){if("function"!=typeof e)throw TypeError(e+" is not a function!");return e}},function(e,t,a){e.exports={default:a(60),__esModule:!0}},function(e,t,a){a(61);var n=a(0).Object;e.exports=function(e,t,a){return n.defineProperty(e,t,a)}},function(e,t,a){var n=a(8);n(n.S+n.F*!a(5),"Object",{defineProperty:a(4).f})},function(e,t,a){e.exports={default:a(63),__esModule:!0}},function(e,t,a){a(43),a(47),e.exports=a(34).f("iterator")},function(e,t,a){var n=a(28),r=a(24);e.exports=function(e){return function(t,a){var s,o,i=String(r(t)),u=n(a),l=i.length;return u<0||u>=l?e?"":void 0:(s=i.charCodeAt(u),s<55296||s>56319||u+1===l||(o=i.charCodeAt(u+1))<56320||o>57343?e?i.charAt(u):s:e?i.slice(u,u+2):o-56320+(s-55296<<10)+65536)}}},function(e,t,a){"use strict";var n=a(30),r=a(21),s=a(33),o={};a(9)(o,a(2)("iterator"),function(){return this}),e.exports=function(e,t,a){e.prototype=n(o,{next:r(1,a)}),s(e,t+" Iterator")}},function(e,t,a){var n=a(4),r=a(10),s=a(23);e.exports=a(5)?Object.defineProperties:function(e,t){r(e);for(var a,o=s(t),i=o.length,u=0;i>u;)n.f(e,a=o[u++],t[a]);return e}},function(e,t,a){var n=a(31);e.exports=Object("z").propertyIsEnumerable(0)?Object:function(e){return"String"==n(e)?e.split(""):Object(e)}},function(e,t,a){var n=a(6),r=a(69),s=a(70);e.exports=function(e){return function(t,a,o){var i,u=n(t),l=r(u.length),c=s(o,l);if(e&&a!=a){for(;l>c;)if((i=u[c++])!=i)return!0}else for(;l>c;c++)if((e||c in u)&&u[c]===a)return e||c||0;return!e&&-1}}},function(e,t,a){var n=a(28),r=Math.min;e.exports=function(e){return e>0?r(n(e),9007199254740991):0}},function(e,t,a){var n=a(28),r=Math.max,s=Math.min;e.exports=function(e,t){return e=n(e),e<0?r(e+t,0):s(e,t)}},function(e,t,a){e.exports=a(1).document&&document.documentElement},function(e,t,a){"use strict";var n=a(73),r=a(74),s=a(22),o=a(6);e.exports=a(44)(Array,"Array",function(e,t){this._t=o(e),this._i=0,this._k=t},function(){var e=this._t,t=this._k,a=this._i++;return!e||a>=e.length?(this._t=void 0,r(1)):"keys"==t?r(0,a):"values"==t?r(0,e[a]):r(0,[a,e[a]])},"values"),s.Arguments=s.Array,n("keys"),n("values"),n("entries")},function(e,t){e.exports=function(){}},function(e,t){e.exports=function(e,t){return{value:t,done:!!e}}},function(e,t,a){e.exports={default:a(76),__esModule:!0}},function(e,t,a){a(77),a(83),a(84),a(85),e.exports=a(0).Symbol},function(e,t,a){"use strict";var n=a(1),r=a(3),s=a(5),o=a(8),i=a(45),u=a(78).KEY,l=a(16),c=a(26),p=a(33),f=a(20),h=a(2),d=a(34),_=a(35),g=a(79),m=a(80),v=a(81),P=a(10),b=a(6),y=a(27),R=a(21),w=a(30),E=a(82),x=a(50),k=a(4),C=a(23),j=x.f,I=k.f,N=E.f,O=n.Symbol,S=n.JSON,M=S&&S.stringify,L=h("_hidden"),B=h("toPrimitive"),T={}.propertyIsEnumerable,z=c("symbol-registry"),F=c("symbols"),D=c("op-symbols"),A=Object.prototype,W="function"==typeof O,J=n.QObject,G=!J||!J.prototype||!J.prototype.findChild,K=s&&l(function(){return 7!=w(I({},"a",{get:function(){return I(this,"a",{value:7}).a}})).a})?function(e,t,a){var n=j(A,t);n&&delete A[t],I(e,t,a),n&&e!==A&&I(A,t,n)}:I,U=function(e){var t=F[e]=w(O.prototype);return t._k=e,t},V=W&&"symbol"==typeof O.iterator?function(e){return"symbol"==typeof e}:function(e){return e instanceof O},Y=function(e,t,a){return e===A&&Y(D,t,a),P(e),t=y(t,!0),P(a),r(F,t)?(a.enumerable?(r(e,L)&&e[L][t]&&(e[L][t]=!1),a=w(a,{enumerable:R(0,!1)})):(r(e,L)||I(e,L,R(1,{})),e[L][t]=!0),K(e,t,a)):I(e,t,a)},Q=function(e,t){P(e);for(var a,n=m(t=b(t)),r=0,s=n.length;s>r;)Y(e,a=n[r++],t[a]);return e},q=function(e,t){return void 0===t?w(e):Q(w(e),t)},H=function(e){var t=T.call(this,e=y(e,!0));return!(this===A&&r(F,e)&&!r(D,e))&&(!(t||!r(this,e)||!r(F,e)||r(this,L)&&this[L][e])||t)},X=function(e,t){if(e=b(e),t=y(t,!0),e!==A||!r(F,t)||r(D,t)){var a=j(e,t);return!a||!r(F,t)||r(e,L)&&e[L][t]||(a.enumerable=!0),a}},Z=function(e){for(var t,a=N(b(e)),n=[],s=0;a.length>s;)r(F,t=a[s++])||t==L||t==u||n.push(t);return n},$=function(e){for(var t,a=e===A,n=N(a?D:b(e)),s=[],o=0;n.length>o;)!r(F,t=n[o++])||a&&!r(A,t)||s.push(F[t]);return s};W||(O=function(){if(this instanceof O)throw TypeError("Symbol is not a constructor!");var e=f(arguments.length>0?arguments[0]:void 0),t=function(a){this===A&&t.call(D,a),r(this,L)&&r(this[L],e)&&(this[L][e]=!1),K(this,e,R(1,a))};return s&&G&&K(A,e,{configurable:!0,set:t}),U(e)},i(O.prototype,"toString",function(){return this._k}),x.f=X,k.f=Y,a(49).f=E.f=Z,a(36).f=H,a(48).f=$,s&&!a(29)&&i(A,"propertyIsEnumerable",H,!0),d.f=function(e){return U(h(e))}),o(o.G+o.W+o.F*!W,{Symbol:O});for(var ee="hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(","),te=0;ee.length>te;)h(ee[te++]);for(var ee=C(h.store),te=0;ee.length>te;)_(ee[te++]);o(o.S+o.F*!W,"Symbol",{for:function(e){return r(z,e+="")?z[e]:z[e]=O(e)},keyFor:function(e){if(V(e))return g(z,e);throw TypeError(e+" is not a symbol!")},useSetter:function(){G=!0},useSimple:function(){G=!1}}),o(o.S+o.F*!W,"Object",{create:q,defineProperty:Y,defineProperties:Q,getOwnPropertyDescriptor:X,getOwnPropertyNames:Z,getOwnPropertySymbols:$}),S&&o(o.S+o.F*(!W||l(function(){var e=O();return"[null]"!=M([e])||"{}"!=M({a:e})||"{}"!=M(Object(e))})),"JSON",{stringify:function(e){if(void 0!==e&&!V(e)){for(var t,a,n=[e],r=1;arguments.length>r;)n.push(arguments[r++]);return t=n[1],"function"==typeof t&&(a=t),!a&&v(t)||(t=function(e,t){if(a&&(t=a.call(this,e,t)),!V(t))return t}),n[1]=t,M.apply(S,n)}}}),O.prototype[B]||a(9)(O.prototype,B,O.prototype.valueOf),p(O,"Symbol"),p(Math,"Math",!0),p(n.JSON,"JSON",!0)},function(e,t,a){var n=a(20)("meta"),r=a(15),s=a(3),o=a(4).f,i=0,u=Object.isExtensible||function(){return!0},l=!a(16)(function(){return u(Object.preventExtensions({}))}),c=function(e){o(e,n,{value:{i:"O"+ ++i,w:{}}})},p=function(e,t){if(!r(e))return"symbol"==typeof e?e:("string"==typeof e?"S":"P")+e;if(!s(e,n)){if(!u(e))return"F";if(!t)return"E";c(e)}return e[n].i},f=function(e,t){if(!s(e,n)){if(!u(e))return!0;if(!t)return!1;c(e)}return e[n].w},h=function(e){return l&&d.NEED&&u(e)&&!s(e,n)&&c(e),e},d=e.exports={KEY:n,NEED:!1,fastKey:p,getWeak:f,onFreeze:h}},function(e,t,a){var n=a(23),r=a(6);e.exports=function(e,t){for(var a,s=r(e),o=n(s),i=o.length,u=0;i>u;)if(s[a=o[u++]]===t)return a}},function(e,t,a){var n=a(23),r=a(48),s=a(36);e.exports=function(e){var t=n(e),a=r.f;if(a)for(var o,i=a(e),u=s.f,l=0;i.length>l;)u.call(e,o=i[l++])&&t.push(o);return t}},function(e,t,a){var n=a(31);e.exports=Array.isArray||function(e){return"Array"==n(e)}},function(e,t,a){var n=a(6),r=a(49).f,s={}.toString,o="object"==typeof window&&window&&Object.getOwnPropertyNames?Object.getOwnPropertyNames(window):[],i=function(e){try{return r(e)}catch(e){return o.slice()}};e.exports.f=function(e){return o&&"[object Window]"==s.call(e)?i(e):r(n(e))}},function(e,t){},function(e,t,a){a(35)("asyncIterator")},function(e,t,a){a(35)("observable")},function(e,t,a){e.exports={default:a(87),__esModule:!0}},function(e,t,a){a(88),e.exports=a(0).Object.setPrototypeOf},function(e,t,a){var n=a(8);n(n.S,"Object",{setPrototypeOf:a(89).set})},function(e,t,a){var n=a(15),r=a(10),s=function(e,t){if(r(e),!n(t)&&null!==t)throw TypeError(t+": can't set as prototype!")};e.exports={set:Object.setPrototypeOf||("__proto__"in{}?function(e,t,n){try{n=a(39)(Function.call,a(50).f(Object.prototype,"__proto__").set,2),n(e,[]),t=!(e instanceof Array)}catch(e){t=!0}return function(e,a){return s(e,a),t?e.__proto__=a:n(e,a),e}}({},!1):void 0),check:s}},function(e,t,a){e.exports={default:a(91),__esModule:!0}},function(e,t,a){a(92);var n=a(0).Object;e.exports=function(e,t){return n.create(e,t)}},function(e,t,a){var n=a(8);n(n.S,"Object",{create:a(30)})},function(e,t,a){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var r=a(7),s=n(r),o=a(11),i=n(o),u=a(12),l=n(u),c=a(13),p=n(c),f=a(14),h=n(f),d=a(17),_=a(18),g=n(_),m=a(19),v=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={value:""},a.handleChange=a.handleChange.bind(a),a.keyPress=a.keyPress.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"handleChange",value:function(e){this.setState({value:e.target.value})}},{key:"keyPress",value:function(e){13==e.keyCode&&(this.setState({value:e.target.value}),this.props.pr_val_showItems(Number(this.state.value)))}},{key:"render",value:function(){var e=this;return React.createElement("aside",{className:"jspager1_jumptopageholder"},React.createElement("label",{for:"jspager1_jump"},"Jump to page "),React.createElement("input",{type:"tel",name:"jspager1_jump",className:" jspager1_jump",placeholder:"",tabindex:"0",value:this.state.value,onChange:this.handleChange,onKeyDown:this.keyPress}),React.createElement("button",{className:"btn","data-message":"jump to page",onClick:function(){e.props.pr_val_showItems(Number(e.state.value))}},"Go"))}}]),t}(React.Component),P=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a.handleChange=a.handleChange.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"handleChange",value:function(e){this.props.pr_val_setPerPage(e.target.value)}},{key:"render",value:function(){return React.createElement("aside",{className:"jspager1_perpageholder"},React.createElement("label",{for:"jspager1_perpage"},"perPage: "),React.createElement("select",{name:"jspager1_perpage",className:"jspager1_perpage",tabindex:"0",onChange:this.handleChange,value:this.props.pr_perPage},this.props.pr_perPageItems.map(function(e){return React.createElement("option",{key:e,value:e},e)})))}}]),t}(React.Component),b=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_first",tabindex:"0",onClick:function(){e.props.pr_val_showItems(1)}},React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"})),React.createElement("span",null,"First"))}}]),t}(React.Component),y=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_prev",tabindex:"0",onClick:function(){e.props.pr_val_flip()}},React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"})),React.createElement("span",null,"Prev"))}}]),t}(React.Component),R=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_next",tabindex:"0",onClick:function(){e.props.pr_val_flip("next")}},React.createElement("span",null,"Next"),React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"})))}}]),t}(React.Component),w=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_last",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_totalPages)}},React.createElement("span",null,"Last"),React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"})))}}]),t}(React.Component),E=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return this.props.pr_i===this.props.pr_currentPage?React.createElement("a",{className:"jspager1_pagebtn \r jspager1_pagebtn--active",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_i)}},this.props.pr_i):React.createElement("a",{className:"jspager1_pagebtn",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_i)}},this.props.pr_i)}}]),t}(React.Component),x=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("aside",{className:"jspager1_pagebtnholder","aria-atomic":"true","aria-live":"polite","aria-relevant":"additions"},this.props.pr_buttonSet.map(function(t){return React.createElement(E,{pr_i:t,pr_currentPage:e.props.pr_currentPage,pr_val_showItems:e.props.pr_val_showItems})}))}}]),t}(React.Component),k=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a.handleChange=a.handleChange.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"createOptions",value:function(){for(var e=this,t=[],a=1;a<=this.props.pr_totalPages;a++)!function(a){t.push(React.createElement("option",{onClick:function(){e.props.pr_val_showItems(a)},key:a,value:a},a))}(a);return t}},{key:"handleChange",value:function(e){this.props.pr_val_showItems(e.target.value)}},{key:"render",value:function(){return React.createElement("aside",{className:"jspager1_totalpagesholder"},React.createElement("label",{for:"jspager1_select"},"Page:"),React.createElement("p",null,this.props.pr_currentPage),React.createElement("select",{className:"jspager1_select",name:"jspager1_select",value:this.props.pr_currentPage,onChange:this.handleChange,tabindex:"0"},this.createOptions()),React.createElement("p",null,"of ",this.props.pr_totalPages))}}]),t}(React.Component),C=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){return React.createElement("div",{className:"row jspager1_items","aria-atomic":"true","aria-live":"assertive","aria-relevant":"all"},this.props.pr_list.map(function(e){return React.createElement("span",null,e)}))}}]),t}(React.Component),j=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.items=[],a.pg=null,a.state={itemList:[],perPage:10,perPageItems:[10,20,50,100],totalPages:"",currentPage:"",buttonSet:[]},a.showItems=a.showItems.bind(a),a.setPerPage=a.setPerPage.bind(a),a.flip=a.flip.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"componentDidMount",value:function(){this.items=d.tempData,this.activatePager()}},{key:"activatePager",value:function(){var e=this;this.pg=null,this.pg=new g.default({perPage:this.state.perPage,data:this.items}),this.setState(function(t){return{totalPages:e.pg.getTotalPages()}}),this.setPageBtns(),this.showItems(1)}},{key:"showItems",value:function(e){var t=this;this.setState(function(a){return{itemList:t.pg.page(e),currentPage:t.pg.currentPage}}),this.changePageBtns()}},{key:"flip",value:function(e){"next"===e?this.showItems(this.pg.next()):this.showItems(this.pg.prev())}},{key:"setPerPage",value:function(e){this.state.perPage=e,this.activatePager()}},{key:"setPageBtns",value:function(){this.temp=[];for(var e=0,t=this.pg.getTotalPages();e<t;e++)this.temp.push((0,m.pageBtns)(e,t))}},{key:"changePageBtns",value:function(){var e=this;this.setState(function(t){return{buttonSet:e.temp[e.pg.currentPage-1]}})}},{key:"render",value:function(){return React.createElement("div",{className:"jspager1_holder"},React.createElement(C,{pr_list:this.state.itemList}),React.createElement("nav",{className:"jspager1"},React.createElement(k,{pr_totalPages:this.state.totalPages,pr_currentPage:this.state.currentPage,pr_val_showItems:this.showItems}),React.createElement("aside",{className:"jspager1_prevnextholder"},React.createElement(b,{pr_val_showItems:this.showItems}),React.createElement(y,{pr_val_flip:this.flip}),React.createElement(R,{pr_val_flip:this.flip}),React.createElement(w,{pr_totalPages:this.state.totalPages,pr_val_showItems:this.showItems})),React.createElement(x,{pr_buttonSet:this.state.buttonSet,pr_currentPage:this.state.currentPage,pr_val_showItems:this.showItems}),React.createElement(v,{pr_val_showItems:this.showItems}),React.createElement(P,{pr_perPage:this.state.perPage,pr_perPageItems:this.state.perPageItems,pr_val_setPerPage:this.setPerPage})))}}]),t}(React.Component);t.default=j},function(e,t,a){e.exports={default:a(95),__esModule:!0}},function(e,t,a){a(47),a(43),e.exports=a(96)},function(e,t,a){var n=a(10),r=a(97);e.exports=a(0).getIterator=function(e){var t=r(e);if("function"!=typeof t)throw TypeError(e+" is not iterable!");return n(t.call(e))}},function(e,t,a){var n=a(98),r=a(2)("iterator"),s=a(22);e.exports=a(0).getIteratorMethod=function(e){if(void 0!=e)return e[r]||e["@@iterator"]||s[n(e)]}},function(e,t,a){var n=a(31),r=a(2)("toStringTag"),s="Arguments"==n(function(){return arguments}()),o=function(e,t){try{return e[t]}catch(e){}};e.exports=function(e){var t,a,i;return void 0===e?"Undefined":null===e?"Null":"string"==typeof(a=o(t=Object(e),r))?a:s?n(t):"Object"==(i=n(t))&&"function"==typeof t.callee?"Arguments":i}},function(e,t,a){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var r=a(7),s=n(r),o=a(11),i=n(o),u=a(12),l=n(u),c=a(13),p=n(c),f=a(14),h=n(f),d=a(17),_=a(18),g=n(_),m=a(19),v=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a.handleChange=a.handleChange.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"handleChange",value:function(e){this.props.pr_val_setPerPage(e.target.value)}},{key:"render",value:function(){return React.createElement("aside",{className:"jspager2_perpageholder"},React.createElement("label",{for:"jspager2_perpage"},"perPage: "),React.createElement("select",{name:"jspager2_perpage",className:"jspager2_perpage",tabindex:"0",onChange:this.handleChange,value:this.props.pr_perPage},this.props.pr_perPageItems.map(function(e){return React.createElement("option",{key:e,value:e},e)})))}}]),t}(React.Component),P=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_first",tabindex:"0",onClick:function(){e.props.pr_val_showItems(1)}},React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"})),React.createElement("span",null,"First"))}}]),t}(React.Component),b=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_prev",tabindex:"0",onClick:function(){e.props.pr_val_flip()}},React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"})),React.createElement("span",null,"Prev"))}}]),t}(React.Component),y=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_next",tabindex:"0",onClick:function(){e.props.pr_val_flip("next")}},React.createElement("span",null,"Next"),React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"})))}}]),t}(React.Component),R=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_last",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_totalPages)}},React.createElement("span",null,"Last"),React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"})))}}]),t}(React.Component),w=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return this.props.pr_i===this.props.pr_currentPage?React.createElement("a",{className:"jspager2_pagebtn \r jspager2_pagebtn--active",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_i)}},this.props.pr_i):React.createElement("a",{className:"jspager2_pagebtn",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_i)}},this.props.pr_i)}}]),t}(React.Component),E=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("aside",{className:"jspager2_pagebtnholder","aria-atomic":"true","aria-live":"polite","aria-relevant":"additions"},this.props.pr_buttonSet.map(function(t){return React.createElement(w,{pr_i:t,pr_currentPage:e.props.pr_currentPage,pr_val_showItems:e.props.pr_val_showItems})}))}}]),t}(React.Component),x=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a.handleChange=a.handleChange.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"createOptions",value:function(){for(var e=this,t=[],a=1;a<=this.props.pr_totalPages;a++)!function(a){t.push(React.createElement("option",{onClick:function(){e.props.pr_val_showItems(a)},key:a,value:a},a))}(a);return t}},{key:"handleChange",value:function(e){this.props.pr_val_showItems(e.target.value)}},{key:"render",value:function(){return React.createElement("aside",{className:"jspager2_totalpagesholder"},React.createElement("label",{for:"jspager2_select"},"Page:"),React.createElement("p",null,this.props.pr_currentPage),React.createElement("select",{className:"jspager2_select",name:"jspager2_select",value:this.props.pr_currentPage,onChange:this.handleChange,tabindex:"0"},this.createOptions()),React.createElement("p",null,"of ",this.props.pr_totalPages))}}]),t}(React.Component),k=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){return React.createElement("div",{className:"row jspager2_items","aria-atomic":"true","aria-live":"assertive","aria-relevant":"all"},this.props.pr_list.map(function(e){return React.createElement("span",null,e)}))}}]),t}(React.Component),C=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.items=[],a.pg=null,a.state={itemList:[],perPage:10,perPageItems:[10,20,50,100],totalPages:"",currentPage:"",buttonSet:[]},a.showItems=a.showItems.bind(a),a.setPerPage=a.setPerPage.bind(a),a.flip=a.flip.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"componentDidMount",value:function(){this.items=d.tempData,this.activatePager()}},{key:"activatePager",value:function(){var e=this;this.pg=null,this.pg=new g.default({perPage:this.state.perPage,data:this.items}),this.setState(function(t){return{totalPages:e.pg.getTotalPages()}}),this.setPageBtns(),this.showItems(1)}},{key:"showItems",value:function(e){var t=this;this.setState(function(a){return{itemList:t.pg.page(e),currentPage:t.pg.currentPage}}),this.changePageBtns()}},{key:"flip",value:function(e){"next"===e?this.showItems(this.pg.next()):this.showItems(this.pg.prev())}},{key:"setPerPage",value:function(e){this.state.perPage=e,this.activatePager()}},{key:"setPageBtns",value:function(){this.temp=[];for(var e=0,t=this.pg.getTotalPages();e<t;e++)this.temp.push((0,m.pageBtns)(e,t))}},{key:"changePageBtns",value:function(){var e=this;this.setState(function(t){return{buttonSet:e.temp[e.pg.currentPage-1]}})}},{key:"render",value:function(){return React.createElement("div",{className:"jspager2_holder"},React.createElement(k,{pr_list:this.state.itemList}),React.createElement("nav",{className:"jspager2"},React.createElement(x,{pr_totalPages:this.state.totalPages,pr_currentPage:this.state.currentPage,pr_val_showItems:this.showItems}),React.createElement("aside",{className:"jspager2_prevnextholder"},React.createElement(P,{pr_val_showItems:this.showItems}),React.createElement(b,{pr_val_flip:this.flip}),React.createElement(y,{pr_val_flip:this.flip}),React.createElement(R,{pr_totalPages:this.state.totalPages,pr_val_showItems:this.showItems})),React.createElement(E,{pr_buttonSet:this.state.buttonSet,pr_currentPage:this.state.currentPage,pr_val_showItems:this.showItems}),React.createElement(v,{pr_perPage:this.state.perPage,pr_perPageItems:this.state.perPageItems,pr_val_setPerPage:this.setPerPage})))}}]),t}(React.Component);t.default=C},function(e,t,a){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var r=a(7),s=n(r),o=a(11),i=n(o),u=a(12),l=n(u),c=a(13),p=n(c),f=a(14),h=n(f),d=a(17),_=a(18),g=n(_),m=a(19),v=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a.handleChange=a.handleChange.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"handleChange",value:function(e){this.props.pr_val_setPerPage(e.target.value)}},{key:"render",value:function(){return React.createElement("aside",{className:"jspager3_perpageholder"},React.createElement("label",{for:"jspager3_perpage"},"perPage: "),React.createElement("select",{name:"jspager3_perpage",className:"jspager3_perpage",tabindex:"0",onChange:this.handleChange,value:this.props.pr_perPage},this.props.pr_perPageItems.map(function(e){return React.createElement("option",{key:e,value:e},e)})))}}]),t}(React.Component),P=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_first",tabindex:"0",onClick:function(){e.props.pr_val_showItems(1)}},React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"})),React.createElement("span",null,"First"))}}]),t}(React.Component),b=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_prev",tabindex:"0",onClick:function(){e.props.pr_val_flip()}},React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"})),React.createElement("span",null,"Prev"))}}]),t}(React.Component),y=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_next",tabindex:"0",onClick:function(){e.props.pr_val_flip("next")}},React.createElement("span",null,"Next"),React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"})))}}]),t}(React.Component),R=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_last",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_totalPages)}},React.createElement("span",null,"Last"),React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"})))}}]),t}(React.Component),w=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return this.props.pr_i===this.props.pr_currentPage?React.createElement("a",{className:"jspager3_pagebtn \r jspager3_pagebtn--active",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_i)}},this.props.pr_i):React.createElement("a",{className:"jspager3_pagebtn",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_i)}},this.props.pr_i)}}]),t}(React.Component),E=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("aside",{className:"jspager3_pagebtnholder","aria-atomic":"true","aria-live":"polite","aria-relevant":"additions"},this.props.pr_buttonSet.map(function(t){return React.createElement(w,{pr_i:t,pr_currentPage:e.props.pr_currentPage,pr_val_showItems:e.props.pr_val_showItems})}))}}]),t}(React.Component),x=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a.handleChange=a.handleChange.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"createOptions",value:function(){for(var e=this,t=[],a=1;a<=this.props.pr_totalPages;a++)!function(a){t.push(React.createElement("option",{onClick:function(){e.props.pr_val_showItems(a)},key:a,value:a},a))}(a);return t}},{key:"handleChange",value:function(e){this.props.pr_val_showItems(e.target.value)}},{key:"render",value:function(){return React.createElement("aside",{className:"jspager3_totalpagesholder"},React.createElement("label",{for:"jspager3_select"},"Page:"),React.createElement("p",null,this.props.pr_currentPage),React.createElement("select",{className:"jspager3_select",name:"jspager3_select",value:this.props.pr_currentPage,onChange:this.handleChange,tabindex:"0"},this.createOptions()),React.createElement("p",null,"of ",this.props.pr_totalPages))}}]),t}(React.Component),k=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){return React.createElement("div",{className:"row jspager3_items","aria-atomic":"true","aria-live":"assertive","aria-relevant":"all"},this.props.pr_list.map(function(e){return React.createElement("span",null,e)}))}}]),t}(React.Component),C=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.items=[],a.pg=null,a.state={itemList:[],perPage:10,perPageItems:[10,20,50,100],totalPages:"",currentPage:"",buttonSet:[]},a.showItems=a.showItems.bind(a),a.setPerPage=a.setPerPage.bind(a),a.flip=a.flip.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"componentDidMount",value:function(){this.items=d.tempData,this.activatePager()}},{key:"activatePager",value:function(){var e=this;this.pg=null,this.pg=new g.default({perPage:this.state.perPage,data:this.items}),this.setState(function(t){return{totalPages:e.pg.getTotalPages()}}),this.setPageBtns(),this.showItems(1)}},{key:"showItems",value:function(e){var t=this;this.setState(function(a){return{itemList:t.pg.page(e),currentPage:t.pg.currentPage}}),this.changePageBtns()}},{key:"flip",value:function(e){"next"===e?this.showItems(this.pg.next()):this.showItems(this.pg.prev())}},{key:"setPerPage",value:function(e){this.state.perPage=e,this.activatePager()}},{key:"setPageBtns",value:function(){this.temp=[];for(var e=0,t=this.pg.getTotalPages();e<t;e++)this.temp.push((0,m.pageBtns)(e,t))}},{key:"changePageBtns",value:function(){var e=this;this.setState(function(t){return{buttonSet:e.temp[e.pg.currentPage-1]}})}},{key:"render",value:function(){return React.createElement("div",{className:"jspager3_holder"},React.createElement(k,{pr_list:this.state.itemList}),React.createElement("nav",{className:"jspager3"},React.createElement("aside",{className:"jspager3_prevnextholder"},React.createElement(P,{pr_val_showItems:this.showItems}),React.createElement(b,{pr_val_flip:this.flip})),React.createElement(x,{pr_totalPages:this.state.totalPages,pr_currentPage:this.state.currentPage,pr_val_showItems:this.showItems}),React.createElement("aside",{className:"jspager3_prevnextholder"},React.createElement(y,{pr_val_flip:this.flip}),React.createElement(R,{pr_totalPages:this.state.totalPages,pr_val_showItems:this.showItems})),React.createElement(E,{pr_buttonSet:this.state.buttonSet,pr_currentPage:this.state.currentPage,pr_val_showItems:this.showItems}),React.createElement(v,{pr_perPage:this.state.perPage,pr_perPageItems:this.state.perPageItems,pr_val_setPerPage:this.setPerPage})))}}]),t}(React.Component);t.default=C},function(e,t,a){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var r=a(7),s=n(r),o=a(11),i=n(o),u=a(12),l=n(u),c=a(13),p=n(c),f=a(14),h=n(f),d=a(17),_=a(18),g=n(_),m=a(19),v=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a.handleChange=a.handleChange.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"handleChange",value:function(e){this.props.pr_val_setPerPage(e.target.value)}},{key:"render",value:function(){return React.createElement("aside",{className:"jspager4_perpageholder"},React.createElement("label",{for:"jspager4_perpage"},"perPage: "),React.createElement("select",{name:"jspager4_perpage",className:"jspager4_perpage",tabindex:"0",onChange:this.handleChange,value:this.props.pr_perPage},this.props.pr_perPageItems.map(function(e){return React.createElement("option",{key:e,value:e},e)})))}}]),t}(React.Component),P=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_first",tabindex:"0",onClick:function(){e.props.pr_val_showItems(1)}},React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"})),React.createElement("span",null,"First"))}}]),t}(React.Component),b=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_prev",tabindex:"0",onClick:function(){e.props.pr_val_flip()}},React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"})),React.createElement("span",null,"Prev"))}}]),t}(React.Component),y=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_next",tabindex:"0",onClick:function(){e.props.pr_val_flip("next")}},React.createElement("span",null,"Next"),React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"})))}}]),t}(React.Component),R=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_last",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_totalPages)}},React.createElement("span",null,"Last"),React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"})))}}]),t}(React.Component),w=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a.handleChange=a.handleChange.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"createOptions",value:function(){for(var e=this,t=[],a=1;a<=this.props.pr_totalPages;a++)!function(a){t.push(React.createElement("option",{onClick:function(){e.props.pr_val_showItems(a)},key:a,value:a},a))}(a);return t}},{key:"handleChange",value:function(e){this.props.pr_val_showItems(e.target.value)}},{key:"render",value:function(){return React.createElement("aside",{className:"jspager4_totalpagesholder"},React.createElement("label",{for:"jspager4_select"},"Page:"),React.createElement("p",null,this.props.pr_currentPage),React.createElement("select",{className:"jspager4_select",name:"jspager4_select",value:this.props.pr_currentPage,onChange:this.handleChange,tabindex:"0"},this.createOptions()),React.createElement("p",null,"of ",this.props.pr_totalPages))}}]),t}(React.Component),E=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){return React.createElement("div",{className:"row jspager4_items","aria-atomic":"true","aria-live":"assertive","aria-relevant":"all"},this.props.pr_list.map(function(e){return React.createElement("span",null,e)}))}}]),t}(React.Component),x=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.items=[],a.pg=null,a.state={itemList:[],perPage:10,perPageItems:[10,20,50,100],totalPages:"",currentPage:"",buttonSet:[]},a.showItems=a.showItems.bind(a),a.setPerPage=a.setPerPage.bind(a),a.flip=a.flip.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"componentDidMount",value:function(){this.items=d.tempData,this.activatePager()}},{key:"activatePager",value:function(){var e=this;this.pg=null,this.pg=new g.default({perPage:this.state.perPage,data:this.items}),this.setState(function(t){return{totalPages:e.pg.getTotalPages()}}),this.setPageBtns(),this.showItems(1)}},{key:"showItems",value:function(e){var t=this;this.setState(function(a){return{itemList:t.pg.page(e),currentPage:t.pg.currentPage}}),this.changePageBtns()}},{key:"flip",value:function(e){"next"===e?this.showItems(this.pg.next()):this.showItems(this.pg.prev())}},{key:"setPerPage",value:function(e){this.state.perPage=e,this.activatePager()}},{key:"setPageBtns",value:function(){this.temp=[];for(var e=0,t=this.pg.getTotalPages();e<t;e++)this.temp.push((0,m.pageBtns)(e,t))}},{key:"changePageBtns",value:function(){var e=this;this.setState(function(t){return{buttonSet:e.temp[e.pg.currentPage-1]}})}},{key:"render",value:function(){return React.createElement("div",{className:"jspager4_holder"},React.createElement(E,{pr_list:this.state.itemList}),React.createElement("nav",{className:"jspager4"},React.createElement("aside",{className:"jspager4_prevnextholder"},React.createElement(P,{pr_val_showItems:this.showItems}),React.createElement(b,{pr_val_flip:this.flip})),React.createElement(w,{pr_totalPages:this.state.totalPages,pr_currentPage:this.state.currentPage,pr_val_showItems:this.showItems}),React.createElement("aside",{className:"jspager4_prevnextholder"},React.createElement(y,{pr_val_flip:this.flip}),React.createElement(R,{pr_totalPages:this.state.totalPages,pr_val_showItems:this.showItems})),React.createElement(v,{pr_perPage:this.state.perPage,pr_perPageItems:this.state.perPageItems,pr_val_setPerPage:this.setPerPage})))}}]),t}(React.Component);t.default=x},function(e,t,a){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var r=a(7),s=n(r),o=a(11),i=n(o),u=a(12),l=n(u),c=a(13),p=n(c),f=a(14),h=n(f),d=a(17),_=a(18),g=n(_),m=a(19),v=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a.handleChange=a.handleChange.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"handleChange",value:function(e){this.props.pr_val_setPerPage(e.target.value)}},{key:"render",value:function(){return React.createElement("aside",{className:"jspager5_perpageholder"},React.createElement("label",{for:"jspager5_perpage"},"perPage: "),React.createElement("select",{name:"jspager5_perpage",className:"jspager5_perpage",tabindex:"0",onChange:this.handleChange,value:this.props.pr_perPage},this.props.pr_perPageItems.map(function(e){return React.createElement("option",{key:e,value:e},e)})))}}]),t}(React.Component),P=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_first",tabindex:"0",onClick:function(){e.props.pr_val_showItems(1)}},React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"})),React.createElement("span",null,"First"))}}]),t}(React.Component),b=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_prev",tabindex:"0",onClick:function(){e.props.pr_val_flip()}},React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"})),React.createElement("span",null,"Prev"))}}]),t}(React.Component),y=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_next",tabindex:"0",onClick:function(){e.props.pr_val_flip("next")}},React.createElement("span",null,"Next"),React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"})))}}]),t}(React.Component),R=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("button",{className:"btn btn_last",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_totalPages)}},React.createElement("span",null,"Last"),React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"},React.createElement("path",{d:"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"})))}}]),t}(React.Component),w=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return this.props.pr_i===this.props.pr_currentPage?React.createElement("a",{className:"jspager5_pagebtn \r jspager5_pagebtn--active",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_i)}},this.props.pr_i):React.createElement("a",{className:"jspager5_pagebtn",tabindex:"0",onClick:function(){e.props.pr_val_showItems(e.props.pr_i)}},this.props.pr_i)}}]),t}(React.Component),E=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){var e=this;return React.createElement("aside",{className:"jspager5_pagebtnholder","aria-atomic":"true","aria-live":"polite","aria-relevant":"additions"},this.props.pr_buttonSet.map(function(t){return React.createElement(w,{pr_i:t,pr_currentPage:e.props.pr_currentPage,pr_val_showItems:e.props.pr_val_showItems})}))}}]),t}(React.Component),x=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a.handleChange=a.handleChange.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"createOptions",value:function(){for(var e=this,t=[],a=1;a<=this.props.pr_totalPages;a++)!function(a){t.push(React.createElement("option",{onClick:function(){e.props.pr_val_showItems(a)},key:a,value:a},a))}(a);return t}},{key:"handleChange",value:function(e){this.props.pr_val_showItems(e.target.value)}},{key:"render",value:function(){return React.createElement("aside",{className:"jspager5_totalpagesholder"},React.createElement("label",{for:"jspager5_select"},"Page:"),React.createElement("p",null,this.props.pr_currentPage),React.createElement("select",{className:"jspager5_select",name:"jspager5_select",value:this.props.pr_currentPage,onChange:this.handleChange,tabindex:"0"},this.createOptions()),React.createElement("p",null,"of ",this.props.pr_totalPages))}}]),t}(React.Component),k=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.state={},a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"render",value:function(){return React.createElement("div",{className:"row jspager5_items","aria-atomic":"true","aria-live":"assertive","aria-relevant":"all"},this.props.pr_list.map(function(e){return React.createElement("span",null,e)}))}}]),t}(React.Component),C=function(e){function t(e){(0,i.default)(this,t);var a=(0,p.default)(this,(t.__proto__||(0,s.default)(t)).call(this,e));return a.items=[],a.pg=null,a.state={itemList:[],perPage:10,perPageItems:[10,20,50,100],totalPages:"",currentPage:"",buttonSet:[]},a.showItems=a.showItems.bind(a),a.setPerPage=a.setPerPage.bind(a),a.flip=a.flip.bind(a),a}return(0,h.default)(t,e),(0,l.default)(t,[{key:"componentDidMount",value:function(){this.items=d.tempData,this.activatePager()}},{key:"activatePager",value:function(){var e=this;this.pg=null,this.pg=new g.default({perPage:this.state.perPage,data:this.items}),this.setState(function(t){return{totalPages:e.pg.getTotalPages()}}),this.setPageBtns(),this.showItems(1)}},{key:"showItems",value:function(e){var t=this;this.setState(function(a){return{itemList:t.pg.page(e),currentPage:t.pg.currentPage}}),this.changePageBtns()}},{key:"flip",value:function(e){"next"===e?this.showItems(this.pg.next()):this.showItems(this.pg.prev())}},{key:"setPerPage",value:function(e){this.state.perPage=e,this.activatePager()}},{key:"setPageBtns",value:function(){this.temp=[];for(var e=0,t=this.pg.getTotalPages();e<t;e++)this.temp.push((0,m.pageBtns)(e,t))}},{key:"changePageBtns",value:function(){var e=this;this.setState(function(t){return{buttonSet:e.temp[e.pg.currentPage-1]}})}},{key:"render",value:function(){return React.createElement("div",{className:"jspager5_holder"},React.createElement(k,{pr_list:this.state.itemList}),React.createElement("nav",{className:"jspager5"},React.createElement(x,{pr_totalPages:this.state.totalPages,pr_currentPage:this.state.currentPage,pr_val_showItems:this.showItems}),React.createElement("aside",{className:"jspager5_prevnextholder"},React.createElement(P,{pr_val_showItems:this.showItems}),React.createElement(b,{pr_val_flip:this.flip})),React.createElement(E,{pr_buttonSet:this.state.buttonSet,pr_currentPage:this.state.currentPage,pr_val_showItems:this.showItems}),React.createElement("aside",{className:"jspager5_prevnextholder"},React.createElement(y,{pr_val_flip:this.flip}),React.createElement(R,{pr_totalPages:this.state.totalPages,pr_val_showItems:this.showItems})),React.createElement(v,{pr_perPage:this.state.perPage,pr_perPageItems:this.state.perPageItems,pr_val_setPerPage:this.setPerPage})))}}]),t}(React.Component);t.default=C}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "dist/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(1);
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(2);
+
+var _Home = __webpack_require__(4);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+ReactDOM.render(React.createElement(_Home2.default, null), document.getElementById('root'));
+
+// router with route config
+// import "./components/Home+Router.jsx";
+
+// default
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 3 */,
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = __webpack_require__(5);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(31);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(32);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(36);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(83);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _RkPager = __webpack_require__(91);
+
+var _RkPager2 = _interopRequireDefault(_RkPager);
+
+var _RkPager3 = __webpack_require__(100);
+
+var _RkPager4 = _interopRequireDefault(_RkPager3);
+
+var _RkPager5 = __webpack_require__(101);
+
+var _RkPager6 = _interopRequireDefault(_RkPager5);
+
+var _RkPager7 = __webpack_require__(102);
+
+var _RkPager8 = _interopRequireDefault(_RkPager7);
+
+var _RkPager9 = __webpack_require__(103);
+
+var _RkPager10 = _interopRequireDefault(_RkPager9);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Home = function (_React$Component) {
+  (0, _inherits3.default)(Home, _React$Component);
+
+  function Home(props) {
+    (0, _classCallCheck3.default)(this, Home);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Home.__proto__ || (0, _getPrototypeOf2.default)(Home)).call(this, props));
+
+    _this.state = {};
+
+    // binders
+    return _this;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(Home, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(_RkPager2.default, null),
+        React.createElement("br", null),
+        React.createElement("br", null),
+        React.createElement(_RkPager4.default, null),
+        React.createElement("br", null),
+        React.createElement("br", null),
+        React.createElement(_RkPager6.default, null),
+        React.createElement("br", null),
+        React.createElement("br", null),
+        React.createElement(_RkPager8.default, null),
+        React.createElement("br", null),
+        React.createElement("br", null),
+        React.createElement(_RkPager10.default, null)
+      );
+    }
+  }]);
+  return Home;
+}(React.Component);
+
+exports.default = Home;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(6), __esModule: true };
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(7);
+module.exports = __webpack_require__(18).Object.getPrototypeOf;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.9 Object.getPrototypeOf(O)
+var toObject        = __webpack_require__(8)
+  , $getPrototypeOf = __webpack_require__(10);
+
+__webpack_require__(16)('getPrototypeOf', function(){
+  return function getPrototypeOf(it){
+    return $getPrototypeOf(toObject(it));
+  };
+});
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.13 ToObject(argument)
+var defined = __webpack_require__(9);
+module.exports = function(it){
+  return Object(defined(it));
+};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+// 7.2.1 RequireObjectCoercible(argument)
+module.exports = function(it){
+  if(it == undefined)throw TypeError("Can't call method on  " + it);
+  return it;
+};
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
+var has         = __webpack_require__(11)
+  , toObject    = __webpack_require__(8)
+  , IE_PROTO    = __webpack_require__(12)('IE_PROTO')
+  , ObjectProto = Object.prototype;
+
+module.exports = Object.getPrototypeOf || function(O){
+  O = toObject(O);
+  if(has(O, IE_PROTO))return O[IE_PROTO];
+  if(typeof O.constructor == 'function' && O instanceof O.constructor){
+    return O.constructor.prototype;
+  } return O instanceof Object ? ObjectProto : null;
+};
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+var hasOwnProperty = {}.hasOwnProperty;
+module.exports = function(it, key){
+  return hasOwnProperty.call(it, key);
+};
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var shared = __webpack_require__(13)('keys')
+  , uid    = __webpack_require__(15);
+module.exports = function(key){
+  return shared[key] || (shared[key] = uid(key));
+};
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(14)
+  , SHARED = '__core-js_shared__'
+  , store  = global[SHARED] || (global[SHARED] = {});
+module.exports = function(key){
+  return store[key] || (store[key] = {});
+};
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+var global = module.exports = typeof window != 'undefined' && window.Math == Math
+  ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
+if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+var id = 0
+  , px = Math.random();
+module.exports = function(key){
+  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+};
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// most Object methods by ES6 should accept primitives
+var $export = __webpack_require__(17)
+  , core    = __webpack_require__(18)
+  , fails   = __webpack_require__(27);
+module.exports = function(KEY, exec){
+  var fn  = (core.Object || {})[KEY] || Object[KEY]
+    , exp = {};
+  exp[KEY] = exec(fn);
+  $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
+};
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global    = __webpack_require__(14)
+  , core      = __webpack_require__(18)
+  , ctx       = __webpack_require__(19)
+  , hide      = __webpack_require__(21)
+  , PROTOTYPE = 'prototype';
+
+var $export = function(type, name, source){
+  var IS_FORCED = type & $export.F
+    , IS_GLOBAL = type & $export.G
+    , IS_STATIC = type & $export.S
+    , IS_PROTO  = type & $export.P
+    , IS_BIND   = type & $export.B
+    , IS_WRAP   = type & $export.W
+    , exports   = IS_GLOBAL ? core : core[name] || (core[name] = {})
+    , expProto  = exports[PROTOTYPE]
+    , target    = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE]
+    , key, own, out;
+  if(IS_GLOBAL)source = name;
+  for(key in source){
+    // contains in native
+    own = !IS_FORCED && target && target[key] !== undefined;
+    if(own && key in exports)continue;
+    // export native or passed
+    out = own ? target[key] : source[key];
+    // prevent global pollution for namespaces
+    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
+    // bind timers to global for call from export context
+    : IS_BIND && own ? ctx(out, global)
+    // wrap global constructors for prevent change them in library
+    : IS_WRAP && target[key] == out ? (function(C){
+      var F = function(a, b, c){
+        if(this instanceof C){
+          switch(arguments.length){
+            case 0: return new C;
+            case 1: return new C(a);
+            case 2: return new C(a, b);
+          } return new C(a, b, c);
+        } return C.apply(this, arguments);
+      };
+      F[PROTOTYPE] = C[PROTOTYPE];
+      return F;
+    // make static versions for prototype methods
+    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+    // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
+    if(IS_PROTO){
+      (exports.virtual || (exports.virtual = {}))[key] = out;
+      // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
+      if(type & $export.R && expProto && !expProto[key])hide(expProto, key, out);
+    }
+  }
+};
+// type bitmap
+$export.F = 1;   // forced
+$export.G = 2;   // global
+$export.S = 4;   // static
+$export.P = 8;   // proto
+$export.B = 16;  // bind
+$export.W = 32;  // wrap
+$export.U = 64;  // safe
+$export.R = 128; // real proto method for `library` 
+module.exports = $export;
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+var core = module.exports = {version: '2.4.0'};
+if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// optional / simple context binding
+var aFunction = __webpack_require__(20);
+module.exports = function(fn, that, length){
+  aFunction(fn);
+  if(that === undefined)return fn;
+  switch(length){
+    case 1: return function(a){
+      return fn.call(that, a);
+    };
+    case 2: return function(a, b){
+      return fn.call(that, a, b);
+    };
+    case 3: return function(a, b, c){
+      return fn.call(that, a, b, c);
+    };
+  }
+  return function(/* ...args */){
+    return fn.apply(that, arguments);
+  };
+};
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+module.exports = function(it){
+  if(typeof it != 'function')throw TypeError(it + ' is not a function!');
+  return it;
+};
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP         = __webpack_require__(22)
+  , createDesc = __webpack_require__(30);
+module.exports = __webpack_require__(26) ? function(object, key, value){
+  return dP.f(object, key, createDesc(1, value));
+} : function(object, key, value){
+  object[key] = value;
+  return object;
+};
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject       = __webpack_require__(23)
+  , IE8_DOM_DEFINE = __webpack_require__(25)
+  , toPrimitive    = __webpack_require__(29)
+  , dP             = Object.defineProperty;
+
+exports.f = __webpack_require__(26) ? Object.defineProperty : function defineProperty(O, P, Attributes){
+  anObject(O);
+  P = toPrimitive(P, true);
+  anObject(Attributes);
+  if(IE8_DOM_DEFINE)try {
+    return dP(O, P, Attributes);
+  } catch(e){ /* empty */ }
+  if('get' in Attributes || 'set' in Attributes)throw TypeError('Accessors not supported!');
+  if('value' in Attributes)O[P] = Attributes.value;
+  return O;
+};
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(24);
+module.exports = function(it){
+  if(!isObject(it))throw TypeError(it + ' is not an object!');
+  return it;
+};
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+module.exports = function(it){
+  return typeof it === 'object' ? it !== null : typeof it === 'function';
+};
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = !__webpack_require__(26) && !__webpack_require__(27)(function(){
+  return Object.defineProperty(__webpack_require__(28)('div'), 'a', {get: function(){ return 7; }}).a != 7;
+});
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Thank's IE8 for his funny defineProperty
+module.exports = !__webpack_require__(27)(function(){
+  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
+});
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports) {
+
+module.exports = function(exec){
+  try {
+    return !!exec();
+  } catch(e){
+    return true;
+  }
+};
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(24)
+  , document = __webpack_require__(14).document
+  // in old IE typeof document.createElement is 'object'
+  , is = isObject(document) && isObject(document.createElement);
+module.exports = function(it){
+  return is ? document.createElement(it) : {};
+};
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.1 ToPrimitive(input [, PreferredType])
+var isObject = __webpack_require__(24);
+// instead of the ES6 spec version, we didn't implement @@toPrimitive case
+// and the second argument - flag - preferred type is a string
+module.exports = function(it, S){
+  if(!isObject(it))return it;
+  var fn, val;
+  if(S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it)))return val;
+  if(typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it)))return val;
+  if(!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it)))return val;
+  throw TypeError("Can't convert object to primitive value");
+};
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+module.exports = function(bitmap, value){
+  return {
+    enumerable  : !(bitmap & 1),
+    configurable: !(bitmap & 2),
+    writable    : !(bitmap & 4),
+    value       : value
+  };
+};
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+exports.default = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _defineProperty = __webpack_require__(33);
+
+var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      (0, _defineProperty2.default)(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(34), __esModule: true };
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(35);
+var $Object = __webpack_require__(18).Object;
+module.exports = function defineProperty(it, key, desc){
+  return $Object.defineProperty(it, key, desc);
+};
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(17);
+// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
+$export($export.S + $export.F * !__webpack_require__(26), 'Object', {defineProperty: __webpack_require__(22).f});
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _typeof2 = __webpack_require__(37);
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && ((typeof call === "undefined" ? "undefined" : (0, _typeof3.default)(call)) === "object" || typeof call === "function") ? call : self;
+};
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _iterator = __webpack_require__(38);
+
+var _iterator2 = _interopRequireDefault(_iterator);
+
+var _symbol = __webpack_require__(67);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj; };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.default) === "symbol" ? function (obj) {
+  return typeof obj === "undefined" ? "undefined" : _typeof(obj);
+} : function (obj) {
+  return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
+};
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(39), __esModule: true };
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(40);
+__webpack_require__(62);
+module.exports = __webpack_require__(66).f('iterator');
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $at  = __webpack_require__(41)(true);
+
+// 21.1.3.27 String.prototype[@@iterator]()
+__webpack_require__(43)(String, 'String', function(iterated){
+  this._t = String(iterated); // target
+  this._i = 0;                // next index
+// 21.1.5.2.1 %StringIteratorPrototype%.next()
+}, function(){
+  var O     = this._t
+    , index = this._i
+    , point;
+  if(index >= O.length)return {value: undefined, done: true};
+  point = $at(O, index);
+  this._i += point.length;
+  return {value: point, done: false};
+});
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var toInteger = __webpack_require__(42)
+  , defined   = __webpack_require__(9);
+// true  -> String#at
+// false -> String#codePointAt
+module.exports = function(TO_STRING){
+  return function(that, pos){
+    var s = String(defined(that))
+      , i = toInteger(pos)
+      , l = s.length
+      , a, b;
+    if(i < 0 || i >= l)return TO_STRING ? '' : undefined;
+    a = s.charCodeAt(i);
+    return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff
+      ? TO_STRING ? s.charAt(i) : a
+      : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
+  };
+};
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports) {
+
+// 7.1.4 ToInteger
+var ceil  = Math.ceil
+  , floor = Math.floor;
+module.exports = function(it){
+  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
+};
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var LIBRARY        = __webpack_require__(44)
+  , $export        = __webpack_require__(17)
+  , redefine       = __webpack_require__(45)
+  , hide           = __webpack_require__(21)
+  , has            = __webpack_require__(11)
+  , Iterators      = __webpack_require__(46)
+  , $iterCreate    = __webpack_require__(47)
+  , setToStringTag = __webpack_require__(60)
+  , getPrototypeOf = __webpack_require__(10)
+  , ITERATOR       = __webpack_require__(61)('iterator')
+  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
+  , FF_ITERATOR    = '@@iterator'
+  , KEYS           = 'keys'
+  , VALUES         = 'values';
+
+var returnThis = function(){ return this; };
+
+module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED){
+  $iterCreate(Constructor, NAME, next);
+  var getMethod = function(kind){
+    if(!BUGGY && kind in proto)return proto[kind];
+    switch(kind){
+      case KEYS: return function keys(){ return new Constructor(this, kind); };
+      case VALUES: return function values(){ return new Constructor(this, kind); };
+    } return function entries(){ return new Constructor(this, kind); };
+  };
+  var TAG        = NAME + ' Iterator'
+    , DEF_VALUES = DEFAULT == VALUES
+    , VALUES_BUG = false
+    , proto      = Base.prototype
+    , $native    = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT]
+    , $default   = $native || getMethod(DEFAULT)
+    , $entries   = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined
+    , $anyNative = NAME == 'Array' ? proto.entries || $native : $native
+    , methods, key, IteratorPrototype;
+  // Fix native
+  if($anyNative){
+    IteratorPrototype = getPrototypeOf($anyNative.call(new Base));
+    if(IteratorPrototype !== Object.prototype){
+      // Set @@toStringTag to native iterators
+      setToStringTag(IteratorPrototype, TAG, true);
+      // fix for some old engines
+      if(!LIBRARY && !has(IteratorPrototype, ITERATOR))hide(IteratorPrototype, ITERATOR, returnThis);
+    }
+  }
+  // fix Array#{values, @@iterator}.name in V8 / FF
+  if(DEF_VALUES && $native && $native.name !== VALUES){
+    VALUES_BUG = true;
+    $default = function values(){ return $native.call(this); };
+  }
+  // Define iterator
+  if((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])){
+    hide(proto, ITERATOR, $default);
+  }
+  // Plug for library
+  Iterators[NAME] = $default;
+  Iterators[TAG]  = returnThis;
+  if(DEFAULT){
+    methods = {
+      values:  DEF_VALUES ? $default : getMethod(VALUES),
+      keys:    IS_SET     ? $default : getMethod(KEYS),
+      entries: $entries
+    };
+    if(FORCED)for(key in methods){
+      if(!(key in proto))redefine(proto, key, methods[key]);
+    } else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
+  }
+  return methods;
+};
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports) {
+
+module.exports = true;
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(21);
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports) {
+
+module.exports = {};
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var create         = __webpack_require__(48)
+  , descriptor     = __webpack_require__(30)
+  , setToStringTag = __webpack_require__(60)
+  , IteratorPrototype = {};
+
+// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
+__webpack_require__(21)(IteratorPrototype, __webpack_require__(61)('iterator'), function(){ return this; });
+
+module.exports = function(Constructor, NAME, next){
+  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
+  setToStringTag(Constructor, NAME + ' Iterator');
+};
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+var anObject    = __webpack_require__(23)
+  , dPs         = __webpack_require__(49)
+  , enumBugKeys = __webpack_require__(58)
+  , IE_PROTO    = __webpack_require__(12)('IE_PROTO')
+  , Empty       = function(){ /* empty */ }
+  , PROTOTYPE   = 'prototype';
+
+// Create object with fake `null` prototype: use iframe Object with cleared prototype
+var createDict = function(){
+  // Thrash, waste and sodomy: IE GC bug
+  var iframe = __webpack_require__(28)('iframe')
+    , i      = enumBugKeys.length
+    , lt     = '<'
+    , gt     = '>'
+    , iframeDocument;
+  iframe.style.display = 'none';
+  __webpack_require__(59).appendChild(iframe);
+  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
+  // createDict = iframe.contentWindow.Object;
+  // html.removeChild(iframe);
+  iframeDocument = iframe.contentWindow.document;
+  iframeDocument.open();
+  iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
+  iframeDocument.close();
+  createDict = iframeDocument.F;
+  while(i--)delete createDict[PROTOTYPE][enumBugKeys[i]];
+  return createDict();
+};
+
+module.exports = Object.create || function create(O, Properties){
+  var result;
+  if(O !== null){
+    Empty[PROTOTYPE] = anObject(O);
+    result = new Empty;
+    Empty[PROTOTYPE] = null;
+    // add "__proto__" for Object.getPrototypeOf polyfill
+    result[IE_PROTO] = O;
+  } else result = createDict();
+  return Properties === undefined ? result : dPs(result, Properties);
+};
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP       = __webpack_require__(22)
+  , anObject = __webpack_require__(23)
+  , getKeys  = __webpack_require__(50);
+
+module.exports = __webpack_require__(26) ? Object.defineProperties : function defineProperties(O, Properties){
+  anObject(O);
+  var keys   = getKeys(Properties)
+    , length = keys.length
+    , i = 0
+    , P;
+  while(length > i)dP.f(O, P = keys[i++], Properties[P]);
+  return O;
+};
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+var $keys       = __webpack_require__(51)
+  , enumBugKeys = __webpack_require__(58);
+
+module.exports = Object.keys || function keys(O){
+  return $keys(O, enumBugKeys);
+};
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var has          = __webpack_require__(11)
+  , toIObject    = __webpack_require__(52)
+  , arrayIndexOf = __webpack_require__(55)(false)
+  , IE_PROTO     = __webpack_require__(12)('IE_PROTO');
+
+module.exports = function(object, names){
+  var O      = toIObject(object)
+    , i      = 0
+    , result = []
+    , key;
+  for(key in O)if(key != IE_PROTO)has(O, key) && result.push(key);
+  // Don't enum bug & hidden keys
+  while(names.length > i)if(has(O, key = names[i++])){
+    ~arrayIndexOf(result, key) || result.push(key);
+  }
+  return result;
+};
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// to indexed object, toObject with fallback for non-array-like ES3 strings
+var IObject = __webpack_require__(53)
+  , defined = __webpack_require__(9);
+module.exports = function(it){
+  return IObject(defined(it));
+};
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// fallback for non-array-like ES3 and non-enumerable old V8 strings
+var cof = __webpack_require__(54);
+module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
+  return cof(it) == 'String' ? it.split('') : Object(it);
+};
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports) {
+
+var toString = {}.toString;
+
+module.exports = function(it){
+  return toString.call(it).slice(8, -1);
+};
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// false -> Array#indexOf
+// true  -> Array#includes
+var toIObject = __webpack_require__(52)
+  , toLength  = __webpack_require__(56)
+  , toIndex   = __webpack_require__(57);
+module.exports = function(IS_INCLUDES){
+  return function($this, el, fromIndex){
+    var O      = toIObject($this)
+      , length = toLength(O.length)
+      , index  = toIndex(fromIndex, length)
+      , value;
+    // Array#includes uses SameValueZero equality algorithm
+    if(IS_INCLUDES && el != el)while(length > index){
+      value = O[index++];
+      if(value != value)return true;
+    // Array#toIndex ignores holes, Array#includes - not
+    } else for(;length > index; index++)if(IS_INCLUDES || index in O){
+      if(O[index] === el)return IS_INCLUDES || index || 0;
+    } return !IS_INCLUDES && -1;
+  };
+};
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.15 ToLength
+var toInteger = __webpack_require__(42)
+  , min       = Math.min;
+module.exports = function(it){
+  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
+};
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var toInteger = __webpack_require__(42)
+  , max       = Math.max
+  , min       = Math.min;
+module.exports = function(index, length){
+  index = toInteger(index);
+  return index < 0 ? max(index + length, 0) : min(index, length);
+};
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
+
+// IE 8- don't enum bug keys
+module.exports = (
+  'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
+).split(',');
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(14).document && document.documentElement;
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var def = __webpack_require__(22).f
+  , has = __webpack_require__(11)
+  , TAG = __webpack_require__(61)('toStringTag');
+
+module.exports = function(it, tag, stat){
+  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
+};
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var store      = __webpack_require__(13)('wks')
+  , uid        = __webpack_require__(15)
+  , Symbol     = __webpack_require__(14).Symbol
+  , USE_SYMBOL = typeof Symbol == 'function';
+
+var $exports = module.exports = function(name){
+  return store[name] || (store[name] =
+    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
+};
+
+$exports.store = store;
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(63);
+var global        = __webpack_require__(14)
+  , hide          = __webpack_require__(21)
+  , Iterators     = __webpack_require__(46)
+  , TO_STRING_TAG = __webpack_require__(61)('toStringTag');
+
+for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
+  var NAME       = collections[i]
+    , Collection = global[NAME]
+    , proto      = Collection && Collection.prototype;
+  if(proto && !proto[TO_STRING_TAG])hide(proto, TO_STRING_TAG, NAME);
+  Iterators[NAME] = Iterators.Array;
+}
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var addToUnscopables = __webpack_require__(64)
+  , step             = __webpack_require__(65)
+  , Iterators        = __webpack_require__(46)
+  , toIObject        = __webpack_require__(52);
+
+// 22.1.3.4 Array.prototype.entries()
+// 22.1.3.13 Array.prototype.keys()
+// 22.1.3.29 Array.prototype.values()
+// 22.1.3.30 Array.prototype[@@iterator]()
+module.exports = __webpack_require__(43)(Array, 'Array', function(iterated, kind){
+  this._t = toIObject(iterated); // target
+  this._i = 0;                   // next index
+  this._k = kind;                // kind
+// 22.1.5.2.1 %ArrayIteratorPrototype%.next()
+}, function(){
+  var O     = this._t
+    , kind  = this._k
+    , index = this._i++;
+  if(!O || index >= O.length){
+    this._t = undefined;
+    return step(1);
+  }
+  if(kind == 'keys'  )return step(0, index);
+  if(kind == 'values')return step(0, O[index]);
+  return step(0, [index, O[index]]);
+}, 'values');
+
+// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
+Iterators.Arguments = Iterators.Array;
+
+addToUnscopables('keys');
+addToUnscopables('values');
+addToUnscopables('entries');
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports) {
+
+module.exports = function(){ /* empty */ };
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports) {
+
+module.exports = function(done, value){
+  return {value: value, done: !!done};
+};
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports.f = __webpack_require__(61);
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(68), __esModule: true };
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(69);
+__webpack_require__(80);
+__webpack_require__(81);
+__webpack_require__(82);
+module.exports = __webpack_require__(18).Symbol;
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// ECMAScript 6 symbols shim
+var global         = __webpack_require__(14)
+  , has            = __webpack_require__(11)
+  , DESCRIPTORS    = __webpack_require__(26)
+  , $export        = __webpack_require__(17)
+  , redefine       = __webpack_require__(45)
+  , META           = __webpack_require__(70).KEY
+  , $fails         = __webpack_require__(27)
+  , shared         = __webpack_require__(13)
+  , setToStringTag = __webpack_require__(60)
+  , uid            = __webpack_require__(15)
+  , wks            = __webpack_require__(61)
+  , wksExt         = __webpack_require__(66)
+  , wksDefine      = __webpack_require__(71)
+  , keyOf          = __webpack_require__(72)
+  , enumKeys       = __webpack_require__(73)
+  , isArray        = __webpack_require__(76)
+  , anObject       = __webpack_require__(23)
+  , toIObject      = __webpack_require__(52)
+  , toPrimitive    = __webpack_require__(29)
+  , createDesc     = __webpack_require__(30)
+  , _create        = __webpack_require__(48)
+  , gOPNExt        = __webpack_require__(77)
+  , $GOPD          = __webpack_require__(79)
+  , $DP            = __webpack_require__(22)
+  , $keys          = __webpack_require__(50)
+  , gOPD           = $GOPD.f
+  , dP             = $DP.f
+  , gOPN           = gOPNExt.f
+  , $Symbol        = global.Symbol
+  , $JSON          = global.JSON
+  , _stringify     = $JSON && $JSON.stringify
+  , PROTOTYPE      = 'prototype'
+  , HIDDEN         = wks('_hidden')
+  , TO_PRIMITIVE   = wks('toPrimitive')
+  , isEnum         = {}.propertyIsEnumerable
+  , SymbolRegistry = shared('symbol-registry')
+  , AllSymbols     = shared('symbols')
+  , OPSymbols      = shared('op-symbols')
+  , ObjectProto    = Object[PROTOTYPE]
+  , USE_NATIVE     = typeof $Symbol == 'function'
+  , QObject        = global.QObject;
+// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
+var setter = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
+
+// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
+var setSymbolDesc = DESCRIPTORS && $fails(function(){
+  return _create(dP({}, 'a', {
+    get: function(){ return dP(this, 'a', {value: 7}).a; }
+  })).a != 7;
+}) ? function(it, key, D){
+  var protoDesc = gOPD(ObjectProto, key);
+  if(protoDesc)delete ObjectProto[key];
+  dP(it, key, D);
+  if(protoDesc && it !== ObjectProto)dP(ObjectProto, key, protoDesc);
+} : dP;
+
+var wrap = function(tag){
+  var sym = AllSymbols[tag] = _create($Symbol[PROTOTYPE]);
+  sym._k = tag;
+  return sym;
+};
+
+var isSymbol = USE_NATIVE && typeof $Symbol.iterator == 'symbol' ? function(it){
+  return typeof it == 'symbol';
+} : function(it){
+  return it instanceof $Symbol;
+};
+
+var $defineProperty = function defineProperty(it, key, D){
+  if(it === ObjectProto)$defineProperty(OPSymbols, key, D);
+  anObject(it);
+  key = toPrimitive(key, true);
+  anObject(D);
+  if(has(AllSymbols, key)){
+    if(!D.enumerable){
+      if(!has(it, HIDDEN))dP(it, HIDDEN, createDesc(1, {}));
+      it[HIDDEN][key] = true;
+    } else {
+      if(has(it, HIDDEN) && it[HIDDEN][key])it[HIDDEN][key] = false;
+      D = _create(D, {enumerable: createDesc(0, false)});
+    } return setSymbolDesc(it, key, D);
+  } return dP(it, key, D);
+};
+var $defineProperties = function defineProperties(it, P){
+  anObject(it);
+  var keys = enumKeys(P = toIObject(P))
+    , i    = 0
+    , l = keys.length
+    , key;
+  while(l > i)$defineProperty(it, key = keys[i++], P[key]);
+  return it;
+};
+var $create = function create(it, P){
+  return P === undefined ? _create(it) : $defineProperties(_create(it), P);
+};
+var $propertyIsEnumerable = function propertyIsEnumerable(key){
+  var E = isEnum.call(this, key = toPrimitive(key, true));
+  if(this === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key))return false;
+  return E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
+};
+var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key){
+  it  = toIObject(it);
+  key = toPrimitive(key, true);
+  if(it === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key))return;
+  var D = gOPD(it, key);
+  if(D && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key]))D.enumerable = true;
+  return D;
+};
+var $getOwnPropertyNames = function getOwnPropertyNames(it){
+  var names  = gOPN(toIObject(it))
+    , result = []
+    , i      = 0
+    , key;
+  while(names.length > i){
+    if(!has(AllSymbols, key = names[i++]) && key != HIDDEN && key != META)result.push(key);
+  } return result;
+};
+var $getOwnPropertySymbols = function getOwnPropertySymbols(it){
+  var IS_OP  = it === ObjectProto
+    , names  = gOPN(IS_OP ? OPSymbols : toIObject(it))
+    , result = []
+    , i      = 0
+    , key;
+  while(names.length > i){
+    if(has(AllSymbols, key = names[i++]) && (IS_OP ? has(ObjectProto, key) : true))result.push(AllSymbols[key]);
+  } return result;
+};
+
+// 19.4.1.1 Symbol([description])
+if(!USE_NATIVE){
+  $Symbol = function Symbol(){
+    if(this instanceof $Symbol)throw TypeError('Symbol is not a constructor!');
+    var tag = uid(arguments.length > 0 ? arguments[0] : undefined);
+    var $set = function(value){
+      if(this === ObjectProto)$set.call(OPSymbols, value);
+      if(has(this, HIDDEN) && has(this[HIDDEN], tag))this[HIDDEN][tag] = false;
+      setSymbolDesc(this, tag, createDesc(1, value));
+    };
+    if(DESCRIPTORS && setter)setSymbolDesc(ObjectProto, tag, {configurable: true, set: $set});
+    return wrap(tag);
+  };
+  redefine($Symbol[PROTOTYPE], 'toString', function toString(){
+    return this._k;
+  });
+
+  $GOPD.f = $getOwnPropertyDescriptor;
+  $DP.f   = $defineProperty;
+  __webpack_require__(78).f = gOPNExt.f = $getOwnPropertyNames;
+  __webpack_require__(75).f  = $propertyIsEnumerable;
+  __webpack_require__(74).f = $getOwnPropertySymbols;
+
+  if(DESCRIPTORS && !__webpack_require__(44)){
+    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
+  }
+
+  wksExt.f = function(name){
+    return wrap(wks(name));
+  }
+}
+
+$export($export.G + $export.W + $export.F * !USE_NATIVE, {Symbol: $Symbol});
+
+for(var symbols = (
+  // 19.4.2.2, 19.4.2.3, 19.4.2.4, 19.4.2.6, 19.4.2.8, 19.4.2.9, 19.4.2.10, 19.4.2.11, 19.4.2.12, 19.4.2.13, 19.4.2.14
+  'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'
+).split(','), i = 0; symbols.length > i; )wks(symbols[i++]);
+
+for(var symbols = $keys(wks.store), i = 0; symbols.length > i; )wksDefine(symbols[i++]);
+
+$export($export.S + $export.F * !USE_NATIVE, 'Symbol', {
+  // 19.4.2.1 Symbol.for(key)
+  'for': function(key){
+    return has(SymbolRegistry, key += '')
+      ? SymbolRegistry[key]
+      : SymbolRegistry[key] = $Symbol(key);
+  },
+  // 19.4.2.5 Symbol.keyFor(sym)
+  keyFor: function keyFor(key){
+    if(isSymbol(key))return keyOf(SymbolRegistry, key);
+    throw TypeError(key + ' is not a symbol!');
+  },
+  useSetter: function(){ setter = true; },
+  useSimple: function(){ setter = false; }
+});
+
+$export($export.S + $export.F * !USE_NATIVE, 'Object', {
+  // 19.1.2.2 Object.create(O [, Properties])
+  create: $create,
+  // 19.1.2.4 Object.defineProperty(O, P, Attributes)
+  defineProperty: $defineProperty,
+  // 19.1.2.3 Object.defineProperties(O, Properties)
+  defineProperties: $defineProperties,
+  // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
+  getOwnPropertyDescriptor: $getOwnPropertyDescriptor,
+  // 19.1.2.7 Object.getOwnPropertyNames(O)
+  getOwnPropertyNames: $getOwnPropertyNames,
+  // 19.1.2.8 Object.getOwnPropertySymbols(O)
+  getOwnPropertySymbols: $getOwnPropertySymbols
+});
+
+// 24.3.2 JSON.stringify(value [, replacer [, space]])
+$JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function(){
+  var S = $Symbol();
+  // MS Edge converts symbol values to JSON as {}
+  // WebKit converts symbol values to JSON as null
+  // V8 throws on boxed symbols
+  return _stringify([S]) != '[null]' || _stringify({a: S}) != '{}' || _stringify(Object(S)) != '{}';
+})), 'JSON', {
+  stringify: function stringify(it){
+    if(it === undefined || isSymbol(it))return; // IE8 returns string on undefined
+    var args = [it]
+      , i    = 1
+      , replacer, $replacer;
+    while(arguments.length > i)args.push(arguments[i++]);
+    replacer = args[1];
+    if(typeof replacer == 'function')$replacer = replacer;
+    if($replacer || !isArray(replacer))replacer = function(key, value){
+      if($replacer)value = $replacer.call(this, key, value);
+      if(!isSymbol(value))return value;
+    };
+    args[1] = replacer;
+    return _stringify.apply($JSON, args);
+  }
+});
+
+// 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
+$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(21)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+// 19.4.3.5 Symbol.prototype[@@toStringTag]
+setToStringTag($Symbol, 'Symbol');
+// 20.2.1.9 Math[@@toStringTag]
+setToStringTag(Math, 'Math', true);
+// 24.3.3 JSON[@@toStringTag]
+setToStringTag(global.JSON, 'JSON', true);
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var META     = __webpack_require__(15)('meta')
+  , isObject = __webpack_require__(24)
+  , has      = __webpack_require__(11)
+  , setDesc  = __webpack_require__(22).f
+  , id       = 0;
+var isExtensible = Object.isExtensible || function(){
+  return true;
+};
+var FREEZE = !__webpack_require__(27)(function(){
+  return isExtensible(Object.preventExtensions({}));
+});
+var setMeta = function(it){
+  setDesc(it, META, {value: {
+    i: 'O' + ++id, // object ID
+    w: {}          // weak collections IDs
+  }});
+};
+var fastKey = function(it, create){
+  // return primitive with prefix
+  if(!isObject(it))return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
+  if(!has(it, META)){
+    // can't set metadata to uncaught frozen object
+    if(!isExtensible(it))return 'F';
+    // not necessary to add metadata
+    if(!create)return 'E';
+    // add missing metadata
+    setMeta(it);
+  // return object ID
+  } return it[META].i;
+};
+var getWeak = function(it, create){
+  if(!has(it, META)){
+    // can't set metadata to uncaught frozen object
+    if(!isExtensible(it))return true;
+    // not necessary to add metadata
+    if(!create)return false;
+    // add missing metadata
+    setMeta(it);
+  // return hash weak collections IDs
+  } return it[META].w;
+};
+// add metadata on freeze-family methods calling
+var onFreeze = function(it){
+  if(FREEZE && meta.NEED && isExtensible(it) && !has(it, META))setMeta(it);
+  return it;
+};
+var meta = module.exports = {
+  KEY:      META,
+  NEED:     false,
+  fastKey:  fastKey,
+  getWeak:  getWeak,
+  onFreeze: onFreeze
+};
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global         = __webpack_require__(14)
+  , core           = __webpack_require__(18)
+  , LIBRARY        = __webpack_require__(44)
+  , wksExt         = __webpack_require__(66)
+  , defineProperty = __webpack_require__(22).f;
+module.exports = function(name){
+  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
+  if(name.charAt(0) != '_' && !(name in $Symbol))defineProperty($Symbol, name, {value: wksExt.f(name)});
+};
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getKeys   = __webpack_require__(50)
+  , toIObject = __webpack_require__(52);
+module.exports = function(object, el){
+  var O      = toIObject(object)
+    , keys   = getKeys(O)
+    , length = keys.length
+    , index  = 0
+    , key;
+  while(length > index)if(O[key = keys[index++]] === el)return key;
+};
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// all enumerable object keys, includes symbols
+var getKeys = __webpack_require__(50)
+  , gOPS    = __webpack_require__(74)
+  , pIE     = __webpack_require__(75);
+module.exports = function(it){
+  var result     = getKeys(it)
+    , getSymbols = gOPS.f;
+  if(getSymbols){
+    var symbols = getSymbols(it)
+      , isEnum  = pIE.f
+      , i       = 0
+      , key;
+    while(symbols.length > i)if(isEnum.call(it, key = symbols[i++]))result.push(key);
+  } return result;
+};
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports) {
+
+exports.f = Object.getOwnPropertySymbols;
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports) {
+
+exports.f = {}.propertyIsEnumerable;
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.2.2 IsArray(argument)
+var cof = __webpack_require__(54);
+module.exports = Array.isArray || function isArray(arg){
+  return cof(arg) == 'Array';
+};
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
+var toIObject = __webpack_require__(52)
+  , gOPN      = __webpack_require__(78).f
+  , toString  = {}.toString;
+
+var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
+  ? Object.getOwnPropertyNames(window) : [];
+
+var getWindowNames = function(it){
+  try {
+    return gOPN(it);
+  } catch(e){
+    return windowNames.slice();
+  }
+};
+
+module.exports.f = function getOwnPropertyNames(it){
+  return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
+};
+
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
+var $keys      = __webpack_require__(51)
+  , hiddenKeys = __webpack_require__(58).concat('length', 'prototype');
+
+exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
+  return $keys(O, hiddenKeys);
+};
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pIE            = __webpack_require__(75)
+  , createDesc     = __webpack_require__(30)
+  , toIObject      = __webpack_require__(52)
+  , toPrimitive    = __webpack_require__(29)
+  , has            = __webpack_require__(11)
+  , IE8_DOM_DEFINE = __webpack_require__(25)
+  , gOPD           = Object.getOwnPropertyDescriptor;
+
+exports.f = __webpack_require__(26) ? gOPD : function getOwnPropertyDescriptor(O, P){
+  O = toIObject(O);
+  P = toPrimitive(P, true);
+  if(IE8_DOM_DEFINE)try {
+    return gOPD(O, P);
+  } catch(e){ /* empty */ }
+  if(has(O, P))return createDesc(!pIE.f.call(O, P), O[P]);
+};
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(71)('asyncIterator');
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(71)('observable');
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _setPrototypeOf = __webpack_require__(84);
+
+var _setPrototypeOf2 = _interopRequireDefault(_setPrototypeOf);
+
+var _create = __webpack_require__(88);
+
+var _create2 = _interopRequireDefault(_create);
+
+var _typeof2 = __webpack_require__(37);
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : (0, _typeof3.default)(superClass)));
+  }
+
+  subClass.prototype = (0, _create2.default)(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf2.default ? (0, _setPrototypeOf2.default)(subClass, superClass) : subClass.__proto__ = superClass;
+};
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(85), __esModule: true };
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(86);
+module.exports = __webpack_require__(18).Object.setPrototypeOf;
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.3.19 Object.setPrototypeOf(O, proto)
+var $export = __webpack_require__(17);
+$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(87).set});
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Works with __proto__ only. Old v8 can't work with null proto objects.
+/* eslint-disable no-proto */
+var isObject = __webpack_require__(24)
+  , anObject = __webpack_require__(23);
+var check = function(O, proto){
+  anObject(O);
+  if(!isObject(proto) && proto !== null)throw TypeError(proto + ": can't set as prototype!");
+};
+module.exports = {
+  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
+    function(test, buggy, set){
+      try {
+        set = __webpack_require__(19)(Function.call, __webpack_require__(79).f(Object.prototype, '__proto__').set, 2);
+        set(test, []);
+        buggy = !(test instanceof Array);
+      } catch(e){ buggy = true; }
+      return function setPrototypeOf(O, proto){
+        check(O, proto);
+        if(buggy)O.__proto__ = proto;
+        else set(O, proto);
+        return O;
+      };
+    }({}, false) : undefined),
+  check: check
+};
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(89), __esModule: true };
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(90);
+var $Object = __webpack_require__(18).Object;
+module.exports = function create(P, D){
+  return $Object.create(P, D);
+};
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(17)
+// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+$export($export.S, 'Object', {create: __webpack_require__(48)});
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = __webpack_require__(5);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(31);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(32);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(36);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(83);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _pager_tempdata = __webpack_require__(92);
+
+var _pager = __webpack_require__(93);
+
+var _pager2 = _interopRequireDefault(_pager);
+
+var _pagebtns = __webpack_require__(94);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var RkPager1_jumpToPage = function (_React$Component) {
+  (0, _inherits3.default)(RkPager1_jumpToPage, _React$Component);
+
+  function RkPager1_jumpToPage(props) {
+    (0, _classCallCheck3.default)(this, RkPager1_jumpToPage);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (RkPager1_jumpToPage.__proto__ || (0, _getPrototypeOf2.default)(RkPager1_jumpToPage)).call(this, props));
+
+    _this.state = {
+      value: ""
+    };
+
+    // binders
+    _this.handleChange = _this.handleChange.bind(_this);
+    _this.keyPress = _this.keyPress.bind(_this);
+    return _this;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager1_jumpToPage, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.setState({
+        value: event.target.value
+      });
+    }
+  }, {
+    key: "keyPress",
+    value: function keyPress(event) {
+      if (event.keyCode == 13) {
+        this.setState({
+          value: event.target.value
+        });
+
+        this.props.pr_val_showItems(Number(this.state.value));
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return React.createElement(
+        "aside",
+        { className: "jspager1_jumptopageholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager1_jump" },
+          "Jump to page\xA0"
+        ),
+        React.createElement("input", { type: "tel", name: "jspager1_jump",
+          className: " jspager1_jump", placeholder: "", tabindex: "0",
+          value: this.state.value,
+          onChange: this.handleChange,
+          onKeyDown: this.keyPress }),
+        React.createElement(
+          "button",
+          { className: "btn", "data-message": "jump to page",
+            onClick: function onClick() {
+              _this2.props.pr_val_showItems(Number(_this2.state.value));
+            } },
+          "Go"
+        )
+      );
+    }
+  }]);
+  return RkPager1_jumpToPage;
+}(React.Component);
+
+var RkPager1_itemsPerPage = function (_React$Component2) {
+  (0, _inherits3.default)(RkPager1_itemsPerPage, _React$Component2);
+
+  function RkPager1_itemsPerPage(props) {
+    (0, _classCallCheck3.default)(this, RkPager1_itemsPerPage);
+
+    var _this3 = (0, _possibleConstructorReturn3.default)(this, (RkPager1_itemsPerPage.__proto__ || (0, _getPrototypeOf2.default)(RkPager1_itemsPerPage)).call(this, props));
+
+    _this3.state = {};
+
+    // binders
+    _this3.handleChange = _this3.handleChange.bind(_this3);
+
+    return _this3;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager1_itemsPerPage, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.pr_val_setPerPage(event.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "aside",
+        { className: "jspager1_perpageholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager1_perpage" },
+          "perPage:\xA0"
+        ),
+        React.createElement(
+          "select",
+          { name: "jspager1_perpage", className: "jspager1_perpage",
+            tabindex: "0", onChange: this.handleChange,
+            value: this.props.pr_perPage },
+          this.props.pr_perPageItems.map(function (i) {
+            return React.createElement(
+              "option",
+              { key: i, value: i },
+              i
+            );
+          })
+        )
+      );
+    }
+  }]);
+  return RkPager1_itemsPerPage;
+}(React.Component);
+
+var RkPager1_btnFirst = function (_React$Component3) {
+  (0, _inherits3.default)(RkPager1_btnFirst, _React$Component3);
+
+  function RkPager1_btnFirst(props) {
+    (0, _classCallCheck3.default)(this, RkPager1_btnFirst);
+
+    var _this4 = (0, _possibleConstructorReturn3.default)(this, (RkPager1_btnFirst.__proto__ || (0, _getPrototypeOf2.default)(RkPager1_btnFirst)).call(this, props));
+
+    _this4.state = {};
+
+    // binders
+
+    return _this4;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager1_btnFirst, [{
+    key: "render",
+    value: function render() {
+      var _this5 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_first", tabindex: "0",
+          onClick: function onClick() {
+            _this5.props.pr_val_showItems(1);
+          } },
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+        ),
+        React.createElement(
+          "span",
+          null,
+          "First"
+        )
+      );
+    }
+  }]);
+  return RkPager1_btnFirst;
+}(React.Component);
+
+var RkPager1_btnPrev = function (_React$Component4) {
+  (0, _inherits3.default)(RkPager1_btnPrev, _React$Component4);
+
+  function RkPager1_btnPrev(props) {
+    (0, _classCallCheck3.default)(this, RkPager1_btnPrev);
+
+    var _this6 = (0, _possibleConstructorReturn3.default)(this, (RkPager1_btnPrev.__proto__ || (0, _getPrototypeOf2.default)(RkPager1_btnPrev)).call(this, props));
+
+    _this6.state = {};
+
+    // binders
+
+    return _this6;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager1_btnPrev, [{
+    key: "render",
+    value: function render() {
+      var _this7 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_prev", tabindex: "0",
+          onClick: function onClick() {
+            _this7.props.pr_val_flip();
+          } },
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+        ),
+        React.createElement(
+          "span",
+          null,
+          "Prev"
+        )
+      );
+    }
+  }]);
+  return RkPager1_btnPrev;
+}(React.Component);
+
+var RkPager1_btnNext = function (_React$Component5) {
+  (0, _inherits3.default)(RkPager1_btnNext, _React$Component5);
+
+  function RkPager1_btnNext(props) {
+    (0, _classCallCheck3.default)(this, RkPager1_btnNext);
+
+    var _this8 = (0, _possibleConstructorReturn3.default)(this, (RkPager1_btnNext.__proto__ || (0, _getPrototypeOf2.default)(RkPager1_btnNext)).call(this, props));
+
+    _this8.state = {};
+
+    // binders
+
+    return _this8;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager1_btnNext, [{
+    key: "render",
+    value: function render() {
+      var _this9 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_next", tabindex: "0",
+          onClick: function onClick() {
+            _this9.props.pr_val_flip("next");
+          } },
+        React.createElement(
+          "span",
+          null,
+          "Next"
+        ),
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" })
+        )
+      );
+    }
+  }]);
+  return RkPager1_btnNext;
+}(React.Component);
+
+var RkPager1_btnLast = function (_React$Component6) {
+  (0, _inherits3.default)(RkPager1_btnLast, _React$Component6);
+
+  function RkPager1_btnLast(props) {
+    (0, _classCallCheck3.default)(this, RkPager1_btnLast);
+
+    var _this10 = (0, _possibleConstructorReturn3.default)(this, (RkPager1_btnLast.__proto__ || (0, _getPrototypeOf2.default)(RkPager1_btnLast)).call(this, props));
+
+    _this10.state = {};
+
+    // binders
+
+    return _this10;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager1_btnLast, [{
+    key: "render",
+    value: function render() {
+      var _this11 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_last", tabindex: "0",
+          onClick: function onClick() {
+            _this11.props.pr_val_showItems(_this11.props.pr_totalPages);
+          } },
+        React.createElement(
+          "span",
+          null,
+          "Last"
+        ),
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" })
+        )
+      );
+    }
+  }]);
+  return RkPager1_btnLast;
+}(React.Component);
+
+var RkPager1_pageBtnItems = function (_React$Component7) {
+  (0, _inherits3.default)(RkPager1_pageBtnItems, _React$Component7);
+
+  function RkPager1_pageBtnItems(props) {
+    (0, _classCallCheck3.default)(this, RkPager1_pageBtnItems);
+
+    var _this12 = (0, _possibleConstructorReturn3.default)(this, (RkPager1_pageBtnItems.__proto__ || (0, _getPrototypeOf2.default)(RkPager1_pageBtnItems)).call(this, props));
+
+    _this12.state = {};
+
+    // binders
+
+    return _this12;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager1_pageBtnItems, [{
+    key: "render",
+    value: function render() {
+      var _this13 = this;
+
+      if (this.props.pr_i === this.props.pr_currentPage) {
+        return React.createElement(
+          "a",
+          { className: "jspager1_pagebtn \r jspager1_pagebtn--active", tabindex: "0",
+            onClick: function onClick() {
+              _this13.props.pr_val_showItems(_this13.props.pr_i);
+            } },
+          this.props.pr_i
+        );
+      } else {
+        return React.createElement(
+          "a",
+          { className: "jspager1_pagebtn", tabindex: "0",
+            onClick: function onClick() {
+              _this13.props.pr_val_showItems(_this13.props.pr_i);
+            } },
+          this.props.pr_i
+        );
+      }
+    }
+  }]);
+  return RkPager1_pageBtnItems;
+}(React.Component);
+
+var RkPager1_pageBtns = function (_React$Component8) {
+  (0, _inherits3.default)(RkPager1_pageBtns, _React$Component8);
+
+  function RkPager1_pageBtns(props) {
+    (0, _classCallCheck3.default)(this, RkPager1_pageBtns);
+
+    var _this14 = (0, _possibleConstructorReturn3.default)(this, (RkPager1_pageBtns.__proto__ || (0, _getPrototypeOf2.default)(RkPager1_pageBtns)).call(this, props));
+
+    _this14.state = {};
+
+    // binders
+
+    return _this14;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager1_pageBtns, [{
+    key: "render",
+    value: function render() {
+      var _this15 = this;
+
+      return React.createElement(
+        "aside",
+        { className: "jspager1_pagebtnholder",
+          "aria-atomic": "true", "aria-live": "polite",
+          "aria-relevant": "additions" },
+        this.props.pr_buttonSet.map(function (i) {
+          return React.createElement(RkPager1_pageBtnItems, {
+            pr_i: i,
+            pr_currentPage: _this15.props.pr_currentPage,
+            pr_val_showItems: _this15.props.pr_val_showItems });
+        })
+      );
+    }
+  }]);
+  return RkPager1_pageBtns;
+}(React.Component);
+
+var RkPager1_pageSelector = function (_React$Component9) {
+  (0, _inherits3.default)(RkPager1_pageSelector, _React$Component9);
+
+  function RkPager1_pageSelector(props) {
+    (0, _classCallCheck3.default)(this, RkPager1_pageSelector);
+
+    var _this16 = (0, _possibleConstructorReturn3.default)(this, (RkPager1_pageSelector.__proto__ || (0, _getPrototypeOf2.default)(RkPager1_pageSelector)).call(this, props));
+
+    _this16.state = {};
+
+    // binders
+    _this16.handleChange = _this16.handleChange.bind(_this16);
+
+    return _this16;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager1_pageSelector, [{
+    key: "createOptions",
+    value: function createOptions() {
+      var _this17 = this;
+
+      var items = [];
+
+      var _loop = function _loop(i) {
+        items.push(React.createElement(
+          "option",
+          { onClick: function onClick() {
+              _this17.props.pr_val_showItems(i);
+            }, key: i, value: i },
+          i
+        ));
+      };
+
+      for (var i = 1; i <= this.props.pr_totalPages; i++) {
+        _loop(i);
+      }
+      return items;
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.pr_val_showItems(event.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "aside",
+        { className: "jspager1_totalpagesholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager1_select" },
+          "Page:"
+        ),
+        React.createElement(
+          "p",
+          null,
+          this.props.pr_currentPage
+        ),
+        React.createElement(
+          "select",
+          { className: "jspager1_select",
+            name: "jspager1_select", value: this.props.pr_currentPage,
+            onChange: this.handleChange, tabindex: "0" },
+          this.createOptions()
+        ),
+        React.createElement(
+          "p",
+          null,
+          "of ",
+          this.props.pr_totalPages
+        )
+      );
+    }
+  }]);
+  return RkPager1_pageSelector;
+}(React.Component);
+
+var RkPager1_itemList = function (_React$Component10) {
+  (0, _inherits3.default)(RkPager1_itemList, _React$Component10);
+
+  function RkPager1_itemList(props) {
+    (0, _classCallCheck3.default)(this, RkPager1_itemList);
+
+    var _this18 = (0, _possibleConstructorReturn3.default)(this, (RkPager1_itemList.__proto__ || (0, _getPrototypeOf2.default)(RkPager1_itemList)).call(this, props));
+
+    _this18.state = {};
+
+    // binders
+
+    return _this18;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager1_itemList, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "row jspager1_items",
+          "aria-atomic": "true", "aria-live": "assertive", "aria-relevant": "all" },
+        this.props.pr_list.map(function (i) {
+          return React.createElement(
+            "span",
+            null,
+            i
+          );
+        })
+      );
+    }
+  }]);
+  return RkPager1_itemList;
+}(React.Component);
+
+var RkPager1 = function (_React$Component11) {
+  (0, _inherits3.default)(RkPager1, _React$Component11);
+
+  function RkPager1(props) {
+    (0, _classCallCheck3.default)(this, RkPager1);
+
+    var _this19 = (0, _possibleConstructorReturn3.default)(this, (RkPager1.__proto__ || (0, _getPrototypeOf2.default)(RkPager1)).call(this, props));
+
+    _this19.items = []; // raw items
+    _this19.pg = null;
+
+    _this19.state = {
+      itemList: [], // paginated items
+
+      perPage: 10,
+      perPageItems: [10, 20, 50, 100],
+      totalPages: "",
+      currentPage: "",
+
+      buttonSet: []
+    };
+
+    // binders
+    _this19.showItems = _this19.showItems.bind(_this19);
+    _this19.setPerPage = _this19.setPerPage.bind(_this19);
+    _this19.flip = _this19.flip.bind(_this19);
+
+    return _this19;
+  }
+  // hooks
+
+
+  (0, _createClass3.default)(RkPager1, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.items = _pager_tempdata.tempData;
+      this.activatePager();
+    }
+
+    // methods
+
+  }, {
+    key: "activatePager",
+    value: function activatePager() {
+      var _this20 = this;
+
+      this.pg = null;
+      this.pg = new _pager2.default({
+        perPage: this.state.perPage,
+        data: this.items
+      });
+
+      this.setState(function (prevState) {
+        return {
+          totalPages: _this20.pg.getTotalPages()
+        };
+      });
+
+      this.setPageBtns();
+      this.showItems(1);
+    }
+  }, {
+    key: "showItems",
+    value: function showItems(num) {
+      var _this21 = this;
+
+      this.setState(function (prevState) {
+        return {
+          itemList: _this21.pg.page(num),
+          currentPage: _this21.pg.currentPage
+        };
+      });
+
+      this.changePageBtns();
+    }
+  }, {
+    key: "flip",
+    value: function flip(direction) {
+      if (direction === "next") {
+        this.showItems(this.pg.next());
+      } else {
+        this.showItems(this.pg.prev());
+      }
+    }
+  }, {
+    key: "setPerPage",
+    value: function setPerPage(perPage) {
+      this.state.perPage = perPage;
+      this.activatePager();
+    }
+  }, {
+    key: "setPageBtns",
+    value: function setPageBtns() {
+      this.temp = [];
+      for (var i = 0, l = this.pg.getTotalPages(); i < l; i++) {
+        this.temp.push((0, _pagebtns.pageBtns)(i, l));
+      }
+    }
+  }, {
+    key: "changePageBtns",
+    value: function changePageBtns() {
+      var _this22 = this;
+
+      this.setState(function (prevState) {
+        return {
+          buttonSet: _this22.temp[_this22.pg.currentPage - 1]
+        };
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "jspager1_holder" },
+        React.createElement(RkPager1_itemList, {
+          pr_list: this.state.itemList }),
+        React.createElement(
+          "nav",
+          { className: "jspager1" },
+          React.createElement(RkPager1_pageSelector, {
+            pr_totalPages: this.state.totalPages,
+            pr_currentPage: this.state.currentPage,
+            pr_val_showItems: this.showItems }),
+          React.createElement(
+            "aside",
+            { className: "jspager1_prevnextholder" },
+            React.createElement(RkPager1_btnFirst, {
+              pr_val_showItems: this.showItems }),
+            React.createElement(RkPager1_btnPrev, {
+              pr_val_flip: this.flip }),
+            React.createElement(RkPager1_btnNext, {
+              pr_val_flip: this.flip }),
+            React.createElement(RkPager1_btnLast, {
+              pr_totalPages: this.state.totalPages,
+              pr_val_showItems: this.showItems })
+          ),
+          React.createElement(RkPager1_pageBtns, {
+            pr_buttonSet: this.state.buttonSet,
+            pr_currentPage: this.state.currentPage,
+            pr_val_showItems: this.showItems }),
+          React.createElement(RkPager1_jumpToPage, {
+            pr_val_showItems: this.showItems }),
+          React.createElement(RkPager1_itemsPerPage, {
+            pr_perPage: this.state.perPage,
+            pr_perPageItems: this.state.perPageItems,
+            pr_val_setPerPage: this.setPerPage })
+        )
+      );
+    }
+  }]);
+  return RkPager1;
+}(React.Component);
+
+exports.default = RkPager1;
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var tempData = [];
+for (var i = 0, l = 162; i < l; i++) {
+  tempData.push(i);
+}
+
+exports.tempData = tempData;
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Pager;
+// pagination helper
+// ======================================================/
+
+function Pager(opts) {
+  this.data = opts.data;
+  this.perPage = opts.perPage;
+  this.currentPage = 1;
+}
+
+Pager.prototype = {
+  getTotalPages: function getTotalPages() {
+    // ret num
+    return Math.ceil(this.data.length / this.perPage);
+  },
+  getCurrentOffset: function getCurrentOffset() {
+    // ret num
+    return (this.currentPage - 1) * this.perPage;
+  },
+  page: function page(num) {
+    if (this.isValidPage(num)) {
+      this.currentPage = num;
+
+      var start = this.getCurrentOffset();
+      // let end = start + this.perPage;
+      var end = start + Number(this.perPage);
+
+      return this.data.slice(start, end);
+    } else {
+      // default page
+      this.currentPage = 1;
+      return this.data.slice(0, this.perPage);
+    }
+  },
+  hasNext: function hasNext() {
+    // ret boolean
+    return this.currentPage < this.getTotalPages();
+  },
+  hasPrev: function hasPrev() {
+    // ret boolean
+    return this.currentPage !== 1;
+  },
+  prev: function prev() {
+    // ret num
+    if (this.hasPrev()) {
+      this.currentPage = this.currentPage - 1;
+    } else {
+      this.currentPage = this.getTotalPages();
+    }
+    return this.currentPage;
+  },
+  next: function next() {
+    // ret num
+    if (this.hasNext()) {
+      this.currentPage++;
+    } else {
+      this.currentPage = 1;
+    }
+    // console.log(this.currentPage);
+    return this.currentPage;
+  },
+  isValidPage: function isValidPage(num) {
+    // ret boolean
+    return num > 0 && num <= this.getTotalPages();
+  }
+};
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.pageBtns = undefined;
+
+var _getIterator2 = __webpack_require__(95);
+
+var _getIterator3 = _interopRequireDefault(_getIterator2);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+/**
+ *  Generates paginator page buttons
+ *
+ *  Credits:
+ *  https://gist.github.com/kottenator/9d936eb3e4e3c3e02598
+ *  
+ *  ...returns an array of [1] if there is only 1 page. 
+ *  - anotherstarburst
+ *  
+ */
+
+var pageBtns = function pageBtns(currentPage, nrOfPages) {
+  var delta = 2,
+      range = [],
+      rangeWithDots = [],
+      l;
+
+  range.push(1);
+
+  if (nrOfPages <= 1) {
+    return range;
+  }
+
+  for (var i = currentPage - delta; i <= currentPage + delta; i++) {
+    if (i < nrOfPages && i > 1) {
+      range.push(i);
+    }
+  }
+  range.push(nrOfPages);
+
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = (0, _getIterator3.default)(range), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var _i = _step.value;
+
+      if (l) {
+        if (_i - l === 2) {
+          rangeWithDots.push(l + 1);
+        } else if (_i - l !== 1) {
+          rangeWithDots.push('...');
+        }
+      }
+      rangeWithDots.push(_i);
+      l = _i;
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  return rangeWithDots;
+  // return range;
+};
+
+exports.pageBtns = pageBtns;
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(96), __esModule: true };
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(62);
+__webpack_require__(40);
+module.exports = __webpack_require__(97);
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(23)
+  , get      = __webpack_require__(98);
+module.exports = __webpack_require__(18).getIterator = function(it){
+  var iterFn = get(it);
+  if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
+  return anObject(iterFn.call(it));
+};
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var classof   = __webpack_require__(99)
+  , ITERATOR  = __webpack_require__(61)('iterator')
+  , Iterators = __webpack_require__(46);
+module.exports = __webpack_require__(18).getIteratorMethod = function(it){
+  if(it != undefined)return it[ITERATOR]
+    || it['@@iterator']
+    || Iterators[classof(it)];
+};
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// getting tag from 19.1.3.6 Object.prototype.toString()
+var cof = __webpack_require__(54)
+  , TAG = __webpack_require__(61)('toStringTag')
+  // ES3 wrong here
+  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
+
+// fallback for IE11 Script Access Denied error
+var tryGet = function(it, key){
+  try {
+    return it[key];
+  } catch(e){ /* empty */ }
+};
+
+module.exports = function(it){
+  var O, T, B;
+  return it === undefined ? 'Undefined' : it === null ? 'Null'
+    // @@toStringTag case
+    : typeof (T = tryGet(O = Object(it), TAG)) == 'string' ? T
+    // builtinTag case
+    : ARG ? cof(O)
+    // ES3 arguments fallback
+    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
+};
+
+/***/ }),
+/* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = __webpack_require__(5);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(31);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(32);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(36);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(83);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _pager_tempdata = __webpack_require__(92);
+
+var _pager = __webpack_require__(93);
+
+var _pager2 = _interopRequireDefault(_pager);
+
+var _pagebtns = __webpack_require__(94);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var RkPager2_itemsPerPage = function (_React$Component) {
+  (0, _inherits3.default)(RkPager2_itemsPerPage, _React$Component);
+
+  function RkPager2_itemsPerPage(props) {
+    (0, _classCallCheck3.default)(this, RkPager2_itemsPerPage);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (RkPager2_itemsPerPage.__proto__ || (0, _getPrototypeOf2.default)(RkPager2_itemsPerPage)).call(this, props));
+
+    _this.state = {};
+
+    // binders
+    _this.handleChange = _this.handleChange.bind(_this);
+
+    return _this;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager2_itemsPerPage, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.pr_val_setPerPage(event.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "aside",
+        { className: "jspager2_perpageholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager2_perpage" },
+          "perPage:\xA0"
+        ),
+        React.createElement(
+          "select",
+          { name: "jspager2_perpage", className: "jspager2_perpage",
+            tabindex: "0", onChange: this.handleChange,
+            value: this.props.pr_perPage },
+          this.props.pr_perPageItems.map(function (i) {
+            return React.createElement(
+              "option",
+              { key: i, value: i },
+              i
+            );
+          })
+        )
+      );
+    }
+  }]);
+  return RkPager2_itemsPerPage;
+}(React.Component);
+
+var RkPager2_btnFirst = function (_React$Component2) {
+  (0, _inherits3.default)(RkPager2_btnFirst, _React$Component2);
+
+  function RkPager2_btnFirst(props) {
+    (0, _classCallCheck3.default)(this, RkPager2_btnFirst);
+
+    var _this2 = (0, _possibleConstructorReturn3.default)(this, (RkPager2_btnFirst.__proto__ || (0, _getPrototypeOf2.default)(RkPager2_btnFirst)).call(this, props));
+
+    _this2.state = {};
+
+    // binders
+
+    return _this2;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager2_btnFirst, [{
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_first", tabindex: "0",
+          onClick: function onClick() {
+            _this3.props.pr_val_showItems(1);
+          } },
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+        ),
+        React.createElement(
+          "span",
+          null,
+          "First"
+        )
+      );
+    }
+  }]);
+  return RkPager2_btnFirst;
+}(React.Component);
+
+var RkPager2_btnPrev = function (_React$Component3) {
+  (0, _inherits3.default)(RkPager2_btnPrev, _React$Component3);
+
+  function RkPager2_btnPrev(props) {
+    (0, _classCallCheck3.default)(this, RkPager2_btnPrev);
+
+    var _this4 = (0, _possibleConstructorReturn3.default)(this, (RkPager2_btnPrev.__proto__ || (0, _getPrototypeOf2.default)(RkPager2_btnPrev)).call(this, props));
+
+    _this4.state = {};
+
+    // binders
+
+    return _this4;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager2_btnPrev, [{
+    key: "render",
+    value: function render() {
+      var _this5 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_prev", tabindex: "0",
+          onClick: function onClick() {
+            _this5.props.pr_val_flip();
+          } },
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+        ),
+        React.createElement(
+          "span",
+          null,
+          "Prev"
+        )
+      );
+    }
+  }]);
+  return RkPager2_btnPrev;
+}(React.Component);
+
+var RkPager2_btnNext = function (_React$Component4) {
+  (0, _inherits3.default)(RkPager2_btnNext, _React$Component4);
+
+  function RkPager2_btnNext(props) {
+    (0, _classCallCheck3.default)(this, RkPager2_btnNext);
+
+    var _this6 = (0, _possibleConstructorReturn3.default)(this, (RkPager2_btnNext.__proto__ || (0, _getPrototypeOf2.default)(RkPager2_btnNext)).call(this, props));
+
+    _this6.state = {};
+
+    // binders
+
+    return _this6;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager2_btnNext, [{
+    key: "render",
+    value: function render() {
+      var _this7 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_next", tabindex: "0",
+          onClick: function onClick() {
+            _this7.props.pr_val_flip("next");
+          } },
+        React.createElement(
+          "span",
+          null,
+          "Next"
+        ),
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" })
+        )
+      );
+    }
+  }]);
+  return RkPager2_btnNext;
+}(React.Component);
+
+var RkPager2_btnLast = function (_React$Component5) {
+  (0, _inherits3.default)(RkPager2_btnLast, _React$Component5);
+
+  function RkPager2_btnLast(props) {
+    (0, _classCallCheck3.default)(this, RkPager2_btnLast);
+
+    var _this8 = (0, _possibleConstructorReturn3.default)(this, (RkPager2_btnLast.__proto__ || (0, _getPrototypeOf2.default)(RkPager2_btnLast)).call(this, props));
+
+    _this8.state = {};
+
+    // binders
+
+    return _this8;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager2_btnLast, [{
+    key: "render",
+    value: function render() {
+      var _this9 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_last", tabindex: "0",
+          onClick: function onClick() {
+            _this9.props.pr_val_showItems(_this9.props.pr_totalPages);
+          } },
+        React.createElement(
+          "span",
+          null,
+          "Last"
+        ),
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" })
+        )
+      );
+    }
+  }]);
+  return RkPager2_btnLast;
+}(React.Component);
+
+var RkPager2_pageBtnItems = function (_React$Component6) {
+  (0, _inherits3.default)(RkPager2_pageBtnItems, _React$Component6);
+
+  function RkPager2_pageBtnItems(props) {
+    (0, _classCallCheck3.default)(this, RkPager2_pageBtnItems);
+
+    var _this10 = (0, _possibleConstructorReturn3.default)(this, (RkPager2_pageBtnItems.__proto__ || (0, _getPrototypeOf2.default)(RkPager2_pageBtnItems)).call(this, props));
+
+    _this10.state = {};
+
+    // binders
+
+    return _this10;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager2_pageBtnItems, [{
+    key: "render",
+    value: function render() {
+      var _this11 = this;
+
+      if (this.props.pr_i === this.props.pr_currentPage) {
+        return React.createElement(
+          "a",
+          { className: "jspager2_pagebtn \r jspager2_pagebtn--active", tabindex: "0",
+            onClick: function onClick() {
+              _this11.props.pr_val_showItems(_this11.props.pr_i);
+            } },
+          this.props.pr_i
+        );
+      } else {
+        return React.createElement(
+          "a",
+          { className: "jspager2_pagebtn", tabindex: "0",
+            onClick: function onClick() {
+              _this11.props.pr_val_showItems(_this11.props.pr_i);
+            } },
+          this.props.pr_i
+        );
+      }
+    }
+  }]);
+  return RkPager2_pageBtnItems;
+}(React.Component);
+
+var RkPager2_pageBtns = function (_React$Component7) {
+  (0, _inherits3.default)(RkPager2_pageBtns, _React$Component7);
+
+  function RkPager2_pageBtns(props) {
+    (0, _classCallCheck3.default)(this, RkPager2_pageBtns);
+
+    var _this12 = (0, _possibleConstructorReturn3.default)(this, (RkPager2_pageBtns.__proto__ || (0, _getPrototypeOf2.default)(RkPager2_pageBtns)).call(this, props));
+
+    _this12.state = {};
+
+    // binders
+
+    return _this12;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager2_pageBtns, [{
+    key: "render",
+    value: function render() {
+      var _this13 = this;
+
+      return React.createElement(
+        "aside",
+        { className: "jspager2_pagebtnholder",
+          "aria-atomic": "true", "aria-live": "polite",
+          "aria-relevant": "additions" },
+        this.props.pr_buttonSet.map(function (i) {
+          return React.createElement(RkPager2_pageBtnItems, {
+            pr_i: i,
+            pr_currentPage: _this13.props.pr_currentPage,
+            pr_val_showItems: _this13.props.pr_val_showItems });
+        })
+      );
+    }
+  }]);
+  return RkPager2_pageBtns;
+}(React.Component);
+
+var RkPager2_pageSelector = function (_React$Component8) {
+  (0, _inherits3.default)(RkPager2_pageSelector, _React$Component8);
+
+  function RkPager2_pageSelector(props) {
+    (0, _classCallCheck3.default)(this, RkPager2_pageSelector);
+
+    var _this14 = (0, _possibleConstructorReturn3.default)(this, (RkPager2_pageSelector.__proto__ || (0, _getPrototypeOf2.default)(RkPager2_pageSelector)).call(this, props));
+
+    _this14.state = {};
+
+    // binders
+    _this14.handleChange = _this14.handleChange.bind(_this14);
+
+    return _this14;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager2_pageSelector, [{
+    key: "createOptions",
+    value: function createOptions() {
+      var _this15 = this;
+
+      var items = [];
+
+      var _loop = function _loop(i) {
+        items.push(React.createElement(
+          "option",
+          { onClick: function onClick() {
+              _this15.props.pr_val_showItems(i);
+            }, key: i, value: i },
+          i
+        ));
+      };
+
+      for (var i = 1; i <= this.props.pr_totalPages; i++) {
+        _loop(i);
+      }
+      return items;
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.pr_val_showItems(event.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "aside",
+        { className: "jspager2_totalpagesholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager2_select" },
+          "Page:"
+        ),
+        React.createElement(
+          "p",
+          null,
+          this.props.pr_currentPage
+        ),
+        React.createElement(
+          "select",
+          { className: "jspager2_select",
+            name: "jspager2_select", value: this.props.pr_currentPage,
+            onChange: this.handleChange, tabindex: "0" },
+          this.createOptions()
+        ),
+        React.createElement(
+          "p",
+          null,
+          "of ",
+          this.props.pr_totalPages
+        )
+      );
+    }
+  }]);
+  return RkPager2_pageSelector;
+}(React.Component);
+
+var RkPager2_itemList = function (_React$Component9) {
+  (0, _inherits3.default)(RkPager2_itemList, _React$Component9);
+
+  function RkPager2_itemList(props) {
+    (0, _classCallCheck3.default)(this, RkPager2_itemList);
+
+    var _this16 = (0, _possibleConstructorReturn3.default)(this, (RkPager2_itemList.__proto__ || (0, _getPrototypeOf2.default)(RkPager2_itemList)).call(this, props));
+
+    _this16.state = {};
+
+    // binders
+
+    return _this16;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager2_itemList, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "row jspager2_items",
+          "aria-atomic": "true", "aria-live": "assertive", "aria-relevant": "all" },
+        this.props.pr_list.map(function (i) {
+          return React.createElement(
+            "span",
+            null,
+            i
+          );
+        })
+      );
+    }
+  }]);
+  return RkPager2_itemList;
+}(React.Component);
+
+var RkPager2 = function (_React$Component10) {
+  (0, _inherits3.default)(RkPager2, _React$Component10);
+
+  function RkPager2(props) {
+    (0, _classCallCheck3.default)(this, RkPager2);
+
+    var _this17 = (0, _possibleConstructorReturn3.default)(this, (RkPager2.__proto__ || (0, _getPrototypeOf2.default)(RkPager2)).call(this, props));
+
+    _this17.items = []; // raw items
+    _this17.pg = null;
+
+    _this17.state = {
+      itemList: [], // paginated items
+
+      perPage: 10,
+      perPageItems: [10, 20, 50, 100],
+      totalPages: "",
+      currentPage: "",
+
+      buttonSet: []
+    };
+
+    // binders
+    _this17.showItems = _this17.showItems.bind(_this17);
+    _this17.setPerPage = _this17.setPerPage.bind(_this17);
+    _this17.flip = _this17.flip.bind(_this17);
+
+    return _this17;
+  }
+  // hooks
+
+
+  (0, _createClass3.default)(RkPager2, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.items = _pager_tempdata.tempData;
+      this.activatePager();
+    }
+
+    // methods
+
+  }, {
+    key: "activatePager",
+    value: function activatePager() {
+      var _this18 = this;
+
+      this.pg = null;
+      this.pg = new _pager2.default({
+        perPage: this.state.perPage,
+        data: this.items
+      });
+
+      this.setState(function (prevState) {
+        return {
+          totalPages: _this18.pg.getTotalPages()
+        };
+      });
+
+      this.setPageBtns();
+      this.showItems(1);
+    }
+  }, {
+    key: "showItems",
+    value: function showItems(num) {
+      var _this19 = this;
+
+      this.setState(function (prevState) {
+        return {
+          itemList: _this19.pg.page(num),
+          currentPage: _this19.pg.currentPage
+        };
+      });
+
+      this.changePageBtns();
+    }
+  }, {
+    key: "flip",
+    value: function flip(direction) {
+      if (direction === "next") {
+        this.showItems(this.pg.next());
+      } else {
+        this.showItems(this.pg.prev());
+      }
+    }
+  }, {
+    key: "setPerPage",
+    value: function setPerPage(perPage) {
+      this.state.perPage = perPage;
+      this.activatePager();
+    }
+  }, {
+    key: "setPageBtns",
+    value: function setPageBtns() {
+      this.temp = [];
+      for (var i = 0, l = this.pg.getTotalPages(); i < l; i++) {
+        this.temp.push((0, _pagebtns.pageBtns)(i, l));
+      }
+    }
+  }, {
+    key: "changePageBtns",
+    value: function changePageBtns() {
+      var _this20 = this;
+
+      this.setState(function (prevState) {
+        return {
+          buttonSet: _this20.temp[_this20.pg.currentPage - 1]
+        };
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "jspager2_holder" },
+        React.createElement(RkPager2_itemList, {
+          pr_list: this.state.itemList }),
+        React.createElement(
+          "nav",
+          { className: "jspager2" },
+          React.createElement(RkPager2_pageSelector, {
+            pr_totalPages: this.state.totalPages,
+            pr_currentPage: this.state.currentPage,
+            pr_val_showItems: this.showItems }),
+          React.createElement(
+            "aside",
+            { className: "jspager2_prevnextholder" },
+            React.createElement(RkPager2_btnFirst, {
+              pr_val_showItems: this.showItems }),
+            React.createElement(RkPager2_btnPrev, {
+              pr_val_flip: this.flip }),
+            React.createElement(RkPager2_btnNext, {
+              pr_val_flip: this.flip }),
+            React.createElement(RkPager2_btnLast, {
+              pr_totalPages: this.state.totalPages,
+              pr_val_showItems: this.showItems })
+          ),
+          React.createElement(RkPager2_pageBtns, {
+            pr_buttonSet: this.state.buttonSet,
+            pr_currentPage: this.state.currentPage,
+            pr_val_showItems: this.showItems }),
+          React.createElement(RkPager2_itemsPerPage, {
+            pr_perPage: this.state.perPage,
+            pr_perPageItems: this.state.perPageItems,
+            pr_val_setPerPage: this.setPerPage })
+        )
+      );
+    }
+  }]);
+  return RkPager2;
+}(React.Component);
+
+exports.default = RkPager2;
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = __webpack_require__(5);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(31);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(32);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(36);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(83);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _pager_tempdata = __webpack_require__(92);
+
+var _pager = __webpack_require__(93);
+
+var _pager2 = _interopRequireDefault(_pager);
+
+var _pagebtns = __webpack_require__(94);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var RkPager3_itemsPerPage = function (_React$Component) {
+  (0, _inherits3.default)(RkPager3_itemsPerPage, _React$Component);
+
+  function RkPager3_itemsPerPage(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_itemsPerPage);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (RkPager3_itemsPerPage.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_itemsPerPage)).call(this, props));
+
+    _this.state = {};
+
+    // binders
+    _this.handleChange = _this.handleChange.bind(_this);
+
+    return _this;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager3_itemsPerPage, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.pr_val_setPerPage(event.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "aside",
+        { className: "jspager3_perpageholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager3_perpage" },
+          "perPage:\xA0"
+        ),
+        React.createElement(
+          "select",
+          { name: "jspager3_perpage", className: "jspager3_perpage",
+            tabindex: "0", onChange: this.handleChange,
+            value: this.props.pr_perPage },
+          this.props.pr_perPageItems.map(function (i) {
+            return React.createElement(
+              "option",
+              { key: i, value: i },
+              i
+            );
+          })
+        )
+      );
+    }
+  }]);
+  return RkPager3_itemsPerPage;
+}(React.Component);
+
+var RkPager3_btnFirst = function (_React$Component2) {
+  (0, _inherits3.default)(RkPager3_btnFirst, _React$Component2);
+
+  function RkPager3_btnFirst(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_btnFirst);
+
+    var _this2 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_btnFirst.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_btnFirst)).call(this, props));
+
+    _this2.state = {};
+
+    // binders
+
+    return _this2;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_btnFirst, [{
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_first", tabindex: "0",
+          onClick: function onClick() {
+            _this3.props.pr_val_showItems(1);
+          } },
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+        ),
+        React.createElement(
+          "span",
+          null,
+          "First"
+        )
+      );
+    }
+  }]);
+  return RkPager3_btnFirst;
+}(React.Component);
+
+var RkPager3_btnPrev = function (_React$Component3) {
+  (0, _inherits3.default)(RkPager3_btnPrev, _React$Component3);
+
+  function RkPager3_btnPrev(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_btnPrev);
+
+    var _this4 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_btnPrev.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_btnPrev)).call(this, props));
+
+    _this4.state = {};
+
+    // binders
+
+    return _this4;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_btnPrev, [{
+    key: "render",
+    value: function render() {
+      var _this5 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_prev", tabindex: "0",
+          onClick: function onClick() {
+            _this5.props.pr_val_flip();
+          } },
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+        ),
+        React.createElement(
+          "span",
+          null,
+          "Prev"
+        )
+      );
+    }
+  }]);
+  return RkPager3_btnPrev;
+}(React.Component);
+
+var RkPager3_btnNext = function (_React$Component4) {
+  (0, _inherits3.default)(RkPager3_btnNext, _React$Component4);
+
+  function RkPager3_btnNext(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_btnNext);
+
+    var _this6 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_btnNext.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_btnNext)).call(this, props));
+
+    _this6.state = {};
+
+    // binders
+
+    return _this6;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_btnNext, [{
+    key: "render",
+    value: function render() {
+      var _this7 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_next", tabindex: "0",
+          onClick: function onClick() {
+            _this7.props.pr_val_flip("next");
+          } },
+        React.createElement(
+          "span",
+          null,
+          "Next"
+        ),
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" })
+        )
+      );
+    }
+  }]);
+  return RkPager3_btnNext;
+}(React.Component);
+
+var RkPager3_btnLast = function (_React$Component5) {
+  (0, _inherits3.default)(RkPager3_btnLast, _React$Component5);
+
+  function RkPager3_btnLast(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_btnLast);
+
+    var _this8 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_btnLast.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_btnLast)).call(this, props));
+
+    _this8.state = {};
+
+    // binders
+
+    return _this8;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_btnLast, [{
+    key: "render",
+    value: function render() {
+      var _this9 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_last", tabindex: "0",
+          onClick: function onClick() {
+            _this9.props.pr_val_showItems(_this9.props.pr_totalPages);
+          } },
+        React.createElement(
+          "span",
+          null,
+          "Last"
+        ),
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" })
+        )
+      );
+    }
+  }]);
+  return RkPager3_btnLast;
+}(React.Component);
+
+var RkPager3_pageBtnItems = function (_React$Component6) {
+  (0, _inherits3.default)(RkPager3_pageBtnItems, _React$Component6);
+
+  function RkPager3_pageBtnItems(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_pageBtnItems);
+
+    var _this10 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_pageBtnItems.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_pageBtnItems)).call(this, props));
+
+    _this10.state = {};
+
+    // binders
+
+    return _this10;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_pageBtnItems, [{
+    key: "render",
+    value: function render() {
+      var _this11 = this;
+
+      if (this.props.pr_i === this.props.pr_currentPage) {
+        return React.createElement(
+          "a",
+          { className: "jspager3_pagebtn \r jspager3_pagebtn--active", tabindex: "0",
+            onClick: function onClick() {
+              _this11.props.pr_val_showItems(_this11.props.pr_i);
+            } },
+          this.props.pr_i
+        );
+      } else {
+        return React.createElement(
+          "a",
+          { className: "jspager3_pagebtn", tabindex: "0",
+            onClick: function onClick() {
+              _this11.props.pr_val_showItems(_this11.props.pr_i);
+            } },
+          this.props.pr_i
+        );
+      }
+    }
+  }]);
+  return RkPager3_pageBtnItems;
+}(React.Component);
+
+var RkPager3_pageBtns = function (_React$Component7) {
+  (0, _inherits3.default)(RkPager3_pageBtns, _React$Component7);
+
+  function RkPager3_pageBtns(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_pageBtns);
+
+    var _this12 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_pageBtns.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_pageBtns)).call(this, props));
+
+    _this12.state = {};
+
+    // binders
+
+    return _this12;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_pageBtns, [{
+    key: "render",
+    value: function render() {
+      var _this13 = this;
+
+      return React.createElement(
+        "aside",
+        { className: "jspager3_pagebtnholder",
+          "aria-atomic": "true", "aria-live": "polite",
+          "aria-relevant": "additions" },
+        this.props.pr_buttonSet.map(function (i) {
+          return React.createElement(RkPager3_pageBtnItems, {
+            pr_i: i,
+            pr_currentPage: _this13.props.pr_currentPage,
+            pr_val_showItems: _this13.props.pr_val_showItems });
+        })
+      );
+    }
+  }]);
+  return RkPager3_pageBtns;
+}(React.Component);
+
+var RkPager3_pageSelector = function (_React$Component8) {
+  (0, _inherits3.default)(RkPager3_pageSelector, _React$Component8);
+
+  function RkPager3_pageSelector(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_pageSelector);
+
+    var _this14 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_pageSelector.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_pageSelector)).call(this, props));
+
+    _this14.state = {};
+
+    // binders
+    _this14.handleChange = _this14.handleChange.bind(_this14);
+
+    return _this14;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager3_pageSelector, [{
+    key: "createOptions",
+    value: function createOptions() {
+      var _this15 = this;
+
+      var items = [];
+
+      var _loop = function _loop(i) {
+        items.push(React.createElement(
+          "option",
+          { onClick: function onClick() {
+              _this15.props.pr_val_showItems(i);
+            }, key: i, value: i },
+          i
+        ));
+      };
+
+      for (var i = 1; i <= this.props.pr_totalPages; i++) {
+        _loop(i);
+      }
+      return items;
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.pr_val_showItems(event.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "aside",
+        { className: "jspager3_totalpagesholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager3_select" },
+          "Page:"
+        ),
+        React.createElement(
+          "p",
+          null,
+          this.props.pr_currentPage
+        ),
+        React.createElement(
+          "select",
+          { className: "jspager3_select",
+            name: "jspager3_select", value: this.props.pr_currentPage,
+            onChange: this.handleChange, tabindex: "0" },
+          this.createOptions()
+        ),
+        React.createElement(
+          "p",
+          null,
+          "of ",
+          this.props.pr_totalPages
+        )
+      );
+    }
+  }]);
+  return RkPager3_pageSelector;
+}(React.Component);
+
+var RkPager3_itemList = function (_React$Component9) {
+  (0, _inherits3.default)(RkPager3_itemList, _React$Component9);
+
+  function RkPager3_itemList(props) {
+    (0, _classCallCheck3.default)(this, RkPager3_itemList);
+
+    var _this16 = (0, _possibleConstructorReturn3.default)(this, (RkPager3_itemList.__proto__ || (0, _getPrototypeOf2.default)(RkPager3_itemList)).call(this, props));
+
+    _this16.state = {};
+
+    // binders
+
+    return _this16;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager3_itemList, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "row jspager3_items",
+          "aria-atomic": "true", "aria-live": "assertive", "aria-relevant": "all" },
+        this.props.pr_list.map(function (i) {
+          return React.createElement(
+            "span",
+            null,
+            i
+          );
+        })
+      );
+    }
+  }]);
+  return RkPager3_itemList;
+}(React.Component);
+
+var RkPager3 = function (_React$Component10) {
+  (0, _inherits3.default)(RkPager3, _React$Component10);
+
+  function RkPager3(props) {
+    (0, _classCallCheck3.default)(this, RkPager3);
+
+    var _this17 = (0, _possibleConstructorReturn3.default)(this, (RkPager3.__proto__ || (0, _getPrototypeOf2.default)(RkPager3)).call(this, props));
+
+    _this17.items = []; // raw items
+    _this17.pg = null;
+
+    _this17.state = {
+      itemList: [], // paginated items
+
+      perPage: 10,
+      perPageItems: [10, 20, 50, 100],
+      totalPages: "",
+      currentPage: "",
+
+      buttonSet: []
+    };
+
+    // binders
+    _this17.showItems = _this17.showItems.bind(_this17);
+    _this17.setPerPage = _this17.setPerPage.bind(_this17);
+    _this17.flip = _this17.flip.bind(_this17);
+
+    return _this17;
+  }
+  // hooks
+
+
+  (0, _createClass3.default)(RkPager3, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.items = _pager_tempdata.tempData;
+      this.activatePager();
+    }
+
+    // methods
+
+  }, {
+    key: "activatePager",
+    value: function activatePager() {
+      var _this18 = this;
+
+      this.pg = null;
+      this.pg = new _pager2.default({
+        perPage: this.state.perPage,
+        data: this.items
+      });
+
+      this.setState(function (prevState) {
+        return {
+          totalPages: _this18.pg.getTotalPages()
+        };
+      });
+
+      this.setPageBtns();
+      this.showItems(1);
+    }
+  }, {
+    key: "showItems",
+    value: function showItems(num) {
+      var _this19 = this;
+
+      this.setState(function (prevState) {
+        return {
+          itemList: _this19.pg.page(num),
+          currentPage: _this19.pg.currentPage
+        };
+      });
+
+      this.changePageBtns();
+    }
+  }, {
+    key: "flip",
+    value: function flip(direction) {
+      if (direction === "next") {
+        this.showItems(this.pg.next());
+      } else {
+        this.showItems(this.pg.prev());
+      }
+    }
+  }, {
+    key: "setPerPage",
+    value: function setPerPage(perPage) {
+      this.state.perPage = perPage;
+      this.activatePager();
+    }
+  }, {
+    key: "setPageBtns",
+    value: function setPageBtns() {
+      this.temp = [];
+      for (var i = 0, l = this.pg.getTotalPages(); i < l; i++) {
+        this.temp.push((0, _pagebtns.pageBtns)(i, l));
+      }
+    }
+  }, {
+    key: "changePageBtns",
+    value: function changePageBtns() {
+      var _this20 = this;
+
+      this.setState(function (prevState) {
+        return {
+          buttonSet: _this20.temp[_this20.pg.currentPage - 1]
+        };
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "jspager3_holder" },
+        React.createElement(RkPager3_itemList, {
+          pr_list: this.state.itemList }),
+        React.createElement(
+          "nav",
+          { className: "jspager3" },
+          React.createElement(
+            "aside",
+            { className: "jspager3_prevnextholder" },
+            React.createElement(RkPager3_btnFirst, {
+              pr_val_showItems: this.showItems }),
+            React.createElement(RkPager3_btnPrev, {
+              pr_val_flip: this.flip })
+          ),
+          React.createElement(RkPager3_pageSelector, {
+            pr_totalPages: this.state.totalPages,
+            pr_currentPage: this.state.currentPage,
+            pr_val_showItems: this.showItems }),
+          React.createElement(
+            "aside",
+            { className: "jspager3_prevnextholder" },
+            React.createElement(RkPager3_btnNext, {
+              pr_val_flip: this.flip }),
+            React.createElement(RkPager3_btnLast, {
+              pr_totalPages: this.state.totalPages,
+              pr_val_showItems: this.showItems })
+          ),
+          React.createElement(RkPager3_pageBtns, {
+            pr_buttonSet: this.state.buttonSet,
+            pr_currentPage: this.state.currentPage,
+            pr_val_showItems: this.showItems }),
+          React.createElement(RkPager3_itemsPerPage, {
+            pr_perPage: this.state.perPage,
+            pr_perPageItems: this.state.perPageItems,
+            pr_val_setPerPage: this.setPerPage })
+        )
+      );
+    }
+  }]);
+  return RkPager3;
+}(React.Component);
+
+exports.default = RkPager3;
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = __webpack_require__(5);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(31);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(32);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(36);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(83);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _pager_tempdata = __webpack_require__(92);
+
+var _pager = __webpack_require__(93);
+
+var _pager2 = _interopRequireDefault(_pager);
+
+var _pagebtns = __webpack_require__(94);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var RkPager4_itemsPerPage = function (_React$Component) {
+  (0, _inherits3.default)(RkPager4_itemsPerPage, _React$Component);
+
+  function RkPager4_itemsPerPage(props) {
+    (0, _classCallCheck3.default)(this, RkPager4_itemsPerPage);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (RkPager4_itemsPerPage.__proto__ || (0, _getPrototypeOf2.default)(RkPager4_itemsPerPage)).call(this, props));
+
+    _this.state = {};
+
+    // binders
+    _this.handleChange = _this.handleChange.bind(_this);
+
+    return _this;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager4_itemsPerPage, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.pr_val_setPerPage(event.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "aside",
+        { className: "jspager4_perpageholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager4_perpage" },
+          "perPage:\xA0"
+        ),
+        React.createElement(
+          "select",
+          { name: "jspager4_perpage", className: "jspager4_perpage",
+            tabindex: "0", onChange: this.handleChange,
+            value: this.props.pr_perPage },
+          this.props.pr_perPageItems.map(function (i) {
+            return React.createElement(
+              "option",
+              { key: i, value: i },
+              i
+            );
+          })
+        )
+      );
+    }
+  }]);
+  return RkPager4_itemsPerPage;
+}(React.Component);
+
+var RkPager4_btnFirst = function (_React$Component2) {
+  (0, _inherits3.default)(RkPager4_btnFirst, _React$Component2);
+
+  function RkPager4_btnFirst(props) {
+    (0, _classCallCheck3.default)(this, RkPager4_btnFirst);
+
+    var _this2 = (0, _possibleConstructorReturn3.default)(this, (RkPager4_btnFirst.__proto__ || (0, _getPrototypeOf2.default)(RkPager4_btnFirst)).call(this, props));
+
+    _this2.state = {};
+
+    // binders
+
+    return _this2;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager4_btnFirst, [{
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_first", tabindex: "0",
+          onClick: function onClick() {
+            _this3.props.pr_val_showItems(1);
+          } },
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+        ),
+        React.createElement(
+          "span",
+          null,
+          "First"
+        )
+      );
+    }
+  }]);
+  return RkPager4_btnFirst;
+}(React.Component);
+
+var RkPager4_btnPrev = function (_React$Component3) {
+  (0, _inherits3.default)(RkPager4_btnPrev, _React$Component3);
+
+  function RkPager4_btnPrev(props) {
+    (0, _classCallCheck3.default)(this, RkPager4_btnPrev);
+
+    var _this4 = (0, _possibleConstructorReturn3.default)(this, (RkPager4_btnPrev.__proto__ || (0, _getPrototypeOf2.default)(RkPager4_btnPrev)).call(this, props));
+
+    _this4.state = {};
+
+    // binders
+
+    return _this4;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager4_btnPrev, [{
+    key: "render",
+    value: function render() {
+      var _this5 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_prev", tabindex: "0",
+          onClick: function onClick() {
+            _this5.props.pr_val_flip();
+          } },
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+        ),
+        React.createElement(
+          "span",
+          null,
+          "Prev"
+        )
+      );
+    }
+  }]);
+  return RkPager4_btnPrev;
+}(React.Component);
+
+var RkPager4_btnNext = function (_React$Component4) {
+  (0, _inherits3.default)(RkPager4_btnNext, _React$Component4);
+
+  function RkPager4_btnNext(props) {
+    (0, _classCallCheck3.default)(this, RkPager4_btnNext);
+
+    var _this6 = (0, _possibleConstructorReturn3.default)(this, (RkPager4_btnNext.__proto__ || (0, _getPrototypeOf2.default)(RkPager4_btnNext)).call(this, props));
+
+    _this6.state = {};
+
+    // binders
+
+    return _this6;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager4_btnNext, [{
+    key: "render",
+    value: function render() {
+      var _this7 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_next", tabindex: "0",
+          onClick: function onClick() {
+            _this7.props.pr_val_flip("next");
+          } },
+        React.createElement(
+          "span",
+          null,
+          "Next"
+        ),
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" })
+        )
+      );
+    }
+  }]);
+  return RkPager4_btnNext;
+}(React.Component);
+
+var RkPager4_btnLast = function (_React$Component5) {
+  (0, _inherits3.default)(RkPager4_btnLast, _React$Component5);
+
+  function RkPager4_btnLast(props) {
+    (0, _classCallCheck3.default)(this, RkPager4_btnLast);
+
+    var _this8 = (0, _possibleConstructorReturn3.default)(this, (RkPager4_btnLast.__proto__ || (0, _getPrototypeOf2.default)(RkPager4_btnLast)).call(this, props));
+
+    _this8.state = {};
+
+    // binders
+
+    return _this8;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager4_btnLast, [{
+    key: "render",
+    value: function render() {
+      var _this9 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_last", tabindex: "0",
+          onClick: function onClick() {
+            _this9.props.pr_val_showItems(_this9.props.pr_totalPages);
+          } },
+        React.createElement(
+          "span",
+          null,
+          "Last"
+        ),
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" })
+        )
+      );
+    }
+  }]);
+  return RkPager4_btnLast;
+}(React.Component);
+
+var RkPager4_pageSelector = function (_React$Component6) {
+  (0, _inherits3.default)(RkPager4_pageSelector, _React$Component6);
+
+  function RkPager4_pageSelector(props) {
+    (0, _classCallCheck3.default)(this, RkPager4_pageSelector);
+
+    var _this10 = (0, _possibleConstructorReturn3.default)(this, (RkPager4_pageSelector.__proto__ || (0, _getPrototypeOf2.default)(RkPager4_pageSelector)).call(this, props));
+
+    _this10.state = {};
+
+    // binders
+    _this10.handleChange = _this10.handleChange.bind(_this10);
+
+    return _this10;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager4_pageSelector, [{
+    key: "createOptions",
+    value: function createOptions() {
+      var _this11 = this;
+
+      var items = [];
+
+      var _loop = function _loop(i) {
+        items.push(React.createElement(
+          "option",
+          { onClick: function onClick() {
+              _this11.props.pr_val_showItems(i);
+            }, key: i, value: i },
+          i
+        ));
+      };
+
+      for (var i = 1; i <= this.props.pr_totalPages; i++) {
+        _loop(i);
+      }
+      return items;
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.pr_val_showItems(event.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "aside",
+        { className: "jspager4_totalpagesholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager4_select" },
+          "Page:"
+        ),
+        React.createElement(
+          "p",
+          null,
+          this.props.pr_currentPage
+        ),
+        React.createElement(
+          "select",
+          { className: "jspager4_select",
+            name: "jspager4_select", value: this.props.pr_currentPage,
+            onChange: this.handleChange, tabindex: "0" },
+          this.createOptions()
+        ),
+        React.createElement(
+          "p",
+          null,
+          "of ",
+          this.props.pr_totalPages
+        )
+      );
+    }
+  }]);
+  return RkPager4_pageSelector;
+}(React.Component);
+
+var RkPager4_itemList = function (_React$Component7) {
+  (0, _inherits3.default)(RkPager4_itemList, _React$Component7);
+
+  function RkPager4_itemList(props) {
+    (0, _classCallCheck3.default)(this, RkPager4_itemList);
+
+    var _this12 = (0, _possibleConstructorReturn3.default)(this, (RkPager4_itemList.__proto__ || (0, _getPrototypeOf2.default)(RkPager4_itemList)).call(this, props));
+
+    _this12.state = {};
+
+    // binders
+
+    return _this12;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager4_itemList, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "row jspager4_items",
+          "aria-atomic": "true", "aria-live": "assertive", "aria-relevant": "all" },
+        this.props.pr_list.map(function (i) {
+          return React.createElement(
+            "span",
+            null,
+            i
+          );
+        })
+      );
+    }
+  }]);
+  return RkPager4_itemList;
+}(React.Component);
+
+var RkPager4 = function (_React$Component8) {
+  (0, _inherits3.default)(RkPager4, _React$Component8);
+
+  function RkPager4(props) {
+    (0, _classCallCheck3.default)(this, RkPager4);
+
+    var _this13 = (0, _possibleConstructorReturn3.default)(this, (RkPager4.__proto__ || (0, _getPrototypeOf2.default)(RkPager4)).call(this, props));
+
+    _this13.items = []; // raw items
+    _this13.pg = null;
+
+    _this13.state = {
+      itemList: [], // paginated items
+
+      perPage: 10,
+      perPageItems: [10, 20, 50, 100],
+      totalPages: "",
+      currentPage: "",
+
+      buttonSet: []
+    };
+
+    // binders
+    _this13.showItems = _this13.showItems.bind(_this13);
+    _this13.setPerPage = _this13.setPerPage.bind(_this13);
+    _this13.flip = _this13.flip.bind(_this13);
+
+    return _this13;
+  }
+  // hooks
+
+
+  (0, _createClass3.default)(RkPager4, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.items = _pager_tempdata.tempData;
+      this.activatePager();
+    }
+
+    // methods
+
+  }, {
+    key: "activatePager",
+    value: function activatePager() {
+      var _this14 = this;
+
+      this.pg = null;
+      this.pg = new _pager2.default({
+        perPage: this.state.perPage,
+        data: this.items
+      });
+
+      this.setState(function (prevState) {
+        return {
+          totalPages: _this14.pg.getTotalPages()
+        };
+      });
+
+      this.setPageBtns();
+      this.showItems(1);
+    }
+  }, {
+    key: "showItems",
+    value: function showItems(num) {
+      var _this15 = this;
+
+      this.setState(function (prevState) {
+        return {
+          itemList: _this15.pg.page(num),
+          currentPage: _this15.pg.currentPage
+        };
+      });
+
+      this.changePageBtns();
+    }
+  }, {
+    key: "flip",
+    value: function flip(direction) {
+      if (direction === "next") {
+        this.showItems(this.pg.next());
+      } else {
+        this.showItems(this.pg.prev());
+      }
+    }
+  }, {
+    key: "setPerPage",
+    value: function setPerPage(perPage) {
+      this.state.perPage = perPage;
+      this.activatePager();
+    }
+  }, {
+    key: "setPageBtns",
+    value: function setPageBtns() {
+      this.temp = [];
+      for (var i = 0, l = this.pg.getTotalPages(); i < l; i++) {
+        this.temp.push((0, _pagebtns.pageBtns)(i, l));
+      }
+    }
+  }, {
+    key: "changePageBtns",
+    value: function changePageBtns() {
+      var _this16 = this;
+
+      this.setState(function (prevState) {
+        return {
+          buttonSet: _this16.temp[_this16.pg.currentPage - 1]
+        };
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "jspager4_holder" },
+        React.createElement(RkPager4_itemList, {
+          pr_list: this.state.itemList }),
+        React.createElement(
+          "nav",
+          { className: "jspager4" },
+          React.createElement(
+            "aside",
+            { className: "jspager4_prevnextholder" },
+            React.createElement(RkPager4_btnFirst, {
+              pr_val_showItems: this.showItems }),
+            React.createElement(RkPager4_btnPrev, {
+              pr_val_flip: this.flip })
+          ),
+          React.createElement(RkPager4_pageSelector, {
+            pr_totalPages: this.state.totalPages,
+            pr_currentPage: this.state.currentPage,
+            pr_val_showItems: this.showItems }),
+          React.createElement(
+            "aside",
+            { className: "jspager4_prevnextholder" },
+            React.createElement(RkPager4_btnNext, {
+              pr_val_flip: this.flip }),
+            React.createElement(RkPager4_btnLast, {
+              pr_totalPages: this.state.totalPages,
+              pr_val_showItems: this.showItems })
+          ),
+          React.createElement(RkPager4_itemsPerPage, {
+            pr_perPage: this.state.perPage,
+            pr_perPageItems: this.state.perPageItems,
+            pr_val_setPerPage: this.setPerPage })
+        )
+      );
+    }
+  }]);
+  return RkPager4;
+}(React.Component);
+
+exports.default = RkPager4;
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = __webpack_require__(5);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(31);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(32);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(36);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(83);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _pager_tempdata = __webpack_require__(92);
+
+var _pager = __webpack_require__(93);
+
+var _pager2 = _interopRequireDefault(_pager);
+
+var _pagebtns = __webpack_require__(94);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var RkPager5_itemsPerPage = function (_React$Component) {
+  (0, _inherits3.default)(RkPager5_itemsPerPage, _React$Component);
+
+  function RkPager5_itemsPerPage(props) {
+    (0, _classCallCheck3.default)(this, RkPager5_itemsPerPage);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (RkPager5_itemsPerPage.__proto__ || (0, _getPrototypeOf2.default)(RkPager5_itemsPerPage)).call(this, props));
+
+    _this.state = {};
+
+    // binders
+    _this.handleChange = _this.handleChange.bind(_this);
+
+    return _this;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager5_itemsPerPage, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.pr_val_setPerPage(event.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "aside",
+        { className: "jspager5_perpageholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager5_perpage" },
+          "perPage:\xA0"
+        ),
+        React.createElement(
+          "select",
+          { name: "jspager5_perpage", className: "jspager5_perpage",
+            tabindex: "0", onChange: this.handleChange,
+            value: this.props.pr_perPage },
+          this.props.pr_perPageItems.map(function (i) {
+            return React.createElement(
+              "option",
+              { key: i, value: i },
+              i
+            );
+          })
+        )
+      );
+    }
+  }]);
+  return RkPager5_itemsPerPage;
+}(React.Component);
+
+var RkPager5_btnFirst = function (_React$Component2) {
+  (0, _inherits3.default)(RkPager5_btnFirst, _React$Component2);
+
+  function RkPager5_btnFirst(props) {
+    (0, _classCallCheck3.default)(this, RkPager5_btnFirst);
+
+    var _this2 = (0, _possibleConstructorReturn3.default)(this, (RkPager5_btnFirst.__proto__ || (0, _getPrototypeOf2.default)(RkPager5_btnFirst)).call(this, props));
+
+    _this2.state = {};
+
+    // binders
+
+    return _this2;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager5_btnFirst, [{
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_first", tabindex: "0",
+          onClick: function onClick() {
+            _this3.props.pr_val_showItems(1);
+          } },
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+        ),
+        React.createElement(
+          "span",
+          null,
+          "First"
+        )
+      );
+    }
+  }]);
+  return RkPager5_btnFirst;
+}(React.Component);
+
+var RkPager5_btnPrev = function (_React$Component3) {
+  (0, _inherits3.default)(RkPager5_btnPrev, _React$Component3);
+
+  function RkPager5_btnPrev(props) {
+    (0, _classCallCheck3.default)(this, RkPager5_btnPrev);
+
+    var _this4 = (0, _possibleConstructorReturn3.default)(this, (RkPager5_btnPrev.__proto__ || (0, _getPrototypeOf2.default)(RkPager5_btnPrev)).call(this, props));
+
+    _this4.state = {};
+
+    // binders
+
+    return _this4;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager5_btnPrev, [{
+    key: "render",
+    value: function render() {
+      var _this5 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_prev", tabindex: "0",
+          onClick: function onClick() {
+            _this5.props.pr_val_flip();
+          } },
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+        ),
+        React.createElement(
+          "span",
+          null,
+          "Prev"
+        )
+      );
+    }
+  }]);
+  return RkPager5_btnPrev;
+}(React.Component);
+
+var RkPager5_btnNext = function (_React$Component4) {
+  (0, _inherits3.default)(RkPager5_btnNext, _React$Component4);
+
+  function RkPager5_btnNext(props) {
+    (0, _classCallCheck3.default)(this, RkPager5_btnNext);
+
+    var _this6 = (0, _possibleConstructorReturn3.default)(this, (RkPager5_btnNext.__proto__ || (0, _getPrototypeOf2.default)(RkPager5_btnNext)).call(this, props));
+
+    _this6.state = {};
+
+    // binders
+
+    return _this6;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager5_btnNext, [{
+    key: "render",
+    value: function render() {
+      var _this7 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_next", tabindex: "0",
+          onClick: function onClick() {
+            _this7.props.pr_val_flip("next");
+          } },
+        React.createElement(
+          "span",
+          null,
+          "Next"
+        ),
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" })
+        )
+      );
+    }
+  }]);
+  return RkPager5_btnNext;
+}(React.Component);
+
+var RkPager5_btnLast = function (_React$Component5) {
+  (0, _inherits3.default)(RkPager5_btnLast, _React$Component5);
+
+  function RkPager5_btnLast(props) {
+    (0, _classCallCheck3.default)(this, RkPager5_btnLast);
+
+    var _this8 = (0, _possibleConstructorReturn3.default)(this, (RkPager5_btnLast.__proto__ || (0, _getPrototypeOf2.default)(RkPager5_btnLast)).call(this, props));
+
+    _this8.state = {};
+
+    // binders
+
+    return _this8;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager5_btnLast, [{
+    key: "render",
+    value: function render() {
+      var _this9 = this;
+
+      return React.createElement(
+        "button",
+        { className: "btn btn_last", tabindex: "0",
+          onClick: function onClick() {
+            _this9.props.pr_val_showItems(_this9.props.pr_totalPages);
+          } },
+        React.createElement(
+          "span",
+          null,
+          "Last"
+        ),
+        React.createElement(
+          "svg",
+          { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24" },
+          React.createElement("path", { d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" })
+        )
+      );
+    }
+  }]);
+  return RkPager5_btnLast;
+}(React.Component);
+
+var RkPager5_pageBtnItems = function (_React$Component6) {
+  (0, _inherits3.default)(RkPager5_pageBtnItems, _React$Component6);
+
+  function RkPager5_pageBtnItems(props) {
+    (0, _classCallCheck3.default)(this, RkPager5_pageBtnItems);
+
+    var _this10 = (0, _possibleConstructorReturn3.default)(this, (RkPager5_pageBtnItems.__proto__ || (0, _getPrototypeOf2.default)(RkPager5_pageBtnItems)).call(this, props));
+
+    _this10.state = {};
+
+    // binders
+
+    return _this10;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager5_pageBtnItems, [{
+    key: "render",
+    value: function render() {
+      var _this11 = this;
+
+      if (this.props.pr_i === this.props.pr_currentPage) {
+        return React.createElement(
+          "a",
+          { className: "jspager5_pagebtn \r jspager5_pagebtn--active", tabindex: "0",
+            onClick: function onClick() {
+              _this11.props.pr_val_showItems(_this11.props.pr_i);
+            } },
+          this.props.pr_i
+        );
+      } else {
+        return React.createElement(
+          "a",
+          { className: "jspager5_pagebtn", tabindex: "0",
+            onClick: function onClick() {
+              _this11.props.pr_val_showItems(_this11.props.pr_i);
+            } },
+          this.props.pr_i
+        );
+      }
+    }
+  }]);
+  return RkPager5_pageBtnItems;
+}(React.Component);
+
+var RkPager5_pageBtns = function (_React$Component7) {
+  (0, _inherits3.default)(RkPager5_pageBtns, _React$Component7);
+
+  function RkPager5_pageBtns(props) {
+    (0, _classCallCheck3.default)(this, RkPager5_pageBtns);
+
+    var _this12 = (0, _possibleConstructorReturn3.default)(this, (RkPager5_pageBtns.__proto__ || (0, _getPrototypeOf2.default)(RkPager5_pageBtns)).call(this, props));
+
+    _this12.state = {};
+
+    // binders
+
+    return _this12;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager5_pageBtns, [{
+    key: "render",
+    value: function render() {
+      var _this13 = this;
+
+      return React.createElement(
+        "aside",
+        { className: "jspager5_pagebtnholder",
+          "aria-atomic": "true", "aria-live": "polite",
+          "aria-relevant": "additions" },
+        this.props.pr_buttonSet.map(function (i) {
+          return React.createElement(RkPager5_pageBtnItems, {
+            pr_i: i,
+            pr_currentPage: _this13.props.pr_currentPage,
+            pr_val_showItems: _this13.props.pr_val_showItems });
+        })
+      );
+    }
+  }]);
+  return RkPager5_pageBtns;
+}(React.Component);
+
+var RkPager5_pageSelector = function (_React$Component8) {
+  (0, _inherits3.default)(RkPager5_pageSelector, _React$Component8);
+
+  function RkPager5_pageSelector(props) {
+    (0, _classCallCheck3.default)(this, RkPager5_pageSelector);
+
+    var _this14 = (0, _possibleConstructorReturn3.default)(this, (RkPager5_pageSelector.__proto__ || (0, _getPrototypeOf2.default)(RkPager5_pageSelector)).call(this, props));
+
+    _this14.state = {};
+
+    // binders
+    _this14.handleChange = _this14.handleChange.bind(_this14);
+
+    return _this14;
+  }
+  // hooks
+
+  // methods
+
+
+  (0, _createClass3.default)(RkPager5_pageSelector, [{
+    key: "createOptions",
+    value: function createOptions() {
+      var _this15 = this;
+
+      var items = [];
+
+      var _loop = function _loop(i) {
+        items.push(React.createElement(
+          "option",
+          { onClick: function onClick() {
+              _this15.props.pr_val_showItems(i);
+            }, key: i, value: i },
+          i
+        ));
+      };
+
+      for (var i = 1; i <= this.props.pr_totalPages; i++) {
+        _loop(i);
+      }
+      return items;
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.props.pr_val_showItems(event.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "aside",
+        { className: "jspager5_totalpagesholder" },
+        React.createElement(
+          "label",
+          { "for": "jspager5_select" },
+          "Page:"
+        ),
+        React.createElement(
+          "p",
+          null,
+          this.props.pr_currentPage
+        ),
+        React.createElement(
+          "select",
+          { className: "jspager5_select",
+            name: "jspager5_select", value: this.props.pr_currentPage,
+            onChange: this.handleChange, tabindex: "0" },
+          this.createOptions()
+        ),
+        React.createElement(
+          "p",
+          null,
+          "of ",
+          this.props.pr_totalPages
+        )
+      );
+    }
+  }]);
+  return RkPager5_pageSelector;
+}(React.Component);
+
+var RkPager5_itemList = function (_React$Component9) {
+  (0, _inherits3.default)(RkPager5_itemList, _React$Component9);
+
+  function RkPager5_itemList(props) {
+    (0, _classCallCheck3.default)(this, RkPager5_itemList);
+
+    var _this16 = (0, _possibleConstructorReturn3.default)(this, (RkPager5_itemList.__proto__ || (0, _getPrototypeOf2.default)(RkPager5_itemList)).call(this, props));
+
+    _this16.state = {};
+
+    // binders
+
+    return _this16;
+  }
+  // hooks
+
+  // methods
+
+  (0, _createClass3.default)(RkPager5_itemList, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "row jspager5_items",
+          "aria-atomic": "true", "aria-live": "assertive", "aria-relevant": "all" },
+        this.props.pr_list.map(function (i) {
+          return React.createElement(
+            "span",
+            null,
+            i
+          );
+        })
+      );
+    }
+  }]);
+  return RkPager5_itemList;
+}(React.Component);
+
+var RkPager5 = function (_React$Component10) {
+  (0, _inherits3.default)(RkPager5, _React$Component10);
+
+  function RkPager5(props) {
+    (0, _classCallCheck3.default)(this, RkPager5);
+
+    var _this17 = (0, _possibleConstructorReturn3.default)(this, (RkPager5.__proto__ || (0, _getPrototypeOf2.default)(RkPager5)).call(this, props));
+
+    _this17.items = []; // raw items
+    _this17.pg = null;
+
+    _this17.state = {
+      itemList: [], // paginated items
+
+      perPage: 10,
+      perPageItems: [10, 20, 50, 100],
+      totalPages: "",
+      currentPage: "",
+
+      buttonSet: []
+    };
+
+    // binders
+    _this17.showItems = _this17.showItems.bind(_this17);
+    _this17.setPerPage = _this17.setPerPage.bind(_this17);
+    _this17.flip = _this17.flip.bind(_this17);
+
+    return _this17;
+  }
+  // hooks
+
+
+  (0, _createClass3.default)(RkPager5, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.items = _pager_tempdata.tempData;
+      this.activatePager();
+    }
+
+    // methods
+
+  }, {
+    key: "activatePager",
+    value: function activatePager() {
+      var _this18 = this;
+
+      this.pg = null;
+      this.pg = new _pager2.default({
+        perPage: this.state.perPage,
+        data: this.items
+      });
+
+      this.setState(function (prevState) {
+        return {
+          totalPages: _this18.pg.getTotalPages()
+        };
+      });
+
+      this.setPageBtns();
+      this.showItems(1);
+    }
+  }, {
+    key: "showItems",
+    value: function showItems(num) {
+      var _this19 = this;
+
+      this.setState(function (prevState) {
+        return {
+          itemList: _this19.pg.page(num),
+          currentPage: _this19.pg.currentPage
+        };
+      });
+
+      this.changePageBtns();
+    }
+  }, {
+    key: "flip",
+    value: function flip(direction) {
+      if (direction === "next") {
+        this.showItems(this.pg.next());
+      } else {
+        this.showItems(this.pg.prev());
+      }
+    }
+  }, {
+    key: "setPerPage",
+    value: function setPerPage(perPage) {
+      this.state.perPage = perPage;
+      this.activatePager();
+    }
+  }, {
+    key: "setPageBtns",
+    value: function setPageBtns() {
+      this.temp = [];
+      for (var i = 0, l = this.pg.getTotalPages(); i < l; i++) {
+        this.temp.push((0, _pagebtns.pageBtns)(i, l));
+      }
+    }
+  }, {
+    key: "changePageBtns",
+    value: function changePageBtns() {
+      var _this20 = this;
+
+      this.setState(function (prevState) {
+        return {
+          buttonSet: _this20.temp[_this20.pg.currentPage - 1]
+        };
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "jspager5_holder" },
+        React.createElement(RkPager5_itemList, {
+          pr_list: this.state.itemList }),
+        React.createElement(
+          "nav",
+          { className: "jspager5" },
+          React.createElement(RkPager5_pageSelector, {
+            pr_totalPages: this.state.totalPages,
+            pr_currentPage: this.state.currentPage,
+            pr_val_showItems: this.showItems }),
+          React.createElement(
+            "aside",
+            { className: "jspager5_prevnextholder" },
+            React.createElement(RkPager5_btnFirst, {
+              pr_val_showItems: this.showItems }),
+            React.createElement(RkPager5_btnPrev, {
+              pr_val_flip: this.flip })
+          ),
+          React.createElement(RkPager5_pageBtns, {
+            pr_buttonSet: this.state.buttonSet,
+            pr_currentPage: this.state.currentPage,
+            pr_val_showItems: this.showItems }),
+          React.createElement(
+            "aside",
+            { className: "jspager5_prevnextholder" },
+            React.createElement(RkPager5_btnNext, {
+              pr_val_flip: this.flip }),
+            React.createElement(RkPager5_btnLast, {
+              pr_totalPages: this.state.totalPages,
+              pr_val_showItems: this.showItems })
+          ),
+          React.createElement(RkPager5_itemsPerPage, {
+            pr_perPage: this.state.perPage,
+            pr_perPageItems: this.state.perPageItems,
+            pr_val_setPerPage: this.setPerPage })
+        )
+      );
+    }
+  }]);
+  return RkPager5;
+}(React.Component);
+
+exports.default = RkPager5;
+
+/***/ })
+/******/ ]);
